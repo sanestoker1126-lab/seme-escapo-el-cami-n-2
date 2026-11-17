@@ -38,7 +38,7 @@
  const LOOK_SEQUENCE=[0,1,2,3,4,5,5,4,3,2,1,0];
  const reduced=!!(root.matchMedia&&root.matchMedia('(prefers-reduced-motion: reduce)').matches);
  const bestiary={}; const estokerCache=new Map(); const sofiCache=new Map();
- const ARRIVAL_LOOKS={original:'uniforme',rosa:'uniforme',uniforme:'uniforme',buzo:'uniforme',astronauta:'uniforme'};
+ const ARRIVAL_LOOKS={original:'original',rosa:'rosa',uniforme:'uniforme',buzo:'uniforme',astronauta:'uniforme'};
  const currentLook=()=>{try{return root.localStorage.getItem('camion-opt-ninaLook')||'original';}catch(_){return 'original';}};
  const $=(selector)=>overlay.querySelector(selector);
  const sofiaFrame=(i,look=currentLook())=>`assets/player/sofia_arrival/${ARRIVAL_LOOKS[look]||'original'}/walk_${Math.max(0,Math.min(5,i))}.png`;
@@ -91,7 +91,7 @@
   }
   // Precarga normal de cuadros, evitando peticiones de red al cambiar de cuadro.
   for(const a of Object.values(anims()))for(const f of a.frames)cacheImage(f.src);
-  for(const look of ['original','rosa','uniforme']){for(let i=0;i<6;i++)cacheImage(sofiaFrame(i,look));cacheImage(sofiaIdleFrame(look));}
+  for(const look of [ARRIVAL_LOOKS[currentLook()]||'original']){for(let i=0;i<6;i++)cacheImage(sofiaFrame(i,look));cacheImage(sofiaIdleFrame(look));}
  }
  function paint(){
   const s=SCENES[index],stage=$('.marine-stage');stage.dataset.scene=s.kind;
