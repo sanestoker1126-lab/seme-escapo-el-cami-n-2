@@ -124,7 +124,8 @@
         "atlas": "assets/player/sofia/sofia_buceadora_movimientos_rgba.png",
         "metadata": "assets/player/sofia/sofia_buceadora_movimientos.json",
         "attack_atlas": "assets/player/sofia/swim_strike_11frames_v581.png",
-        "attack_metadata": "assets/player/sofia/swim_strike_v581.json"
+        "attack_metadata": "assets/player/sofia/swim_strike_v581.json",
+        "animation_manifest": "assets/player/sofia/animation_manifest_v12.json"
       },
       "arrival": {
         "pivot_normalized": [
@@ -162,7 +163,8 @@
             "mirrored_atlas_frames": 12
           }
         ],
-        "loader": "js/app/marine_intro.js"
+        "loader": "js/app/marine_intro.js",
+        "source_locked_manifest": "assets/player/sofia_arrival/manifest_source_locked_v581.json"
       }
     },
     "estoker": {
@@ -195,23 +197,29 @@
   "pending_issues": [
     {
       "asset": "assets/player/sofia_arrival/manifest.json",
-      "status": "EXISTENTE_REQUIERE_CORRECCION",
-      "problem": "Paths point to nonexistent sofia_escolar_roja, sofia_rosa_morada, sofia_reno_rojo directories; actual asset folders are original, rosa, uniforme. This registry references real paths without overwriting the legacy file."
+      "status": "LEGACY_PRESERVED_ALTERNATIVE_CREATED",
+      "problem": "Original manifest names missing folders; source-locked manifest_source_locked_v581.json references actual paths without overwriting legacy."
     },
     {
       "asset": "assets/player/sofia/animation_manifest_v12.json",
-      "status": "BLOQUEADO_POR_FALTA_DE_FUENTE",
-      "problem": "States marked provisional are not evidence of complete authored animations. Preserve original source and label honestly."
+      "status": "CREATED_SOURCE_LOCKED_VISUAL_QA_PENDING",
+      "problem": "New v12 source-locked index references existing PNG/JSON and marks derived complementary poses provisional; does not certify authored completeness."
     },
     {
       "asset": "space and additional enemies",
       "status": "NO_VERIFICADO",
       "problem": "Do not manufacture canonical sprites where the repository currently uses procedural drawings/overlays."
+    },
+    {
+      "asset": "assets/player/sofia/sofia_submarina_complementaria.json",
+      "status": "LEGACY_METADATA_IMAGE_PATH_STALE",
+      "problem": "Sidecar image points to atlas/sofia_submarina_complementaria.png; PNG is at assets/player/sofia/sofia_submarina_complementaria.png. v12 uses verified path, derived states disabled."
     }
   ],
   "qa": {
     "test": "tests/character_enemy_assets_section01.test.js",
     "viewer": "tools/preview_character_enemy_section01.html",
-    "note": "Source and coordinate QA; visual transitions and combat timing require in-game capture."
+    "note": "Source and coordinate QA; visual transitions and combat timing require in-game capture.",
+    "generated_test": "tests/character_enemy_missing_sources_v581.test.js"
   }
 }
