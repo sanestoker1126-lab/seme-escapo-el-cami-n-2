@@ -2716,6 +2716,9 @@
     const W = G.world;
     if (!G.room) { drawBackdrop(G, V); drawScenes(G, V); drawNeighborhood(G, V, T); drawStreet(G, V, T); drawToxiAtmosphere(G, V, T); }
     for (const r of W.rooms) drawRoomBackground(r, V);
+    // A1/A2 environment art: optional, behind collision geometry and characters.
+    // Never inserts platforms, pickups, hazards or enemies.
+    if (!G.room && NS.EnvironmentProps) NS.EnvironmentProps.draw(G, V, ctx);
     drawWaters(G, V, false);
     if (!G.room) { drawMarineAtmosphere(G,V,T); drawMarineCurrents(G,V,T); }
     drawSolids(G, V);
