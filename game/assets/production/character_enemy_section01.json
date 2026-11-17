@@ -212,14 +212,23 @@
     },
     {
       "asset": "assets/player/sofia/sofia_submarina_complementaria.json",
-      "status": "LEGACY_METADATA_IMAGE_PATH_STALE",
-      "problem": "Sidecar image points to atlas/sofia_submarina_complementaria.png; PNG is at assets/player/sofia/sofia_submarina_complementaria.png. v12 uses verified path, derived states disabled."
+      "status": "METADATA_IMAGE_PATH_CORRECTED_VISUAL_QA_PENDING",
+      "problem": "The sidecar now resolves the real PNG. Derived preview frames are not accepted as independent poses, and individual PNG exports are still absent."
+    },
+    {
+      "asset": "PNG recompression runtime profile",
+      "status": "TOOL_COMMITTED_EXECUTION_PENDING",
+      "problem": "Lossless PNG IDAT optimizer is committed and unit-tested on a synthetic RGBA image, but real repo PNG bytes have not been processed. Run --profile runtime --apply on a checkout to produce optimized PNG binaries."
     }
   ],
   "qa": {
     "test": "tests/character_enemy_assets_section01.test.js",
     "viewer": "tools/preview_character_enemy_section01.html",
     "note": "Source and coordinate QA; visual transitions and combat timing require in-game capture.",
-    "generated_test": "tests/character_enemy_missing_sources_v581.test.js"
+    "generated_test": "tests/character_enemy_missing_sources_v581.test.js",
+    "png_optimizer": "tools/arte/optimize_png_source_locked.js",
+    "png_optimizer_test": "tests/v581_lossless_png_optimization.test.js",
+    "png_optimization_status": "SOURCE_LOSSLESS_TOOL_COMMITTED_NOT_RUN_AGAINST_REPOSITORY_PNG_BYTES",
+    "cinematic_variant_mapping": "FIXED_ACTUAL_SELECTED_LOOK"
   }
 }
