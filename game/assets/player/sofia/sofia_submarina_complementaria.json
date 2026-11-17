@@ -3,7 +3,7 @@
   "version": 1,
   "character": "Sofía",
   "skin": "traje submarino original turquesa y coral",
-  "image": "atlas/sofia_submarina_complementaria.png",
+  "image": "sofia_submarina_complementaria.png",
   "size": [
     2048,
     3328
@@ -3272,5 +3272,7 @@
     }
   },
   "method": "derivación por reutilización/rotación/traslación de poses originales, NO nuevos dibujos articulados",
-  "metadata": "Pivote en px relativo a cada celda; canvas rendering usa atlas.frame_rect y atlas.pivot. Frames PNG conservan exactamente esta celda."
+  "metadata": {
+    "legacy_image_path_original": "atlas/sofia_submarina_complementaria.png"
+  }
 }
