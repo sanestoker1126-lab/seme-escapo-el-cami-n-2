@@ -19,7 +19,7 @@ Fuente exacta: `SE_ME_FUE_EL_CAMION_ENVIRONMENT_A1_A2_RGBA_V58_1.zip`
 SHA-256: `e987510ca7a0645cc8e53a89260209205e6bebe05c6f648d86d050b3604f2281`
 
 El ZIP incluye 32 objetos catalogados y 8 atlas PNG RGBA con JSON/CSV. Dos PNG auxiliares no
-están incluidos en el catálogo y no se activan automáticamente.
+están incluidos en el catálogo; el importador conserva sus bytes pero no se activan automáticamente.
 
 ### Finalizar desde el clon GitHub/Codespaces
 
