@@ -191,13 +191,13 @@
   "runtime": {
     "loader": "js/app/marine_intro.js",
     "current_look_map": {
-      "original": "uniforme",
-      "rosa": "uniforme",
+      "original": "original",
+      "rosa": "rosa",
       "uniforme": "uniforme",
       "buzo": "uniforme",
       "astronauta": "uniforme"
     },
-    "note": "Current runtime maps looks to uniforme; existing V58.1 regression test requires it. No gameplay behavior changed."
+    "note": "The cinematic now respects original/rosa/uniforme look and preloads only the chosen source frames; source texture pixels remain unchanged."
   },
   "qa": {
     "atlas_coordinate_integrity": "PASS",
