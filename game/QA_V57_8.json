@@ -1,0 +1,21 @@
+{
+  "version": "57.8.0",
+  "base": "V57.7",
+  "validated": {
+    "selected_node_tests": 48,
+    "fail": 0,
+    "marine_focus_tests": 29,
+    "fail_marine": 0,
+    "PWA_cached_resources": 307,
+    "PWA_missing_resources": 0,
+    "gameplay_physics_probe": "down and up only with active input; release dampens",
+    "island_feet_alpha_y": 308,
+    "alpha_image_height": 320,
+    "island_variants": 3,
+    "walking_frames_per_variant": 6,
+    "idle_poses_per_variant": 1,
+    "marine_hold_frames": 6
+  },
+  "visual_browser_test": "not run: local Chromium navigation blocked by administrator",
+  "global_test_suite": "started but full sweep exceeded permitted runtime; focused and physics tests succeeded"
+}

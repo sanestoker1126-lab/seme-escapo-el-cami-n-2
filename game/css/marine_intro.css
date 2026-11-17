@@ -1,0 +1,191 @@
+/* La llegada a la isla no mueve al jugador: el juego permanece en pausa. */
+#marineIntro{position:fixed;inset:0;z-index:1300;display:flex;flex-direction:column;background:#041421;color:#ecfbff;font-family:system-ui,-apple-system,sans-serif}
+#marineIntro[hidden]{display:none!important}
+#marineIntro .marine-stage{flex:1;min-height:0;position:relative;overflow:hidden;background:linear-gradient(#70d9fa 0 17%,#067caa 20%,#043f67),url('../assets/parallax/marino/panorama_marino.webp');background-image:linear-gradient(0deg,rgba(0,20,47,.75),rgba(2,27,47,.07) 55%),url('../assets/parallax/marino/panorama_marino.webp');background-position:center,center 35%;background-size:cover}
+#marineIntro .marine-sky{position:absolute;inset:0 0 auto;height:22%;background:linear-gradient(#91d3f3,#8edcf6 70%,transparent);opacity:0;transition:opacity .7s}
+#marineIntro .marine-island{position:absolute;width:47%;height:18%;left:-2%;bottom:23%;border-radius:40% 45% 10% 12% / 40% 30% 20% 30%;background:linear-gradient(#91ad6c 0 18%,#466d59 20%,#133749 95%);border-top:9px solid #a8c67b;box-shadow:inset -20px -20px 20px #082b43,0 8px 30px #072641}
+#marineIntro .marine-wave{position:absolute;left:35%;right:0;bottom:32%;height:4px;background:linear-gradient(90deg,transparent,#8eebff,#e5faff,#79d9ed);box-shadow:0 0 19px #b0fbff;opacity:0}
+#marineIntro .marine-actor{position:absolute;left:12%;bottom:40%;height:min(27vh,220px);width:120px;filter:drop-shadow(0 6px 6px #032336);transform-origin:bottom left;transition:opacity .4s}
+#marineIntro .marine-actor img{width:100%;height:100%;object-fit:contain;object-position:bottom}
+#marineIntro .marine-papa{position:absolute;right:15%;bottom:23%;height:65%;max-height:420px;opacity:0;filter:drop-shadow(0 0 12px #9ee7fc);transition:opacity .6s}
+#marineIntro .marine-papa img{height:100%;max-width:34vw}
+#marineIntro .marine-memory{position:absolute;inset:0;background:linear-gradient(110deg,rgba(7,20,51,.48),rgba(18,59,109,.56));opacity:0;pointer-events:none;transition:opacity .4s}
+#marineIntro .marine-caption{position:absolute;left:3%;right:3%;bottom:4%;max-width:850px;margin:auto;padding:14px 19px;background:linear-gradient(110deg,rgba(2,26,46,.95),rgba(7,45,79,.85));border:1px solid #91eafb;border-radius:14px;box-shadow:0 6px 20px #001c36;z-index:2}
+#marineIntro .marine-tag{font-size:11px;letter-spacing:2px;font-weight:900;color:#6feded}
+#marineIntro .marine-title{margin:4px 0 7px;font-size:clamp(17px,3vw,29px);line-height:1.1}
+#marineIntro .marine-text{margin:0;font-size:clamp(12px,1.7vw,17px);line-height:1.35}
+#marineIntro .marine-controls{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px max(14px,3vw);background:#031422;border-top:2px solid #2ba9d1;min-height:66px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
+#marineIntro button{font-size:13px;min-height:44px;background:#0a496c;border:1px solid #68dded;color:#e8fbff;border-radius:11px;padding:0 15px;font-weight:800;cursor:pointer}
+#marineIntro button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#marineIntro .marine-next{background:#25aac1;color:#042033}
+#marineIntro .marine-progress{flex:1;min-width:75px;max-width:300px;text-align:center;font-size:11px;color:#b8f7fc}
+#marineIntro .marine-track{height:5px;background:#125672;border-radius:5px;overflow:hidden;margin-top:5px}
+#marineIntro .marine-track i{display:block;height:100%;background:#55eaf2;width:0%}
+#marineIntro .marine-stage[data-scene="arrival"] .marine-sky,#marineIntro .marine-stage[data-scene="arrival"] .marine-wave{opacity:1}
+#marineIntro .marine-stage[data-scene="arrival"]{background-position:center,center 1%}
+#marineIntro .marine-stage[data-scene="arrival"] .marine-actor{bottom:41%;left:8%}
+#marineIntro .marine-stage[data-scene="arrival"].marine-animate .marine-actor{animation:marineWalk 5s ease-out 1 both}
+@keyframes marineWalk{0%{transform:translateX(-22vw)}50%{transform:translateX(8vw)}75%{transform:translateX(14vw) rotate(-5deg)}100%{transform:translateX(13vw)}}
+#marineIntro .marine-stage[data-scene="memory"] .marine-memory,#marineIntro .marine-stage[data-scene="warning"] .marine-memory,#marineIntro .marine-stage[data-scene="mission"] .marine-memory{opacity:1}
+#marineIntro .marine-stage[data-scene="memory"] .marine-papa,#marineIntro .marine-stage[data-scene="warning"] .marine-papa,#marineIntro .marine-stage[data-scene="mission"] .marine-papa{opacity:1}
+#marineIntro .marine-stage[data-scene="memory"] .marine-actor,#marineIntro .marine-stage[data-scene="warning"] .marine-actor,#marineIntro .marine-stage[data-scene="mission"] .marine-actor{left:20%;bottom:28%}
+#marineIntro .marine-stage[data-scene="resolve"] .marine-actor{left:25%;bottom:30%}
+@media(max-width:600px){#marineIntro .marine-actor{height:32%;width:75px}#marineIntro .marine-papa{right:2%;height:50%}#marineIntro .marine-controls{gap:6px}#marineIntro button{padding:0 9px;font-size:11px}#marineIntro .marine-caption{bottom:2%;padding:8px 12px}}
+@media(prefers-reduced-motion:reduce){#marineIntro *,#marineIntro *:before,#marineIntro *:after{animation:none!important;transition:none!important}}
+
+/* V57.3 - Storyboard real extraído de la última hoja, con 5 escenas. */
+#marineIntro .marine-board{position:absolute;inset:0 auto 0 -10%;width:120%;height:100%;object-fit:cover;opacity:.96;filter:saturate(1.06);pointer-events:none;transform:translate3d(var(--marine-background-pan,0px),0,0);will-change:transform}
+#marineIntro .marine-beasts{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.85}
+#marineIntro .marine-memory{pointer-events:none;opacity:0!important}
+#marineIntro .marine-sky,#marineIntro .marine-island,#marineIntro .marine-wave{display:none!important}
+#marineIntro .marine-actor{z-index:1;opacity:0;transition:opacity .3s}
+#marineIntro .marine-stage[data-scene="arrival"] .marine-actor{opacity:.9;bottom:34%;left:8%;height:26%}
+#marineIntro .marine-stage[data-scene="arrival"].marine-animate .marine-actor{animation:marineWalk 4.3s ease-out 1 both}
+#marineIntro .marine-papa{display:none!important}
+#marineIntro .marine-caption{z-index:2;max-width:820px;bottom:3%}
+@media(max-width:640px){#marineIntro .marine-stage[data-scene="arrival"] .marine-actor{width:65px;bottom:35%}#marineIntro .marine-board{object-fit:cover}#marineIntro .marine-caption{padding:8px 12px}}
+
+@media(min-width:900px){#marineIntro .marine-stage{background-position:center}#marineIntro .marine-board{object-fit:cover}}
+
+/* V57.5 · Animaciones reales de Estoker en el recuerdo. Sin cambios de física. */
+#marineIntro .marine-estoker{position:absolute;z-index:2;left:49%;bottom:23%;height:47%;max-height:320px;aspect-ratio:280/384;opacity:0;pointer-events:none;filter:drop-shadow(0 5px 9px rgba(1,19,39,.78));}
+#marineIntro .marine-estoker img{width:100%;height:100%;object-fit:contain;object-position:bottom}
+#marineIntro .marine-has-estoker .marine-estoker{opacity:1}
+#marineIntro .marine-actor{z-index:2;opacity:0;filter:drop-shadow(0 4px 6px #032336)}
+#marineIntro .marine-has-sofia .marine-actor{opacity:1}
+#marineIntro .marine-beasts{z-index:2}
+#marineIntro .marine-caption{z-index:5;left:max(3%,12px);right:max(3%,12px);bottom:2%;max-width:850px;background:rgba(1,25,47,.94)}
+#marineIntro .marine-flashback{pointer-events:none;position:absolute;z-index:3;top:3%;left:0;right:0;text-align:center;opacity:0;transition:opacity .5s}
+#marineIntro .marine-flashback span{padding:6px 16px;font-size:clamp(10px,2vw,17px);letter-spacing:.19em;font-weight:900;border:1px solid rgba(221,216,255,.85);background:rgba(13,21,63,.85);border-radius:999px;color:#e7d6ff;box-shadow:0 0 18px rgba(152,129,248,.6)}
+#marineIntro .marine-memory-scene .marine-flashback{opacity:1}
+#marineIntro .marine-memory{display:block!important;position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(23,20,58,.3),rgba(7,35,82,.4));pointer-events:none}
+#marineIntro .marine-memory-scene .marine-board{filter:brightness(.65) saturate(.85);opacity:.88}
+#marineIntro .marine-memory-scene .marine-memory{opacity:.65!important}
+#marineIntro .marine-stage[data-scene="arrival"] .marine-actor,#marineIntro .marine-stage[data-scene="recognize"] .marine-actor{left:11%;bottom:32%;height:30%;width:auto;aspect-ratio:1/1}
+#marineIntro .marine-stage[data-scene="arrival"].marine-animate .marine-actor{animation:marineWalk 4.3s ease-out 1 both}
+#marineIntro .marine-stage[data-scene="recognize"] .marine-actor{left:27%;bottom:31%}
+#marineIntro .marine-stage[data-scene="pastWalk"] .marine-actor{left:22%;bottom:25%;height:36%;width:auto;aspect-ratio:1/1}
+#marineIntro .marine-stage[data-scene="pastWalk"] .marine-estoker{left:48%;bottom:26%;height:39%}
+#marineIntro .marine-stage[data-scene="pastWalk"].marine-animate .marine-estoker{animation:marineMemoryStroll 5.6s ease-in-out 1 both}
+#marineIntro .marine-stage[data-scene="pastWalk"].marine-animate .marine-actor{animation:marineMemoryStroll 5.6s ease-in-out .4s 1 both}
+#marineIntro .marine-stage[data-scene="legend"] .marine-actor{left:24%;bottom:29%;height:29%;width:auto;aspect-ratio:1/1}
+#marineIntro .marine-stage[data-scene="legend"] .marine-estoker{left:50%;bottom:27%;height:40%}
+#marineIntro .marine-stage[data-scene="warning"] .marine-estoker{left:17%;bottom:24%;height:42%}
+#marineIntro .marine-stage[data-scene="mission"] .marine-estoker{left:27%;bottom:27%;height:36%}
+#marineIntro .marine-stage[data-scene="mission"] .marine-actor{left:12%;bottom:29%;height:29%;width:auto;aspect-ratio:1/1}
+#marineIntro .marine-stage[data-scene="resolve"] .marine-actor{left:23%;bottom:27%;height:31%;width:auto;aspect-ratio:1/1}
+@keyframes marineMemoryStroll{0%{transform:translateX(-5vw)}100%{transform:translateX(7vw)}}
+@media(max-width:640px){
+ #marineIntro .marine-estoker{max-height:185px;left:53%}
+ #marineIntro .marine-stage[data-scene="pastWalk"] .marine-actor{left:14%;height:28%}
+ #marineIntro .marine-stage[data-scene="pastWalk"] .marine-estoker{left:55%;height:30%}
+ #marineIntro .marine-stage[data-scene="legend"] .marine-estoker{left:52%;height:33%}
+ #marineIntro .marine-stage[data-scene="warning"] .marine-estoker{left:10%;height:29%}
+ #marineIntro .marine-stage[data-scene="mission"] .marine-estoker{left:18%;height:30%}
+ #marineIntro .marine-caption{padding:8px 10px}
+ #marineIntro .marine-text{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){#marineIntro .marine-animate .marine-estoker{animation:none!important}}
+
+/* V57.6 — Suelo fisico visual fijo para la cinemática. Las posiciones son
+   relativas a la misma línea; la física real de Sofía NO se modifica. */
+#marineIntro .marine-stage{--marine-ground-line:30%;}
+#marineIntro .marine-ground{
+ position:absolute;z-index:2;left:0;right:0;bottom:0;
+ height:var(--marine-ground-line);pointer-events:none;
+ background:
+   linear-gradient(180deg,rgba(255,239,183,.30),rgba(63,99,88,.13) 13%,rgba(9,29,39,.75) 63%,#071b27 100%),
+   url('../assets/platforms/stone_moss.png') top left / 155px 68px repeat-x,
+   linear-gradient(#9fb984,#2b645b 20%,#082b39 85%);
+ box-shadow:0 -5px 8px rgba(13,97,104,.4);
+}
+#marineIntro .marine-ground:before{content:"";position:absolute;inset:0 0 auto;height:9px;
+ background:linear-gradient(180deg,#b9d593 0 25%,#75977a 50%,rgba(8,46,64,.25) 100%);
+ box-shadow:0 -2px 5px rgba(213,248,218,.55);}
+#marineIntro .marine-ground:after{content:"";position:absolute;inset:14px 0 0;
+ background:radial-gradient(ellipse at 20% 8%,rgba(127,178,130,.13),transparent 19%),
+ radial-gradient(ellipse at 67% 35%,rgba(45,81,85,.3),transparent 28%);
+ pointer-events:none;}
+#marineIntro .marine-memory-scene .marine-ground{filter:saturate(.67) brightness(.82)}
+#marineIntro .marine-stage .marine-actor{
+ height:33%;width:auto;aspect-ratio:1 / 1;left:11%;max-height:none;
+ bottom:var(--marine-ground-line);z-index:3;transform-origin:center bottom;
+ transition:opacity .3s;animation:none!important;
+}
+#marineIntro .marine-stage .marine-estoker{
+ height:43%;width:auto;aspect-ratio:280 / 384;left:32%;max-height:none;
+ bottom:var(--marine-ground-line);z-index:3;transform-origin:center bottom;
+ transition:opacity .3s;animation:none!important;
+}
+#marineIntro .marine-stage .marine-actor img,#marineIntro .marine-stage .marine-estoker img{
+ width:100%;height:100%;object-fit:contain;object-position:bottom;display:block;
+}
+/* Cada escena mantiene el mismo apoyo; solo varía la ubicación horizontal. */
+#marineIntro .marine-stage[data-scene="arrival"] .marine-actor{left:7%;height:34%;}
+#marineIntro .marine-stage[data-scene="recognize"] .marine-actor{left:26%;height:34%;}
+#marineIntro .marine-stage[data-scene="pastWalk"] .marine-actor{left:15%;height:34%;}
+#marineIntro .marine-stage[data-scene="pastWalk"] .marine-estoker{left:30%;height:43%;}
+#marineIntro .marine-stage[data-scene="legend"] .marine-actor{left:18%;height:34%;}
+#marineIntro .marine-stage[data-scene="legend"] .marine-estoker{left:35%;height:43%;}
+#marineIntro .marine-stage[data-scene="warning"] .marine-estoker{left:12%;height:41%;}
+#marineIntro .marine-stage[data-scene="mission"] .marine-actor{left:12%;height:34%;}
+#marineIntro .marine-stage[data-scene="mission"] .marine-estoker{left:28%;height:43%;}
+#marineIntro .marine-stage[data-scene="resolve"] .marine-actor{left:26%;height:34%;}
+/* Anula las dos animaciones de traslado antiguas, que no estaban sincronizadas. */
+#marineIntro .marine-stage.marine-animate .marine-actor,
+#marineIntro .marine-stage.marine-animate .marine-estoker{animation:none!important;}
+#marineIntro .marine-caption{z-index:5;}
+@media(max-width:640px){
+ #marineIntro .marine-stage{--marine-ground-line:30%;}
+ #marineIntro .marine-stage .marine-actor{height:35%;width:auto;}
+ #marineIntro .marine-stage .marine-estoker{height:44%;width:auto;}
+ #marineIntro .marine-stage[data-scene="pastWalk"] .marine-actor{height:35%;left:12%;}
+ #marineIntro .marine-stage[data-scene="pastWalk"] .marine-estoker{height:44%;left:28%;}
+}
+
+/* V57.7 — Ruta seca, llegada a la isla y recuerdo en tierra firme.
+   El mar vive detrás de la costa y en una visión de la leyenda, jamás bajo los actores. */
+#marineIntro .marine-stage{--marine-ground-line:30%;background:#113f5a;}
+#marineIntro .marine-board{opacity:1;filter:none;object-fit:cover;object-position:center 57%;}
+#marineIntro .marine-stage[data-scene="arrival"] .marine-board{object-position:center 48%;}
+#marineIntro .marine-ground{height:var(--marine-ground-line);background:
+ linear-gradient(180deg,rgba(194,176,136,.06),rgba(69,67,52,.18) 22%,rgba(27,41,44,.55) 100%),
+ url('../assets/platforms/concrete.png') top left / 144px 50px repeat-x,
+ linear-gradient(180deg,#aca286,#625f52 48%,#293f42 100%);
+ box-shadow:0 -3px 5px rgba(88,83,59,.25)}
+#marineIntro .marine-ground:before{background:linear-gradient(180deg,#b8b49a,#6d766b);box-shadow:0 -2px 2px #ece1b9}
+#marineIntro .marine-memory-scene .marine-ground{filter:sepia(.18) saturate(.8) brightness(.85)}
+#marineIntro .marine-memory-scene .marine-board{filter:sepia(.16) saturate(.88) brightness(.92);opacity:1}
+#marineIntro .marine-memory{background:linear-gradient(110deg,rgba(133,102,79,.12),rgba(83,54,108,.12))}
+#marineIntro .marine-memory-scene .marine-memory{opacity:.4!important}
+#marineIntro .marine-stage[data-scene="arrival"] .marine-actor{left:7%;height:34%;}
+#marineIntro .marine-stage[data-scene="recognize"] .marine-actor{left:34%;height:34%;}
+#marineIntro .marine-stage[data-scene="resolve"] .marine-actor{left:34%;height:34%;}
+#marineIntro .marine-place{position:absolute;left:max(15px,2%);top:3%;z-index:4;
+ padding:8px 13px;font-size:clamp(9px,1.5vw,13px);letter-spacing:.09em;font-weight:900;
+ color:#fff9de;background:rgba(37,75,60,.85);border:1px solid rgba(233,225,179,.8);
+ border-radius:9px;pointer-events:none;box-shadow:0 3px 12px rgba(3,20,12,.2)}
+#marineIntro .marine-vision{display:none;position:absolute;right:4%;top:12%;width:43%;height:36%;
+ overflow:hidden;z-index:2;border:3px solid rgba(178,225,245,.85);border-radius:18px;
+ box-shadow:0 0 22px rgba(86,186,248,.5),inset 0 0 20px #103147;background:#056793;pointer-events:none}
+#marineIntro .marine-vision:before{content:'LA LEYENDA BAJO EL MAR';position:absolute;z-index:2;top:0;left:0;right:0;
+ color:#efffff;font-size:clamp(10px,1.1vw,14px);font-weight:900;text-align:center;
+ padding:4px;background:linear-gradient(180deg,rgba(3,24,51,.88),transparent)}
+#marineIntro .marine-vision img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.95}
+#marineIntro .marine-stage:is([data-scene="legend"],[data-scene="warning"],[data-scene="mission"]) .marine-vision{display:block}
+#marineIntro .marine-beasts{z-index:3;left:auto;right:4%;top:12%;width:43%;height:36%;opacity:.94;}
+#marineIntro .marine-stage:not([data-scene="warning"]):not([data-scene="mission"]) .marine-beasts{display:none}
+#marineIntro .marine-flashback{z-index:4}
+#marineIntro .marine-memory-opening .marine-flashback{opacity:1}
+#marineIntro .marine-memory-opening:after{content:'';position:absolute;inset:0;z-index:4;pointer-events:none;
+ background:rgba(255,249,208,.22);animation:marineFlashMemory 1.3s ease-out both}
+@keyframes marineFlashMemory{from{opacity:1}to{opacity:0}}
+#marineIntro .marine-stage .marine-actor,#marineIntro .marine-stage .marine-estoker{animation:none!important}
+@media(max-width:650px){
+ #marineIntro .marine-place{font-size:9px;top:2%;padding:4px 7px}
+ #marineIntro .marine-vision,#marineIntro .marine-beasts{top:12%;height:30%;width:44%;right:2%}
+ #marineIntro .marine-vision:before{font-size:9px}
+ #marineIntro .marine-stage[data-scene="recognize"] .marine-actor{left:34%}
+ #marineIntro .marine-stage[data-scene="resolve"] .marine-actor{left:34%}
+}
+@media(prefers-reduced-motion:reduce){#marineIntro .marine-memory-opening:after{animation:none;opacity:0}}

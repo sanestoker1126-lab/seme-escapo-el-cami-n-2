@@ -1,0 +1,453 @@
+{
+  "source_atlas": "shark_atlas.png",
+  "source_metadata": "shark_atlas.json",
+  "image": "shark_atlas_v573.png",
+  "format": "RGBA8888",
+  "frames_count": 33,
+  "cell": {
+    "w": 337,
+    "h": 232
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "padding": 8,
+  "direction": "right",
+  "frames": {
+    "tiburon_atlas_000": {
+      "rect": [
+        42,
+        36,
+        253,
+        160,
+        42,
+        36
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_001": {
+      "rect": [
+        396,
+        44,
+        218,
+        143,
+        59,
+        44
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_002": {
+      "rect": [
+        734,
+        53,
+        217,
+        125,
+        60,
+        53
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_003": {
+      "rect": [
+        1067,
+        49,
+        224,
+        134,
+        56,
+        49
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_004": {
+      "rect": [
+        1414,
+        46,
+        205,
+        140,
+        66,
+        46
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_005": {
+      "rect": [
+        1744,
+        52,
+        218,
+        128,
+        59,
+        52
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_006": {
+      "rect": [
+        66,
+        285,
+        204,
+        126,
+        66,
+        53
+      ],
+      "state": "swim"
+    },
+    "tiburon_atlas_007": {
+      "rect": [
+        384,
+        272,
+        242,
+        152,
+        47,
+        40
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_008": {
+      "rect": [
+        731,
+        270,
+        222,
+        156,
+        57,
+        38
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_009": {
+      "rect": [
+        1074,
+        270,
+        211,
+        156,
+        63,
+        38
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_010": {
+      "rect": [
+        1407,
+        266,
+        219,
+        163,
+        59,
+        34
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_011": {
+      "rect": [
+        1747,
+        257,
+        212,
+        182,
+        62,
+        25
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_012": {
+      "rect": [
+        62,
+        481,
+        213,
+        198,
+        62,
+        17
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_013": {
+      "rect": [
+        401,
+        508,
+        209,
+        144,
+        64,
+        44
+      ],
+      "state": "bite"
+    },
+    "tiburon_atlas_014": {
+      "rect": [
+        714,
+        513,
+        257,
+        134,
+        40,
+        49
+      ],
+      "state": "dash_bite"
+    },
+    "tiburon_atlas_015": {
+      "rect": [
+        1035,
+        514,
+        289,
+        132,
+        24,
+        50
+      ],
+      "state": "dash_bite"
+    },
+    "tiburon_atlas_016": {
+      "rect": [
+        1368,
+        515,
+        296,
+        130,
+        20,
+        51
+      ],
+      "state": "dash_bite"
+    },
+    "tiburon_atlas_017": {
+      "rect": [
+        1702,
+        512,
+        303,
+        135,
+        17,
+        48
+      ],
+      "state": "dash_bite"
+    },
+    "tiburon_atlas_018": {
+      "rect": [
+        28,
+        746,
+        280,
+        131,
+        28,
+        50
+      ],
+      "state": "dash_bite"
+    },
+    "tiburon_atlas_019": {
+      "rect": [
+        386,
+        742,
+        239,
+        140,
+        49,
+        46
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_020": {
+      "rect": [
+        730,
+        740,
+        224,
+        144,
+        56,
+        44
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_021": {
+      "rect": [
+        1065,
+        737,
+        228,
+        150,
+        54,
+        41
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_022": {
+      "rect": [
+        1408,
+        737,
+        216,
+        150,
+        60,
+        41
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_023": {
+      "rect": [
+        1753,
+        736,
+        201,
+        152,
+        68,
+        40
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_024": {
+      "rect": [
+        71,
+        978,
+        195,
+        132,
+        71,
+        50
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_025": {
+      "rect": [
+        412,
+        971,
+        187,
+        145,
+        75,
+        43
+      ],
+      "state": "hurt"
+    },
+    "tiburon_atlas_026": {
+      "rect": [
+        730,
+        963,
+        224,
+        161,
+        56,
+        35
+      ],
+      "state": "death"
+    },
+    "tiburon_atlas_027": {
+      "rect": [
+        1073,
+        962,
+        212,
+        163,
+        62,
+        34
+      ],
+      "state": "death"
+    },
+    "tiburon_atlas_028": {
+      "rect": [
+        1408,
+        962,
+        216,
+        164,
+        60,
+        34
+      ],
+      "state": "death"
+    },
+    "tiburon_atlas_029": {
+      "rect": [
+        1747,
+        967,
+        213,
+        153,
+        62,
+        39
+      ],
+      "state": "death"
+    },
+    "tiburon_atlas_030": {
+      "rect": [
+        57,
+        1200,
+        222,
+        151,
+        57,
+        40
+      ],
+      "state": "death"
+    },
+    "tiburon_atlas_031": {
+      "rect": [
+        401,
+        1203,
+        208,
+        146,
+        64,
+        43
+      ],
+      "state": "death"
+    },
+    "tiburon_atlas_032": {
+      "rect": [
+        739,
+        1209,
+        206,
+        133,
+        65,
+        49
+      ],
+      "state": "death"
+    }
+  },
+  "animations": {
+    "swim": {
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "ms": 100,
+      "loop": true
+    },
+    "bite": {
+      "ids": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "ms": 91,
+      "loop": false
+    },
+    "dash_bite": {
+      "ids": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "ms": 77,
+      "loop": false
+    },
+    "hurt": {
+      "ids": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "ms": 111,
+      "loop": false
+    },
+    "death": {
+      "ids": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "ms": 143,
+      "loop": false
+    }
+  },
+  "qa_flags": [
+    [
+      "tiburon_atlas_012",
+      "trim touches crop edge; expected for trimmed sources"
+    ]
+  ]
+}

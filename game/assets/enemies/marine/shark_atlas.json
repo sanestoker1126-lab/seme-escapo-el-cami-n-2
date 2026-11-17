@@ -1,0 +1,1348 @@
+{
+  "name": "tiburon",
+  "image": "tiburon_atlas.png",
+  "format": "RGBA8888",
+  "transparent": true,
+  "size": {
+    "w": 1926,
+    "h": 1296
+  },
+  "cell": {
+    "w": 321,
+    "h": 216
+  },
+  "anchor": "center",
+  "direction": "right",
+  "fps_target": 60,
+  "collision_guide": {
+    "hurtbox_local": {
+      "x": 64,
+      "y": 50,
+      "w": 193,
+      "h": 123
+    },
+    "attackbox_local": {
+      "x": 221,
+      "y": 60,
+      "w": 90,
+      "h": 91
+    },
+    "not_certified": true
+  },
+  "frames": {
+    "tiburon_atlas_000": {
+      "filename": "tiburon_atlas_000",
+      "frame": {
+        "x": 34,
+        "y": 28,
+        "w": 253,
+        "h": 160
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 253,
+        "h": 160
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 34,
+        "y": 28
+      },
+      "sourceCrop": [
+        8,
+        7,
+        253,
+        160
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_001": {
+      "filename": "tiburon_atlas_001",
+      "frame": {
+        "x": 372,
+        "y": 36,
+        "w": 218,
+        "h": 143
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 218,
+        "h": 143
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 51,
+        "y": 36
+      },
+      "sourceCrop": [
+        259,
+        13,
+        218,
+        143
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_002": {
+      "filename": "tiburon_atlas_002",
+      "frame": {
+        "x": 694,
+        "y": 45,
+        "w": 217,
+        "h": 125
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 125
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 52,
+        "y": 45
+      },
+      "sourceCrop": [
+        472,
+        32,
+        217,
+        125
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_003": {
+      "filename": "tiburon_atlas_003",
+      "frame": {
+        "x": 1011,
+        "y": 41,
+        "w": 224,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 224,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 41
+      },
+      "sourceCrop": [
+        680,
+        21,
+        224,
+        134
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_004": {
+      "filename": "tiburon_atlas_004",
+      "frame": {
+        "x": 1342,
+        "y": 38,
+        "w": 205,
+        "h": 140
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 140
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 58,
+        "y": 38
+      },
+      "sourceCrop": [
+        905,
+        17,
+        205,
+        140
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_005": {
+      "filename": "tiburon_atlas_005",
+      "frame": {
+        "x": 1656,
+        "y": 44,
+        "w": 218,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 218,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 51,
+        "y": 44
+      },
+      "sourceCrop": [
+        1110,
+        30,
+        218,
+        128
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_006": {
+      "filename": "tiburon_atlas_006",
+      "frame": {
+        "x": 58,
+        "y": 261,
+        "w": 204,
+        "h": 126
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 204,
+        "h": 126
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 58,
+        "y": 45
+      },
+      "sourceCrop": [
+        1327,
+        34,
+        204,
+        126
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_007": {
+      "filename": "tiburon_atlas_007",
+      "frame": {
+        "x": 360,
+        "y": 248,
+        "w": 242,
+        "h": 152
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 242,
+        "h": 152
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 39,
+        "y": 32
+      },
+      "sourceCrop": [
+        4,
+        219,
+        242,
+        152
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_008": {
+      "filename": "tiburon_atlas_008",
+      "frame": {
+        "x": 691,
+        "y": 246,
+        "w": 222,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 49,
+        "y": 30
+      },
+      "sourceCrop": [
+        244,
+        225,
+        222,
+        156
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_009": {
+      "filename": "tiburon_atlas_009",
+      "frame": {
+        "x": 1018,
+        "y": 246,
+        "w": 211,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 211,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 55,
+        "y": 30
+      },
+      "sourceCrop": [
+        459,
+        220,
+        211,
+        156
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_010": {
+      "filename": "tiburon_atlas_010",
+      "frame": {
+        "x": 1335,
+        "y": 242,
+        "w": 219,
+        "h": 163
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 219,
+        "h": 163
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 51,
+        "y": 26
+      },
+      "sourceCrop": [
+        666,
+        212,
+        219,
+        163
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_011": {
+      "filename": "tiburon_atlas_011",
+      "frame": {
+        "x": 1659,
+        "y": 233,
+        "w": 212,
+        "h": 182
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 212,
+        "h": 182
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 54,
+        "y": 17
+      },
+      "sourceCrop": [
+        892,
+        200,
+        212,
+        182
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_012": {
+      "filename": "tiburon_atlas_012",
+      "frame": {
+        "x": 54,
+        "y": 441,
+        "w": 213,
+        "h": 198
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 213,
+        "h": 198
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 54,
+        "y": 9
+      },
+      "sourceCrop": [
+        1101,
+        200,
+        213,
+        198
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_013": {
+      "filename": "tiburon_atlas_013",
+      "frame": {
+        "x": 377,
+        "y": 468,
+        "w": 209,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 209,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 56,
+        "y": 36
+      },
+      "sourceCrop": [
+        1322,
+        226,
+        209,
+        144
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_014": {
+      "filename": "tiburon_atlas_014",
+      "frame": {
+        "x": 674,
+        "y": 473,
+        "w": 257,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 257,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 32,
+        "y": 41
+      },
+      "sourceCrop": [
+        6,
+        435,
+        257,
+        134
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_015": {
+      "filename": "tiburon_atlas_015",
+      "frame": {
+        "x": 979,
+        "y": 474,
+        "w": 289,
+        "h": 132
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 289,
+        "h": 132
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 16,
+        "y": 42
+      },
+      "sourceCrop": [
+        251,
+        436,
+        289,
+        132
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_016": {
+      "filename": "tiburon_atlas_016",
+      "frame": {
+        "x": 1296,
+        "y": 475,
+        "w": 296,
+        "h": 130
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 296,
+        "h": 130
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 12,
+        "y": 43
+      },
+      "sourceCrop": [
+        519,
+        441,
+        296,
+        130
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_017": {
+      "filename": "tiburon_atlas_017",
+      "frame": {
+        "x": 1614,
+        "y": 472,
+        "w": 303,
+        "h": 135
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 303,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 9,
+        "y": 40
+      },
+      "sourceCrop": [
+        812,
+        436,
+        303,
+        135
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_018": {
+      "filename": "tiburon_atlas_018",
+      "frame": {
+        "x": 20,
+        "y": 690,
+        "w": 280,
+        "h": 131
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 280,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 20,
+        "y": 42
+      },
+      "sourceCrop": [
+        1116,
+        440,
+        280,
+        131
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_019": {
+      "filename": "tiburon_atlas_019",
+      "frame": {
+        "x": 362,
+        "y": 686,
+        "w": 239,
+        "h": 140
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 239,
+        "h": 140
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 41,
+        "y": 38
+      },
+      "sourceCrop": [
+        6,
+        616,
+        239,
+        140
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_020": {
+      "filename": "tiburon_atlas_020",
+      "frame": {
+        "x": 690,
+        "y": 684,
+        "w": 224,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 224,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 36
+      },
+      "sourceCrop": [
+        247,
+        616,
+        224,
+        144
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_021": {
+      "filename": "tiburon_atlas_021",
+      "frame": {
+        "x": 1009,
+        "y": 681,
+        "w": 228,
+        "h": 150
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 228,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 46,
+        "y": 33
+      },
+      "sourceCrop": [
+        474,
+        616,
+        228,
+        150
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_022": {
+      "filename": "tiburon_atlas_022",
+      "frame": {
+        "x": 1336,
+        "y": 681,
+        "w": 216,
+        "h": 150
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 216,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 52,
+        "y": 33
+      },
+      "sourceCrop": [
+        699,
+        617,
+        216,
+        150
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_023": {
+      "filename": "tiburon_atlas_023",
+      "frame": {
+        "x": 1665,
+        "y": 680,
+        "w": 201,
+        "h": 152
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 201,
+        "h": 152
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 60,
+        "y": 32
+      },
+      "sourceCrop": [
+        913,
+        620,
+        201,
+        152
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_024": {
+      "filename": "tiburon_atlas_024",
+      "frame": {
+        "x": 63,
+        "y": 906,
+        "w": 195,
+        "h": 132
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 195,
+        "h": 132
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 63,
+        "y": 42
+      },
+      "sourceCrop": [
+        1130,
+        620,
+        195,
+        132
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_025": {
+      "filename": "tiburon_atlas_025",
+      "frame": {
+        "x": 388,
+        "y": 899,
+        "w": 187,
+        "h": 145
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 187,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 67,
+        "y": 35
+      },
+      "sourceCrop": [
+        1339,
+        622,
+        187,
+        145
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_026": {
+      "filename": "tiburon_atlas_026",
+      "frame": {
+        "x": 690,
+        "y": 891,
+        "w": 224,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 224,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 27
+      },
+      "sourceCrop": [
+        5,
+        793,
+        224,
+        161
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_027": {
+      "filename": "tiburon_atlas_027",
+      "frame": {
+        "x": 1017,
+        "y": 890,
+        "w": 212,
+        "h": 163
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 212,
+        "h": 163
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 54,
+        "y": 26
+      },
+      "sourceCrop": [
+        251,
+        801,
+        212,
+        163
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_028": {
+      "filename": "tiburon_atlas_028",
+      "frame": {
+        "x": 1336,
+        "y": 890,
+        "w": 216,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 216,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 52,
+        "y": 26
+      },
+      "sourceCrop": [
+        484,
+        807,
+        216,
+        164
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_029": {
+      "filename": "tiburon_atlas_029",
+      "frame": {
+        "x": 1659,
+        "y": 895,
+        "w": 213,
+        "h": 153
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 213,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 54,
+        "y": 31
+      },
+      "sourceCrop": [
+        701,
+        816,
+        213,
+        153
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_030": {
+      "filename": "tiburon_atlas_030",
+      "frame": {
+        "x": 49,
+        "y": 1112,
+        "w": 222,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 222,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 49,
+        "y": 32
+      },
+      "sourceCrop": [
+        913,
+        821,
+        222,
+        151
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_031": {
+      "filename": "tiburon_atlas_031",
+      "frame": {
+        "x": 377,
+        "y": 1115,
+        "w": 208,
+        "h": 146
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 208,
+        "h": 146
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 56,
+        "y": 35
+      },
+      "sourceCrop": [
+        1122,
+        827,
+        208,
+        146
+      ],
+      "action": "main"
+    },
+    "tiburon_atlas_032": {
+      "filename": "tiburon_atlas_032",
+      "frame": {
+        "x": 699,
+        "y": 1121,
+        "w": 206,
+        "h": 133
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 206,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 321,
+        "h": 216
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 57,
+        "y": 41
+      },
+      "sourceCrop": [
+        1327,
+        840,
+        206,
+        133
+      ],
+      "action": "main"
+    }
+  },
+  "animations": {
+    "swim": {
+      "frames": [
+        "tiburon_atlas_000",
+        "tiburon_atlas_001",
+        "tiburon_atlas_002",
+        "tiburon_atlas_003",
+        "tiburon_atlas_004",
+        "tiburon_atlas_005",
+        "tiburon_atlas_006"
+      ],
+      "frame_duration_ms": 100,
+      "loop": true,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "bite": {
+      "frames": [
+        "tiburon_atlas_007",
+        "tiburon_atlas_008",
+        "tiburon_atlas_009",
+        "tiburon_atlas_010",
+        "tiburon_atlas_011",
+        "tiburon_atlas_012",
+        "tiburon_atlas_013"
+      ],
+      "frame_duration_ms": 91,
+      "loop": false,
+      "damage": 13,
+      "active_attack_frames": [
+        3,
+        4
+      ]
+    },
+    "dash_bite": {
+      "frames": [
+        "tiburon_atlas_014",
+        "tiburon_atlas_015",
+        "tiburon_atlas_016",
+        "tiburon_atlas_017",
+        "tiburon_atlas_018"
+      ],
+      "frame_duration_ms": 77,
+      "loop": false,
+      "damage": 20,
+      "active_attack_frames": [
+        2,
+        3
+      ]
+    },
+    "hurt": {
+      "frames": [
+        "tiburon_atlas_019",
+        "tiburon_atlas_020",
+        "tiburon_atlas_021",
+        "tiburon_atlas_022",
+        "tiburon_atlas_023",
+        "tiburon_atlas_024",
+        "tiburon_atlas_025"
+      ],
+      "frame_duration_ms": 111,
+      "loop": false,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "death": {
+      "frames": [
+        "tiburon_atlas_026",
+        "tiburon_atlas_027",
+        "tiburon_atlas_028",
+        "tiburon_atlas_029",
+        "tiburon_atlas_030",
+        "tiburon_atlas_031",
+        "tiburon_atlas_032"
+      ],
+      "frame_duration_ms": 143,
+      "loop": false,
+      "damage": 0,
+      "active_attack_frames": []
+    }
+  },
+  "fx": {
+    "image": "tiburon_fx.png",
+    "size": {
+      "w": 775,
+      "h": 125
+    },
+    "frames": {
+      "tiburon_fx_000": {
+        "filename": "tiburon_fx_000",
+        "frame": {
+          "x": 9,
+          "y": 9,
+          "w": 137,
+          "h": 107
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 137,
+          "h": 107
+        },
+        "sourceSize": {
+          "w": 155,
+          "h": 125
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 9,
+          "y": 9
+        },
+        "sourceCrop": [
+          1381,
+          464,
+          137,
+          107
+        ],
+        "action": "fx"
+      }
+    }
+  }
+}

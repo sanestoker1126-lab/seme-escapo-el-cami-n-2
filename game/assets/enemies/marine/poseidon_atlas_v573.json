@@ -1,0 +1,353 @@
+{
+  "source_atlas": "poseidon_atlas.png",
+  "source_metadata": "poseidon_atlas.json",
+  "image": "poseidon_atlas_v573.png",
+  "format": "RGBA8888",
+  "frames_count": 24,
+  "cell": {
+    "w": 339,
+    "h": 283
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "padding": 8,
+  "direction": "right",
+  "frames": {
+    "poseidon_atlas_000": {
+      "rect": [
+        42,
+        17,
+        254,
+        249,
+        42,
+        17
+      ],
+      "state": "idle_swim"
+    },
+    "poseidon_atlas_001": {
+      "rect": [
+        383,
+        26,
+        251,
+        230,
+        44,
+        26
+      ],
+      "state": "idle_swim"
+    },
+    "poseidon_atlas_002": {
+      "rect": [
+        716,
+        40,
+        263,
+        202,
+        38,
+        40
+      ],
+      "state": "idle_swim"
+    },
+    "poseidon_atlas_003": {
+      "rect": [
+        1054,
+        51,
+        265,
+        180,
+        37,
+        51
+      ],
+      "state": "idle_swim"
+    },
+    "poseidon_atlas_004": {
+      "rect": [
+        1391,
+        60,
+        269,
+        163,
+        35,
+        60
+      ],
+      "state": "idle_swim"
+    },
+    "poseidon_atlas_005": {
+      "rect": [
+        1733,
+        73,
+        262,
+        137,
+        38,
+        73
+      ],
+      "state": "idle_swim"
+    },
+    "poseidon_atlas_006": {
+      "rect": [
+        75,
+        303,
+        188,
+        242,
+        75,
+        20
+      ],
+      "state": "trident_attack"
+    },
+    "poseidon_atlas_007": {
+      "rect": [
+        412,
+        305,
+        192,
+        238,
+        73,
+        22
+      ],
+      "state": "trident_attack"
+    },
+    "poseidon_atlas_008": {
+      "rect": [
+        723,
+        310,
+        248,
+        228,
+        45,
+        27
+      ],
+      "state": "trident_attack"
+    },
+    "poseidon_atlas_009": {
+      "rect": [
+        1037,
+        323,
+        298,
+        202,
+        20,
+        40
+      ],
+      "state": "trident_attack"
+    },
+    "poseidon_atlas_010": {
+      "rect": [
+        1373,
+        334,
+        305,
+        180,
+        17,
+        51
+      ],
+      "state": "trident_attack"
+    },
+    "poseidon_atlas_011": {
+      "rect": [
+        1719,
+        317,
+        291,
+        215,
+        24,
+        34
+      ],
+      "state": "trident_attack"
+    },
+    "poseidon_atlas_012": {
+      "rect": [
+        66,
+        587,
+        206,
+        241,
+        66,
+        21
+      ],
+      "state": "tidal_attack"
+    },
+    "poseidon_atlas_013": {
+      "rect": [
+        395,
+        593,
+        226,
+        229,
+        56,
+        27
+      ],
+      "state": "tidal_attack"
+    },
+    "poseidon_atlas_014": {
+      "rect": [
+        722,
+        593,
+        251,
+        229,
+        44,
+        27
+      ],
+      "state": "tidal_attack"
+    },
+    "poseidon_atlas_015": {
+      "rect": [
+        1051,
+        601,
+        270,
+        213,
+        34,
+        35
+      ],
+      "state": "tidal_attack"
+    },
+    "poseidon_atlas_016": {
+      "rect": [
+        1376,
+        600,
+        299,
+        214,
+        20,
+        34
+      ],
+      "state": "tidal_attack"
+    },
+    "poseidon_atlas_017": {
+      "rect": [
+        1721,
+        603,
+        286,
+        208,
+        26,
+        37
+      ],
+      "state": "tidal_attack"
+    },
+    "poseidon_atlas_018": {
+      "rect": [
+        64,
+        874,
+        211,
+        232,
+        64,
+        25
+      ],
+      "state": "hurt"
+    },
+    "poseidon_atlas_019": {
+      "rect": [
+        400,
+        882,
+        217,
+        217,
+        61,
+        33
+      ],
+      "state": "hurt"
+    },
+    "poseidon_atlas_020": {
+      "rect": [
+        739,
+        877,
+        216,
+        226,
+        61,
+        28
+      ],
+      "state": "hurt"
+    },
+    "poseidon_atlas_021": {
+      "rect": [
+        1065,
+        901,
+        243,
+        179,
+        48,
+        52
+      ],
+      "state": "death"
+    },
+    "poseidon_atlas_022": {
+      "rect": [
+        1402,
+        922,
+        246,
+        137,
+        46,
+        73
+      ],
+      "state": "death"
+    },
+    "poseidon_atlas_023": {
+      "rect": [
+        1721,
+        923,
+        287,
+        135,
+        26,
+        74
+      ],
+      "state": "death"
+    }
+  },
+  "animations": {
+    "idle_swim": {
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ms": 111,
+      "loop": true
+    },
+    "trident_attack": {
+      "ids": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "ms": 100,
+      "loop": false
+    },
+    "tidal_attack": {
+      "ids": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "ms": 125,
+      "loop": false
+    },
+    "hurt": {
+      "ids": [
+        18,
+        19,
+        20
+      ],
+      "ms": 125,
+      "loop": false
+    },
+    "death": {
+      "ids": [
+        21,
+        22,
+        23
+      ],
+      "ms": 167,
+      "loop": false
+    }
+  },
+  "qa_flags": [
+    [
+      "poseidon_atlas_005",
+      "trim touches crop edge; expected for trimmed sources"
+    ],
+    [
+      "poseidon_atlas_006",
+      "trim touches crop edge; expected for trimmed sources"
+    ],
+    [
+      "poseidon_atlas_017",
+      "trim touches crop edge; expected for trimmed sources"
+    ]
+  ]
+}

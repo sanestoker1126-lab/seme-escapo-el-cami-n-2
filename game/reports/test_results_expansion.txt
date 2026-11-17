@@ -1,0 +1,60 @@
+# Terminal Full Output
+# Terminal: test-expansion-checkpoints
+# Command: set -e
+node --check js/core/levels.js
+node --check js/core/world.js
+node --check js/core/game.js
+node --test tests/world_expansion.test.js tests/world.test.js tests/game.test.js tests/background_overhaul.test.js
+# PID: 45920
+# Timestamp: 2026-11-17_16-54-00.720526
+# Original Length: 4335 characters
+# ----------------------------------------
+
+[32mubuntu@sandbox:~$ [0mset -e
+node --check js/core/levels.js
+node --check js/core/world.js
+node --check js/core/game.js
+node --test tests/world_expansion.test.js tests/world.test.js tests/game.test.js tests/background_overhaul.test.js
+[32m✔ la campaña mantiene sus 18 niveles agrupados en cuatro mundos [90m(2.088973ms)
+[39m[39m[32m✔ cada uno de los diez fondos de fase 1 existe y coincide con el registro de nivel [90m(0.55131ms)
+[39m[39m[32m✔ las ocho escenas restantes conservan sus fondos de origen o procedurales [90m(0.23941ms)
+[39m[39m[32m✔ los suelos antes pintados siguen teniendo la misma geometría y ahora muestran plataformas del motor [90m(0.18623ms)
+[39m[39m[32m✔ inicio: Nina aparece en la parada del tramo 1, apoyada y con 3 vidas en Normal [90m(69.267604ms)
+[39m[39m[32m✔ gatitas: detectan al enemigo cercano y lo distraen sin quitarle vida [90m(43.734313ms)
+[39m[39m[32m✔ gatitas: exploran y alternan conductas propias mientras Sofía espera [90m(310.488656ms)
+[39m[39m[32m✔ gatitas: siguen el movimiento sin saltos y se congelan al pausar [90m(53.533719ms)
+[39m[39m[32m✔ daño: resta una vida, aplica retroceso desde la fuente e invulnerabilidad [90m(27.213055ms)
+[39m[39m[32m✔ escudo: absorbe un golpe sin perder vidas [90m(29.167216ms)
+[39m[39m[32m✔ caída dañina: depende de la dificultad (Fácil perdona más que Difícil) [90m(168.984857ms)
+[39m[39m[32m✔ derrota: sin vidas → animación → game over; reintento desde la última parada [90m(93.786921ms)
+[39m[39m[32m✔ pausa: congela la simulación y el cronómetro [90m(62.150648ms)
+[39m[39m[32m✔ puertas: la trampilla lleva a la zona inferior y la salida devuelve más abajo [90m(75.446877ms)
+[39m[39m[32m✔ llave y reja: la reja bloquea sin llave y se abre con ella [90m(80.779261ms)
+[39m[39m[32m✔ objetos perdidos: se recogen, cuentan para el final y se guardan [90m(34.644844ms)
+[39m[39m[32m✔ parada: activarla guarda el progreso y desbloquea el tramo [90m(39.291884ms)
+[39m[39m[32m✔ victoria: llegar a la puerta del camión termina la partida con estrellas y final [90m(68.256422ms)
+[39m[39m[32m✔ cámara: Nina siempre dentro del encuadre durante una caída larga [90m(166.305809ms)
+[39m[39m[32m✔ el mundo es determinista: misma semilla, mismo mundo e identificadores [90m(270.072087ms)
+[39m[39m[32m✔ identificadores únicos en todas las colecciones [90m(32.326476ms)
+[39m[39m[32m✔ estructura: 16 niveles (4 nuevos), una zona inferior, una reja con llave y un jefe por nivel, 6 objetos y una meta [90m(32.676724ms)
+[39m[39m[32m✔ la dificultad cambia la densidad de enemigos, no la geometría principal [90m(109.525121ms)
+[39m[39m[32m✔ todo está dentro de los muros exteriores y nada solapa paneles con sectores [90m(47.881067ms)
+[39m[39m[32m✔ enemigos caminantes: su patrulla cabe en su plataforma y no empieza dentro de una caja [90m(28.714759ms)
+[39m[39m[32m✔ la parada de inicio y la salida de cada tramo quedan despejadas [90m(28.888056ms)
+[39m[39m[32m✔ el análisis respeta los sólidos: con la reja cerrada el nicho es inaccesible [90m(21170.151372ms)
+[39m[39m[32m✔ alcanzabilidad (facil): meta, paradas, objetos, llaves, todos los cristales y sin trampas [90m(41948.51879ms)
+[39m[39m[32m✔ alcanzabilidad (normal): meta, paradas, objetos, llaves, todos los cristales y sin trampas [90m(41978.751668ms)
+[39m[39m[32m✔ alcanzabilidad (dificil): meta, paradas, objetos, llaves, todos los cristales y sin trampas [90m(42161.238227ms)
+[39m[39m[32m✔ cada misión conserva inicio/meta únicos y añade continuación lateral descendente [90m(0.911011ms)
+[39m[39m[32m✔ los cuatro mundos tienen al menos una misión asociada y mapas de dimensión positiva [90m(0.17213ms)
+[39m[39m[32m✔ Submarino y Espacio siguen siendo alcanzables en fácil, normal y difícil [90m(1955.679024ms)
+[39m[39m[32m✔ retry reaparece en el checkpoint intermedio de la misma escena [90m(62.470721ms)
+[39m[39m[34mℹ tests 34
+[39m[34mℹ suites 0
+[39m[34mℹ pass 34
+[39m[34mℹ fail 0
+[39m[34mℹ cancelled 0
+[39m[34mℹ skipped 0
+[39m[34mℹ todo 0
+[39m[34mℹ duration_ms 147899.648358
+[32mubuntu@sandbox:~/game/eco/V58_1_backgrounds_rework/project$ [0m

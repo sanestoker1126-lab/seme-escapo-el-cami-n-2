@@ -1,0 +1,33 @@
+/* Cinemática V58.1: overlay ligero sobre la escena orbital pausada del Canvas. */
+#spaceIntro{position:fixed;inset:0;z-index:1320;display:flex;color:#f3f8ff;font-family:system-ui,-apple-system,sans-serif;pointer-events:none;background:linear-gradient(180deg,rgba(3,8,28,.22),rgba(3,8,28,.08) 43%,rgba(3,8,28,.34));}
+#spaceIntro[hidden]{display:none!important}
+#spaceIntro .space-intro-stage{position:relative;display:flex;flex-direction:column;justify-content:space-between;width:100%;min-height:0;overflow:hidden;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);}
+#spaceIntro .space-intro-stage:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.27;background-image:radial-gradient(1px 1px at 13% 18%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 71% 12%,#b9edff 98%,transparent),radial-gradient(1px 1px at 86% 44%,#fff 98%,transparent),radial-gradient(1px 1px at 28% 57%,#d8ceff 98%,transparent);background-size:217px 179px,263px 227px,191px 211px,307px 233px;}
+#spaceIntro .space-intro-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:10px;margin:clamp(10px,3vh,28px) clamp(12px,4vw,48px) 0;}
+#spaceIntro .space-intro-crew,#spaceIntro .space-intro-tag{display:inline-flex;align-items:center;min-height:28px;padding:5px 10px;border:1px solid rgba(141,225,255,.72);border-radius:999px;background:rgba(4,17,42,.72);box-shadow:0 0 16px rgba(74,192,255,.21);font-size:clamp(9px,1.6vw,13px);font-weight:900;letter-spacing:.08em;}
+#spaceIntro .space-intro-crew{color:#b8f5ff;white-space:nowrap}
+#spaceIntro .space-intro-tag{color:#fff;text-align:right}
+#spaceIntro .space-intro-copy{position:relative;z-index:1;width:min(820px,calc(100% - 28px));margin:auto auto clamp(12px,3vh,28px);padding:clamp(14px,2.5vw,24px);border:1px solid rgba(142,220,255,.72);border-radius:16px;background:linear-gradient(115deg,rgba(4,14,40,.9),rgba(9,33,68,.78));box-shadow:0 10px 40px rgba(0,0,0,.42),inset 0 0 24px rgba(61,151,216,.12);backdrop-filter:blur(5px);pointer-events:auto;}
+#spaceIntro .space-intro-title{margin:0 0 8px;font-size:clamp(21px,4vw,38px);line-height:1.02;letter-spacing:.025em;text-shadow:0 2px 12px rgba(82,201,255,.4)}
+#spaceIntro .space-intro-text{max-width:70ch;margin:0;color:#e0edff;font-size:clamp(13px,1.8vw,18px);line-height:1.45}
+#spaceIntro .space-intro-controls{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:clamp(6px,2vw,18px);padding:10px clamp(12px,4vw,48px) max(12px,env(safe-area-inset-bottom));border-top:1px solid rgba(91,198,255,.55);background:rgba(3,10,30,.88);pointer-events:auto;}
+#spaceIntro button{min-height:44px;padding:0 clamp(10px,2vw,18px);border:1px solid #7ce4ff;border-radius:11px;background:#0b395f;color:#effbff;font-size:clamp(10px,1.5vw,13px);font-weight:900;cursor:pointer;white-space:nowrap;}
+#spaceIntro .space-intro-next{border-color:#b7f5ff;background:linear-gradient(120deg,#61dfff,#a2f3ff);color:#071a31;box-shadow:0 0 18px rgba(85,221,255,.26)}
+#spaceIntro button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#spaceIntro .space-intro-progress{flex:1;min-width:54px;max-width:280px;text-align:center;color:#caedff;font-size:10px;font-weight:800;letter-spacing:.06em}
+#spaceIntro .space-intro-track{height:4px;margin-top:5px;overflow:hidden;border-radius:99px;background:rgba(98,164,219,.35)}
+#spaceIntro .space-intro-track i{display:block;width:0;height:100%;border-radius:inherit;background:#76e8ff;transition:width .25s ease}
+#spaceIntro .space-intro-stage[data-scene="station"] .space-intro-title{color:#c6eaff}
+#spaceIntro .space-intro-stage[data-scene="mission"] .space-intro-title{color:#d7f7a0}
+#spaceIntro .space-intro-hint{position:absolute;z-index:1;right:clamp(12px,4vw,48px);bottom:calc(74px + env(safe-area-inset-bottom));margin:0;color:rgba(227,241,255,.8);font-size:10px;text-shadow:0 2px 5px #000;pointer-events:none}
+@media(max-width:520px){
+ #spaceIntro .space-intro-top{align-items:flex-start;flex-direction:column;gap:6px;margin-top:max(10px,env(safe-area-inset-top))}
+ #spaceIntro .space-intro-tag{max-width:100%;font-size:9px}
+ #spaceIntro .space-intro-copy{margin-bottom:10px;padding:12px;border-radius:13px}
+ #spaceIntro .space-intro-text{font-size:13px;line-height:1.38}
+ #spaceIntro .space-intro-controls{gap:5px;padding-left:8px;padding-right:8px}
+ #spaceIntro button{padding:0 8px;font-size:9px}
+ #spaceIntro .space-intro-progress{font-size:9px}
+ #spaceIntro .space-intro-hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){#spaceIntro *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

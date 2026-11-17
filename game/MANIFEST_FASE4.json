@@ -1,0 +1,80 @@
+{
+  "project": "¡Se me fue el camión!",
+  "phase": "FASE4_CAMARA_LUCES_MENU",
+  "source_version": "V58.1 FASE3_CANDIDATO",
+  "status": "RELEASE_CANDIDATE",
+  "release_1_0": false,
+  "base_archive": "/home/ubuntu/game/eco/V58_1_phase3/SE_ME_FUE_EL_CAMION_V58_1_FASE3_CANDIDATO.zip",
+  "base_sha256": "e77c3e77d52d5f4491b58e4bb8428c1bb4567584968f848251ff7348f549eee1",
+  "scope": [
+    "Pulso de cámara visual, centrado y limitado; respeta la opción de sacudida.",
+    "Iluminación radial suave por mundo, acotada al viewport y reducida por nivel de calidad.",
+    "Menú con reutilización condicional de nodos y layout paisaje/móvil responsivo.",
+    "Retorno booleano explícito de preload para evitar aviso falso tras Image.decode().",
+    "Invalidación del caché PWA de Fase 4."
+  ],
+  "preserved": [
+    "Físicas, timestep y colisiones sin cambios.",
+    "Geometría, progresión y contenido de niveles sin cambios.",
+    "Sprites originales y audio sin cambios."
+  ],
+  "changed_text_files": [
+    "INFORME_FASE4_CAMARA_LUCES_MENU_ES.md",
+    "MANIFEST_FASE4.json",
+    "Se_Me_Fue_El_Camion.html",
+    "css/game.css",
+    "js/app/render.js",
+    "js/app/ui.js",
+    "sw.js",
+    "tests/phase3_space_marine_fx.test.js",
+    "tests/phase4_camera_lighting_menu.test.js",
+    "tests/v572_marine_atlases_space.test.js",
+    "tests/v573_marine_cinematic.test.js",
+    "tests/v57_thematic_villains.test.js",
+    "tests/v581_android_canvas_resilience.test.js",
+    "tests/v581_marine_motion_fx.test.js",
+    "tests/v581_space_cinematic.test.js",
+    "tests/v581_space_environment.test.js",
+    "tests/v581_space_gravity.test.js",
+    "tests/v581_space_laser.test.js",
+    "tests/v581_space_suits.test.js",
+    "tests/v581_swim_strike_flashback_cache.test.js"
+  ],
+  "automated_qa": {
+    "syntax_checks": "node --check de módulos afectados y tests/*.js",
+    "focused_test_modules": 14,
+    "tests_passed": 66,
+    "tests_failed": 0
+  },
+  "browser_qa": {
+    "environment": "Chromium headless en sandbox; modo QA, sin prueba de dispositivo físico",
+    "worlds_captured": ["escuela", "guadalajara", "submarino", "espacial"],
+    "viewports": ["1920x1080 menú paisaje", "412x915 menú móvil", "1600x900 gameplay", "412x915 espacio gameplay"],
+    "javascript_exceptions": 0,
+    "menu_dom_reuse": true,
+    "menu_mobile_scroll": true,
+    "menu_landscape_overflow": false,
+    "raf_sample_fps": 60.3,
+    "raf_sample_duration_ms": 2505
+  },
+  "visual_evidence": [
+    "reports/screenshots/phase4/menu_phase4_landscape.png",
+    "reports/screenshots/phase4/menu_phase4_portrait.png",
+    "reports/screenshots/phase4/world_1_phase4_on.png",
+    "reports/screenshots/phase4/world_1_phase4_off.png",
+    "reports/screenshots/phase4/world_2_phase4_on.png",
+    "reports/screenshots/phase4/world_2_phase4_off.png",
+    "reports/screenshots/phase4/world_3_phase4_on.png",
+    "reports/screenshots/phase4/world_3_phase4_off.png",
+    "reports/screenshots/phase4/world_4_phase4_on.png",
+    "reports/screenshots/phase4/world_4_phase4_off.png",
+    "reports/screenshots/phase4/world_4_phase4_mobile.png"
+  ],
+  "pending": [
+    "Prueba física en Motorola Moto G15 con Android 15.",
+    "Instalación y actualización PWA offline en Android.",
+    "Revisión ECO separada de banda superior en el encuadre submarino y formas geométricas heredadas del fondo espacial, presentes ya en Fase 3."
+  ],
+  "evidence_directory": "reports/screenshots/phase4/",
+  "report": "INFORME_FASE4_CAMARA_LUCES_MENU_ES.md"
+}

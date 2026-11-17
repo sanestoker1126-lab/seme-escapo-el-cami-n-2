@@ -1,0 +1,1743 @@
+{
+  "name": "pirana",
+  "image": "pirana_atlas.png",
+  "format": "RGBA8888",
+  "transparent": true,
+  "size": {
+    "w": 1734,
+    "h": 1080
+  },
+  "cell": {
+    "w": 289,
+    "h": 180
+  },
+  "anchor": "center",
+  "direction": "right",
+  "fps_target": 60,
+  "collision_guide": {
+    "hurtbox_local": {
+      "x": 58,
+      "y": 41,
+      "w": 173,
+      "h": 103
+    },
+    "attackbox_local": {
+      "x": 199,
+      "y": 50,
+      "w": 81,
+      "h": 76
+    },
+    "not_certified": true
+  },
+  "frames": {
+    "pirana_atlas_000": {
+      "filename": "pirana_atlas_000",
+      "frame": {
+        "x": 35,
+        "y": 11,
+        "w": 218,
+        "h": 157
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 218,
+        "h": 157
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 35,
+        "y": 11
+      },
+      "sourceCrop": [
+        12,
+        3,
+        218,
+        157
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_001": {
+      "filename": "pirana_atlas_001",
+      "frame": {
+        "x": 328,
+        "y": 15,
+        "w": 210,
+        "h": 150
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 210,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 39,
+        "y": 15
+      },
+      "sourceCrop": [
+        240,
+        11,
+        210,
+        150
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_002": {
+      "filename": "pirana_atlas_002",
+      "frame": {
+        "x": 619,
+        "y": 20,
+        "w": 206,
+        "h": 140
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 206,
+        "h": 140
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 41,
+        "y": 20
+      },
+      "sourceCrop": [
+        466,
+        10,
+        206,
+        140
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_003": {
+      "filename": "pirana_atlas_003",
+      "frame": {
+        "x": 907,
+        "y": 17,
+        "w": 208,
+        "h": 146
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 208,
+        "h": 146
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 40,
+        "y": 17
+      },
+      "sourceCrop": [
+        680,
+        11,
+        208,
+        146
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_004": {
+      "filename": "pirana_atlas_004",
+      "frame": {
+        "x": 1196,
+        "y": 17,
+        "w": 208,
+        "h": 145
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 208,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 40,
+        "y": 17
+      },
+      "sourceCrop": [
+        899,
+        11,
+        208,
+        145
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_005": {
+      "filename": "pirana_atlas_005",
+      "frame": {
+        "x": 1487,
+        "y": 15,
+        "w": 205,
+        "h": 150
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 42,
+        "y": 15
+      },
+      "sourceCrop": [
+        1116,
+        11,
+        205,
+        150
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_006": {
+      "filename": "pirana_atlas_006",
+      "frame": {
+        "x": 42,
+        "y": 200,
+        "w": 205,
+        "h": 140
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 140
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 42,
+        "y": 20
+      },
+      "sourceCrop": [
+        1324,
+        11,
+        205,
+        140
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_007": {
+      "filename": "pirana_atlas_007",
+      "frame": {
+        "x": 334,
+        "y": 204,
+        "w": 198,
+        "h": 131
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 198,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 45,
+        "y": 24
+      },
+      "sourceCrop": [
+        12,
+        189,
+        198,
+        131
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_008": {
+      "filename": "pirana_atlas_008",
+      "frame": {
+        "x": 618,
+        "y": 207,
+        "w": 209,
+        "h": 126
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 209,
+        "h": 126
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 40,
+        "y": 27
+      },
+      "sourceCrop": [
+        218,
+        194,
+        209,
+        126
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_009": {
+      "filename": "pirana_atlas_009",
+      "frame": {
+        "x": 904,
+        "y": 198,
+        "w": 214,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 214,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 37,
+        "y": 18
+      },
+      "sourceCrop": [
+        434,
+        178,
+        214,
+        144
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_010": {
+      "filename": "pirana_atlas_010",
+      "frame": {
+        "x": 1185,
+        "y": 198,
+        "w": 231,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 231,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 29,
+        "y": 18
+      },
+      "sourceCrop": [
+        653,
+        178,
+        231,
+        144
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_011": {
+      "filename": "pirana_atlas_011",
+      "frame": {
+        "x": 1471,
+        "y": 200,
+        "w": 237,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 237,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 26,
+        "y": 20
+      },
+      "sourceCrop": [
+        861,
+        182,
+        237,
+        139
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_012": {
+      "filename": "pirana_atlas_012",
+      "frame": {
+        "x": 9,
+        "y": 372,
+        "w": 271,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 271,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 9,
+        "y": 12
+      },
+      "sourceCrop": [
+        1049,
+        177,
+        271,
+        156
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_013": {
+      "filename": "pirana_atlas_013",
+      "frame": {
+        "x": 327,
+        "y": 386,
+        "w": 213,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 213,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 38,
+        "y": 26
+      },
+      "sourceCrop": [
+        1311,
+        187,
+        213,
+        127
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_014": {
+      "filename": "pirana_atlas_014",
+      "frame": {
+        "x": 626,
+        "y": 380,
+        "w": 193,
+        "h": 140
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 193,
+        "h": 140
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 20
+      },
+      "sourceCrop": [
+        13,
+        351,
+        193,
+        140
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_015": {
+      "filename": "pirana_atlas_015",
+      "frame": {
+        "x": 913,
+        "y": 374,
+        "w": 197,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 197,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 46,
+        "y": 14
+      },
+      "sourceCrop": [
+        233,
+        342,
+        197,
+        151
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_016": {
+      "filename": "pirana_atlas_016",
+      "frame": {
+        "x": 1192,
+        "y": 377,
+        "w": 217,
+        "h": 145
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 36,
+        "y": 17
+      },
+      "sourceCrop": [
+        459,
+        342,
+        217,
+        145
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_017": {
+      "filename": "pirana_atlas_017",
+      "frame": {
+        "x": 1478,
+        "y": 369,
+        "w": 223,
+        "h": 162
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 223,
+        "h": 162
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 33,
+        "y": 9
+      },
+      "sourceCrop": [
+        669,
+        351,
+        223,
+        162
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_018": {
+      "filename": "pirana_atlas_018",
+      "frame": {
+        "x": 31,
+        "y": 551,
+        "w": 227,
+        "h": 157
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 227,
+        "h": 157
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 31,
+        "y": 11
+      },
+      "sourceCrop": [
+        888,
+        342,
+        227,
+        157
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_019": {
+      "filename": "pirana_atlas_019",
+      "frame": {
+        "x": 328,
+        "y": 555,
+        "w": 211,
+        "h": 149
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 211,
+        "h": 149
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 39,
+        "y": 15
+      },
+      "sourceCrop": [
+        1104,
+        353,
+        211,
+        149
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_020": {
+      "filename": "pirana_atlas_020",
+      "frame": {
+        "x": 622,
+        "y": 555,
+        "w": 200,
+        "h": 150
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 44,
+        "y": 15
+      },
+      "sourceCrop": [
+        1313,
+        350,
+        200,
+        150
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_021": {
+      "filename": "pirana_atlas_021",
+      "frame": {
+        "x": 923,
+        "y": 563,
+        "w": 177,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 177,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 56,
+        "y": 23
+      },
+      "sourceCrop": [
+        10,
+        524,
+        177,
+        134
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_022": {
+      "filename": "pirana_atlas_022",
+      "frame": {
+        "x": 1217,
+        "y": 557,
+        "w": 167,
+        "h": 145
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 61,
+        "y": 17
+      },
+      "sourceCrop": [
+        197,
+        516,
+        167,
+        145
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_023": {
+      "filename": "pirana_atlas_023",
+      "frame": {
+        "x": 1496,
+        "y": 557,
+        "w": 186,
+        "h": 146
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 186,
+        "h": 146
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 51,
+        "y": 17
+      },
+      "sourceCrop": [
+        382,
+        513,
+        186,
+        146
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_024": {
+      "filename": "pirana_atlas_024",
+      "frame": {
+        "x": 59,
+        "y": 730,
+        "w": 171,
+        "h": 160
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 160
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 59,
+        "y": 10
+      },
+      "sourceCrop": [
+        573,
+        513,
+        171,
+        160
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_025": {
+      "filename": "pirana_atlas_025",
+      "frame": {
+        "x": 344,
+        "y": 731,
+        "w": 178,
+        "h": 158
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 158
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 55,
+        "y": 11
+      },
+      "sourceCrop": [
+        751,
+        515,
+        178,
+        158
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_026": {
+      "filename": "pirana_atlas_026",
+      "frame": {
+        "x": 630,
+        "y": 732,
+        "w": 184,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 184,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 52,
+        "y": 12
+      },
+      "sourceCrop": [
+        933,
+        516,
+        184,
+        156
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_027": {
+      "filename": "pirana_atlas_027",
+      "frame": {
+        "x": 923,
+        "y": 736,
+        "w": 176,
+        "h": 147
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 56,
+        "y": 16
+      },
+      "sourceCrop": [
+        1122,
+        516,
+        176,
+        147
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_028": {
+      "filename": "pirana_atlas_028",
+      "frame": {
+        "x": 1204,
+        "y": 732,
+        "w": 192,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 12
+      },
+      "sourceCrop": [
+        12,
+        685,
+        192,
+        156
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_029": {
+      "filename": "pirana_atlas_029",
+      "frame": {
+        "x": 1493,
+        "y": 734,
+        "w": 193,
+        "h": 152
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 193,
+        "h": 152
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 14
+      },
+      "sourceCrop": [
+        210,
+        689,
+        193,
+        152
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_030": {
+      "filename": "pirana_atlas_030",
+      "frame": {
+        "x": 44,
+        "y": 920,
+        "w": 201,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 201,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 44,
+        "y": 20
+      },
+      "sourceCrop": [
+        406,
+        696,
+        201,
+        139
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_031": {
+      "filename": "pirana_atlas_031",
+      "frame": {
+        "x": 344,
+        "y": 921,
+        "w": 178,
+        "h": 138
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 138
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 55,
+        "y": 21
+      },
+      "sourceCrop": [
+        614,
+        702,
+        178,
+        138
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_032": {
+      "filename": "pirana_atlas_032",
+      "frame": {
+        "x": 626,
+        "y": 923,
+        "w": 193,
+        "h": 133
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 193,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 23
+      },
+      "sourceCrop": [
+        793,
+        708,
+        193,
+        133
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_033": {
+      "filename": "pirana_atlas_033",
+      "frame": {
+        "x": 919,
+        "y": 924,
+        "w": 184,
+        "h": 132
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 184,
+        "h": 132
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 52,
+        "y": 24
+      },
+      "sourceCrop": [
+        975,
+        701,
+        184,
+        132
+      ],
+      "action": "main"
+    },
+    "pirana_atlas_034": {
+      "filename": "pirana_atlas_034",
+      "frame": {
+        "x": 1179,
+        "y": 923,
+        "w": 242,
+        "h": 133
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 242,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 180
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 23,
+        "y": 23
+      },
+      "sourceCrop": [
+        1163,
+        700,
+        242,
+        133
+      ],
+      "action": "main"
+    }
+  },
+  "animations": {
+    "swim": {
+      "frames": [
+        "pirana_atlas_000",
+        "pirana_atlas_001",
+        "pirana_atlas_002",
+        "pirana_atlas_003",
+        "pirana_atlas_004",
+        "pirana_atlas_005",
+        "pirana_atlas_006"
+      ],
+      "frame_duration_ms": 83,
+      "loop": true,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "bite": {
+      "frames": [
+        "pirana_atlas_007",
+        "pirana_atlas_008",
+        "pirana_atlas_009",
+        "pirana_atlas_010",
+        "pirana_atlas_011",
+        "pirana_atlas_012",
+        "pirana_atlas_013"
+      ],
+      "frame_duration_ms": 77,
+      "loop": false,
+      "damage": 7,
+      "active_attack_frames": [
+        3,
+        4
+      ]
+    },
+    "hurt": {
+      "frames": [
+        "pirana_atlas_014",
+        "pirana_atlas_015",
+        "pirana_atlas_016",
+        "pirana_atlas_017",
+        "pirana_atlas_018",
+        "pirana_atlas_019",
+        "pirana_atlas_020"
+      ],
+      "frame_duration_ms": 111,
+      "loop": false,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "stun": {
+      "frames": [
+        "pirana_atlas_021",
+        "pirana_atlas_022",
+        "pirana_atlas_023",
+        "pirana_atlas_024",
+        "pirana_atlas_025",
+        "pirana_atlas_026",
+        "pirana_atlas_027"
+      ],
+      "frame_duration_ms": 167,
+      "loop": true,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "death": {
+      "frames": [
+        "pirana_atlas_028",
+        "pirana_atlas_029",
+        "pirana_atlas_030",
+        "pirana_atlas_031",
+        "pirana_atlas_032",
+        "pirana_atlas_033",
+        "pirana_atlas_034"
+      ],
+      "frame_duration_ms": 143,
+      "loop": false,
+      "damage": 0,
+      "active_attack_frames": []
+    }
+  },
+  "fx": {
+    "image": "pirana_fx.png",
+    "size": {
+      "w": 1245,
+      "h": 320
+    },
+    "frames": {
+      "pirana_fx_000": {
+        "filename": "pirana_fx_000",
+        "frame": {
+          "x": 25,
+          "y": 9,
+          "w": 199,
+          "h": 142
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 199,
+          "h": 142
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 25,
+          "y": 9
+        },
+        "sourceCrop": [
+          1313,
+          527,
+          199,
+          142
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_001": {
+        "filename": "pirana_fx_001",
+        "frame": {
+          "x": 296,
+          "y": 20,
+          "w": 154,
+          "h": 120
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 154,
+          "h": 120
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 47,
+          "y": 20
+        },
+        "sourceCrop": [
+          1368,
+          705,
+          154,
+          120
+        ],
+        "action": "bubbles"
+      },
+      "pirana_fx_002": {
+        "filename": "pirana_fx_002",
+        "frame": {
+          "x": 535,
+          "y": 20,
+          "w": 175,
+          "h": 119
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 175,
+          "h": 119
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 37,
+          "y": 20
+        },
+        "sourceCrop": [
+          23,
+          878,
+          175,
+          119
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_003": {
+        "filename": "pirana_fx_003",
+        "frame": {
+          "x": 789,
+          "y": 13,
+          "w": 164,
+          "h": 134
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 164,
+          "h": 134
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 42,
+          "y": 13
+        },
+        "sourceCrop": [
+          209,
+          866,
+          164,
+          134
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_004": {
+        "filename": "pirana_fx_004",
+        "frame": {
+          "x": 1037,
+          "y": 18,
+          "w": 167,
+          "h": 123
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 167,
+          "h": 123
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 41,
+          "y": 18
+        },
+        "sourceCrop": [
+          391,
+          865,
+          167,
+          123
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_005": {
+        "filename": "pirana_fx_005",
+        "frame": {
+          "x": 61,
+          "y": 186,
+          "w": 126,
+          "h": 108
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 126,
+          "h": 108
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 61,
+          "y": 26
+        },
+        "sourceCrop": [
+          579,
+          877,
+          126,
+          108
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_006": {
+        "filename": "pirana_fx_006",
+        "frame": {
+          "x": 258,
+          "y": 179,
+          "w": 231,
+          "h": 121
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 231,
+          "h": 121
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 9,
+          "y": 19
+        },
+        "sourceCrop": [
+          729,
+          868,
+          231,
+          121
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_007": {
+        "filename": "pirana_fx_007",
+        "frame": {
+          "x": 521,
+          "y": 194,
+          "w": 202,
+          "h": 92
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 202,
+          "h": 92
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 23,
+          "y": 34
+        },
+        "sourceCrop": [
+          956,
+          888,
+          202,
+          92
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_008": {
+        "filename": "pirana_fx_008",
+        "frame": {
+          "x": 787,
+          "y": 191,
+          "w": 168,
+          "h": 97
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 168,
+          "h": 97
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 40,
+          "y": 31
+        },
+        "sourceCrop": [
+          1184,
+          881,
+          168,
+          97
+        ],
+        "action": "fx"
+      },
+      "pirana_fx_009": {
+        "filename": "pirana_fx_009",
+        "frame": {
+          "x": 1033,
+          "y": 189,
+          "w": 174,
+          "h": 102
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 174,
+          "h": 102
+        },
+        "sourceSize": {
+          "w": 249,
+          "h": 160
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 37,
+          "y": 29
+        },
+        "sourceCrop": [
+          1348,
+          876,
+          174,
+          102
+        ],
+        "action": "fx"
+      }
+    }
+  }
+}

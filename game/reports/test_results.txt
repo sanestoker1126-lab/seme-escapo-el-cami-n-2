@@ -1,0 +1,208 @@
+TAP version 13
+# Subtest: la campaña mantiene sus 18 niveles agrupados en cuatro mundos
+ok 1 - la campaña mantiene sus 18 niveles agrupados en cuatro mundos
+  ---
+  duration_ms: 1.874048
+  type: 'test'
+  ...
+# Subtest: cada uno de los diez fondos de fase 1 existe y coincide con el registro de nivel
+ok 2 - cada uno de los diez fondos de fase 1 existe y coincide con el registro de nivel
+  ---
+  duration_ms: 0.491538
+  type: 'test'
+  ...
+# Subtest: las ocho escenas restantes conservan sus fondos de origen o procedurales
+ok 3 - las ocho escenas restantes conservan sus fondos de origen o procedurales
+  ---
+  duration_ms: 0.21959
+  type: 'test'
+  ...
+# Subtest: los suelos antes pintados siguen teniendo la misma geometría y ahora muestran plataformas del motor
+ok 4 - los suelos antes pintados siguen teniendo la misma geometría y ahora muestran plataformas del motor
+  ---
+  duration_ms: 0.220971
+  type: 'test'
+  ...
+# Subtest: gravedad: Nina cae y aterriza exactamente sobre la plataforma
+ok 5 - gravedad: Nina cae y aterriza exactamente sobre la plataforma
+  ---
+  duration_ms: 2.07515
+  type: 'test'
+  ...
+# Subtest: velocidad terminal acotada y sin atravesar plataformas delgadas
+ok 6 - velocidad terminal acotada y sin atravesar plataformas delgadas
+  ---
+  duration_ms: 1.418543
+  type: 'test'
+  ...
+# Subtest: salto completo ≈ 135 u y salto corto mucho menor (salto variable)
+ok 7 - salto completo ≈ 135 u y salto corto mucho menor (salto variable)
+  ---
+  duration_ms: 0.535756
+  type: 'test'
+  ...
+# Subtest: coyote time: se puede saltar poco después de salir del borde
+ok 8 - coyote time: se puede saltar poco después de salir del borde
+  ---
+  duration_ms: 0.331208
+  type: 'test'
+  ...
+# Subtest: buffer de salto: pulsar justo antes de aterrizar salta al tocar suelo
+ok 9 - buffer de salto: pulsar justo antes de aterrizar salta al tocar suelo
+  ---
+  duration_ms: 0.575756
+  type: 'test'
+  ...
+# Subtest: paso fijo: el resultado no depende de la tasa de refresco
+ok 10 - paso fijo: el resultado no depende de la tasa de refresco
+  ---
+  duration_ms: 1.810571
+  type: 'test'
+  ...
+# Subtest: muros sólidos: ni caminando ni con dash se atraviesan
+ok 11 - muros sólidos: ni caminando ni con dash se atraviesan
+  ---
+  duration_ms: 1.032482
+  type: 'test'
+  ...
+# Subtest: barrido continuo: el jugador no atraviesa sólidos delgados en un paso largo
+ok 12 - barrido continuo: el jugador no atraviesa sólidos delgados en un paso largo
+  ---
+  duration_ms: 0.298389
+  type: 'test'
+  ...
+# Subtest: techo sólido: el salto se corta sin atravesarlo
+ok 13 - techo sólido: el salto se corta sin atravesarlo
+  ---
+  duration_ms: 0.59824
+  type: 'test'
+  ...
+# Subtest: plataformas de un sentido: se atraviesan desde abajo y se aterriza encima
+ok 14 - plataformas de un sentido: se atraviesan desde abajo y se aterriza encima
+  ---
+  duration_ms: 0.555465
+  type: 'test'
+  ...
+# Subtest: BAJAR atraviesa peldaños y tarimas, pero no la piedra
+ok 15 - BAJAR atraviesa peldaños y tarimas, pero no la piedra
+  ---
+  duration_ms: 0.422124
+  type: 'test'
+  ...
+# Subtest: tarimas móviles: Nina viaja con la tarima sin resbalar ni caer
+ok 16 - tarimas móviles: Nina viaja con la tarima sin resbalar ni caer
+  ---
+  duration_ms: 1.036228
+  type: 'test'
+  ...
+# Subtest: asistencia de escalón: se baja una escalera caminando
+ok 17 - asistencia de escalón: se baja una escalera caminando
+  ---
+  duration_ms: 0.808495
+  type: 'test'
+  ...
+# Subtest: toldo rebotador: lanza hacia arriba y anula la caída
+ok 18 - toldo rebotador: lanza hacia arriba y anula la caída
+  ---
+  duration_ms: 0.291919
+  type: 'test'
+  ...
+# Subtest: charco: reduce la fricción (patina más lejos)
+ok 19 - charco: reduce la fricción (patina más lejos)
+  ---
+  duration_ms: 0.30633
+  type: 'test'
+  ...
+# Subtest: dash: un dash aéreo por salto, recarga al aterrizar
+ok 20 - dash: un dash aéreo por salto, recarga al aterrizar
+  ---
+  duration_ms: 0.324347
+  type: 'test'
+  ...
+# Subtest: cajas rompibles: el dash las rompe; caminando bloquean
+ok 21 - cajas rompibles: el dash las rompe; caminando bloquean
+  ---
+  duration_ms: 0.367012
+  type: 'test'
+  ...
+# Subtest: estados de animación: un único estado por paso con prioridad
+ok 22 - estados de animación: un único estado por paso con prioridad
+  ---
+  duration_ms: 0.172259
+  type: 'test'
+  ...
+# Subtest: el mundo es determinista: misma semilla, mismo mundo e identificadores
+ok 23 - el mundo es determinista: misma semilla, mismo mundo e identificadores
+  ---
+  duration_ms: 121.479241
+  type: 'test'
+  ...
+# Subtest: identificadores únicos en todas las colecciones
+ok 24 - identificadores únicos en todas las colecciones
+  ---
+  duration_ms: 19.248003
+  type: 'test'
+  ...
+# Subtest: estructura: 16 niveles (4 nuevos), una zona inferior, una reja con llave y un jefe por nivel, 6 objetos y una meta
+ok 25 - estructura: 16 niveles (4 nuevos), una zona inferior, una reja con llave y un jefe por nivel, 6 objetos y una meta
+  ---
+  duration_ms: 13.973714
+  type: 'test'
+  ...
+# Subtest: la dificultad cambia la densidad de enemigos, no la geometría principal
+ok 26 - la dificultad cambia la densidad de enemigos, no la geometría principal
+  ---
+  duration_ms: 42.357668
+  type: 'test'
+  ...
+# Subtest: todo está dentro de los muros exteriores y nada solapa paneles con sectores
+ok 27 - todo está dentro de los muros exteriores y nada solapa paneles con sectores
+  ---
+  duration_ms: 12.158216
+  type: 'test'
+  ...
+# Subtest: enemigos caminantes: su patrulla cabe en su plataforma y no empieza dentro de una caja
+ok 28 - enemigos caminantes: su patrulla cabe en su plataforma y no empieza dentro de una caja
+  ---
+  duration_ms: 12.173448
+  type: 'test'
+  ...
+# Subtest: la parada de inicio y la salida de cada tramo quedan despejadas
+ok 29 - la parada de inicio y la salida de cada tramo quedan despejadas
+  ---
+  duration_ms: 11.326394
+  type: 'test'
+  ...
+# Subtest: el análisis respeta los sólidos: con la reja cerrada el nicho es inaccesible
+ok 30 - el análisis respeta los sólidos: con la reja cerrada el nicho es inaccesible
+  ---
+  duration_ms: 12356.292402
+  type: 'test'
+  ...
+# Subtest: alcanzabilidad (facil): meta, paradas, objetos, llaves, todos los cristales y sin trampas
+ok 31 - alcanzabilidad (facil): meta, paradas, objetos, llaves, todos los cristales y sin trampas
+  ---
+  duration_ms: 23765.992775
+  type: 'test'
+  ...
+# Subtest: alcanzabilidad (normal): meta, paradas, objetos, llaves, todos los cristales y sin trampas
+ok 32 - alcanzabilidad (normal): meta, paradas, objetos, llaves, todos los cristales y sin trampas
+  ---
+  duration_ms: 23823.402158
+  type: 'test'
+  ...
+# Subtest: alcanzabilidad (dificil): meta, paradas, objetos, llaves, todos los cristales y sin trampas
+ok 33 - alcanzabilidad (dificil): meta, paradas, objetos, llaves, todos los cristales y sin trampas
+  ---
+  duration_ms: 24561.990847
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 84845.396503

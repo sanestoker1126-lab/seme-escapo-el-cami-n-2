@@ -1,0 +1,63 @@
+{
+  "schema": "marino-parallax-integrado-v571",
+  "levelSize": {
+    "width": 940,
+    "height": 3072
+  },
+  "layers": [
+    {
+      "index": 0,
+      "src": "assets/parallax/marino/00_oceano_vertical.webp",
+      "parallax": 0.05,
+      "role": "background",
+      "width": 2304,
+      "height": 3072,
+      "alpha": false
+    },
+    {
+      "index": 1,
+      "src": "assets/parallax/marino/01_luz_volumen.webp",
+      "parallax": 0.08,
+      "role": "background",
+      "width": 2304,
+      "height": 3072,
+      "alpha": true
+    },
+    {
+      "index": 2,
+      "src": "assets/parallax/submarino/01_profundidad.svg",
+      "parallax": 0.15,
+      "role": "background"
+    },
+    {
+      "index": 3,
+      "src": "assets/parallax/submarino/02_estructuras.svg",
+      "parallax": 0.25,
+      "role": "background"
+    },
+    {
+      "index": 4,
+      "src": "assets/parallax/marino/05_fauna_limpia.webp",
+      "parallax": 0.35,
+      "role": "background",
+      "width": 2172,
+      "height": 724,
+      "alpha": true
+    },
+    {
+      "index": 5,
+      "src": "assets/parallax/marino/06_arrecife_real.webp",
+      "parallax": 0.5,
+      "role": "background",
+      "width": 2172,
+      "height": 724,
+      "alpha": true
+    },
+    {
+      "index": 6,
+      "src": "assets/parallax/submarino/04_primer_plano.svg",
+      "parallax": 0.8,
+      "role": "foreground"
+    }
+  ]
+}

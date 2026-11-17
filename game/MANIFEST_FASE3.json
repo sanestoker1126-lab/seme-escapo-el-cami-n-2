@@ -1,0 +1,48 @@
+{
+  "proyecto": "¡Se me fue el camión!",
+  "build": "V58.1_FASE3",
+  "estado": "RELEASE_CANDIDATE",
+  "base": {
+    "archivo": "SE_ME_FUE_EL_CAMION_V58_1_FASE2_CANDIDATO.zip",
+    "sha256": "95f947e160f2fb6398c3bc9e274a1e3b9aab23edddea24802d5d6a5c91596745"
+  },
+  "archivos_codigo_modificados": [
+    "js/app/render.js",
+    "sw.js",
+    "tests/phase3_space_marine_fx.test.js",
+    "tests/v572_marine_atlases_space.test.js",
+    "tests/v573_marine_cinematic.test.js",
+    "tests/v581_marine_motion_fx.test.js"
+  ],
+  "efectos": {
+    "submarino": "Burbujas procedurales limitadas por qScale; halo y motas visuales para Poseidón.",
+    "espacio": "Estelas procedurales deterministas de meteoritos con búsqueda acotada de posiciones despejadas.",
+    "fisicas_y_colisiones_modificadas": false,
+    "sprites_originales_reemplazados": false
+  },
+  "verificacion": {
+    "javascript_sintaxis": "aprobada",
+    "suite_focalizada_fase3_marino_espacio_enemigos": "27/27 aprobada",
+    "suite_mundo_expansion_alcanzabilidad": "31/31 aprobada",
+    "chromium_headless": {
+      "misiones_capturadas": ["escuela", "guadalajara", "submarino", "espacio"],
+      "viewport": "1920x1080",
+      "excepciones_javascript": 0,
+      "advertencia_no_critica": "navigator.vibrate bloqueado en Chromium sin gesto táctil humano durante la captura espacial"
+    },
+    "service_worker": "Cache Fase 3 y renderer final comprobados en navegador."
+  },
+  "pendientes": [
+    "Validación física en Android 15 / Motorola Moto G15.",
+    "Medición de FPS/memoria en dispositivo real.",
+    "Inspección visual de Poseidón durante un combate profundo.",
+    "Revisar la gran forma violeta preexistente del fondo espacial, presente en Fase 2."
+  ],
+  "evidencia": [
+    "reports/screenshots/phase3/phase3_escuela.png",
+    "reports/screenshots/phase3/phase3_guadalajara.png",
+    "reports/screenshots/phase3/phase3_submarino.png",
+    "reports/screenshots/phase3/phase3_espacio.png",
+    "INFORME_FASE3_MARINO_ESPACIO_ES.md"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "source": "sofia_buceadora_movimientos_rgba.png",
+  "notes": "11 cuadros de una secuencia nueva, compuestos de cuadros reales existentes; no son poses generadas de ataque ni nuevos dibujos.",
+  "fps": 22,
+  "loop": false,
+  "animation": "strike",
+  "frames": [
+    {
+      "source": "giro_agua_00",
+      "rect": [
+        48,
+        60,
+        119,
+        96
+      ],
+      "pivot": [
+        60.0,
+        48.0
+      ]
+    },
+    {
+      "source": "giro_agua_01",
+      "rect": [
+        266,
+        58,
+        116,
+        99
+      ],
+      "pivot": [
+        58.0,
+        50.0
+      ]
+    },
+    {
+      "source": "impulso_submarino_00",
+      "rect": [
+        486,
+        52,
+        108,
+        111
+      ],
+      "pivot": [
+        54.0,
+        56.0
+      ]
+    },
+    {
+      "source": "impulso_submarino_01",
+      "rect": [
+        698,
+        52,
+        115,
+        111
+      ],
+      "pivot": [
+        58.0,
+        56.0
+      ]
+    },
+    {
+      "source": "impulso_submarino_02",
+      "rect": [
+        43,
+        269,
+        130,
+        109
+      ],
+      "pivot": [
+        65.0,
+        55.0
+      ]
+    },
+    {
+      "source": "impulso_submarino_03",
+      "rect": [
+        261,
+        270,
+        125,
+        107
+      ],
+      "pivot": [
+        63.0,
+        54.0
+      ]
+    },
+    {
+      "source": "giro_agua_02",
+      "rect": [
+        485,
+        277,
+        110,
+        94
+      ],
+      "pivot": [
+        55.0,
+        47.0
+      ]
+    },
+    {
+      "source": "giro_agua_03",
+      "rect": [
+        707,
+        277,
+        98,
+        94
+      ],
+      "pivot": [
+        49.0,
+        47.0
+      ]
+    },
+    {
+      "source": "frenar_agua_00",
+      "rect": [
+        44,
+        490,
+        128,
+        100
+      ],
+      "pivot": [
+        64.0,
+        50.0
+      ]
+    },
+    {
+      "source": "frenar_agua_01",
+      "rect": [
+        264,
+        493,
+        120,
+        93
+      ],
+      "pivot": [
+        60.0,
+        47.0
+      ]
+    },
+    {
+      "source": "frenar_agua_02",
+      "rect": [
+        481,
+        503,
+        117,
+        74
+      ],
+      "pivot": [
+        59.0,
+        37.0
+      ]
+    }
+  ]
+}
