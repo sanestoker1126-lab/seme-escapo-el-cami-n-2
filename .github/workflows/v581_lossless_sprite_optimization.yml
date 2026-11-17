@@ -1,0 +1,58 @@
+name: V58.1 source-locked PNG optimization
+
+on:
+  push:
+    branches:
+      - manus/release-candidate-v58.1-fase4
+    paths:
+      - .github/workflows/v581_lossless_sprite_optimization.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source-locked optimizer
+        working-directory: game
+        run: node --test tests/v581_lossless_png_optimization.test.js
+      - name: Optimize source PNG files without any pixel or alpha changes
+        working-directory: game
+        run: node tools/arte/optimize_png_source_locked.js --profile runtime --apply --report optimization_result_v581.json
+      - name: Validate character and enemy manifests after optimization
+        working-directory: game
+        run: node --test tests/character_enemy_assets_section01.test.js tests/character_enemy_missing_sources_v581.test.js
+      - name: Commit only smaller lossless PNG assets to the same branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'game/assets/**/*.png'
+          if git diff --cached --quiet; then
+            echo 'All original PNGs already optimal with this lossless method.'
+            exit 0
+          fi
+          git diff --cached --name-only | while IFS= read -r file; do
+            case "$file" in game/assets/*.png|game/assets/*/*.png|game/assets/*/*/*.png|game/assets/*/*/*/*.png|game/assets/*/*/*/*/*.png) ;;
+              *) echo "Unexpected file staged: $file" >&2; exit 1 ;;
+            esac
+          done
+          git commit -m 'perf(assets): recompress original PNG IDAT losslessly'
+          git push origin "HEAD:${{ github.ref_name }}"
+      - name: Publish detailed size and alpha integrity report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v581-png-lossless-report
+          path: game/optimization_result_v581.json
+          if-no-files-found: ignore
