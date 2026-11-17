@@ -8,6 +8,10 @@ on:
       - .github/workflows/v581_lossless_sprite_optimization.yml
   workflow_dispatch:
 
+concurrency:
+  group: v581-lossless-png-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -48,7 +52,16 @@ jobs:
             esac
           done
           git commit -m 'perf(assets): recompress original PNG IDAT losslessly'
-          git push origin "HEAD:${{ github.ref_name }}"
+          # Preserve any concurrent independent commits on the target branch.
+          for attempt in 1 2 3; do
+            git fetch origin "${{ github.ref_name }}"
+            git rebase "origin/${{ github.ref_name }}"
+            if git push origin "HEAD:${{ github.ref_name }}"; then
+              exit 0
+            fi
+          done
+          echo 'Branch advanced during three safe push attempts; no force push used.' >&2
+          exit 1
       - name: Publish detailed size and alpha integrity report
         if: always()
         uses: actions/upload-artifact@v4
