@@ -14,6 +14,10 @@ import zipfile
 EXPECTED_SHA256 = "e987510ca7a0645cc8e53a89260209205e6bebe05c6f648d86d050b3604f2281"
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = "game/assets/environment_complete_manifest.json"
+EXTRA_SOURCE_ONLY = (
+    'game/assets/objects/guadalajara/banca_hierro_forjado.png',
+    'game/assets/objects/submarino/arco_ruina_sumergida.png',
+)
 SUPPORT_FILES = (
     "game/assets/environment_manifest.json",
     "game/assets/environment_a2_manifest.json",
@@ -58,7 +62,7 @@ def main() -> int:
         objects=manifest.get("objects",[])
         if len(objects)!=32:
             parser.error("unexpected number of catalogued objects")
-        targets=set(SUPPORT_FILES)
+        targets=set(SUPPORT_FILES)|set(EXTRA_SOURCE_ONLY)
         for obj in objects:
             targets.add("game/"+obj["png"])
         for world in manifest["worlds"].values():
