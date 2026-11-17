@@ -43,7 +43,7 @@ test('Estoker y Sofía comparten layout con separación y ancla de suelo',()=>{
  const intro=fs.readFileSync(path.join(ROOT,'js/app/marine_intro.js'),'utf8');
  assert.match(intro,/function layoutActors/); assert.match(intro,/dadX=baseX\+gw\+gap/);
  assert.match(intro,/Math\.min\(layout\.limit,motion\.offset\)/);assert.match(intro,/function setFeetOnGround/);
- assert.match(intro,/ARRIVAL_LOOKS=\{original:'uniforme'/);
+ assert.match(intro,/ARRIVAL_LOOKS=\{original:'original',rosa:'rosa',uniforme:'uniforme'/);
 });
 test('Caché V58.1 no almacena respuestas HTTP fallidas; render restablece estado del canvas',()=>{
  const sw=fs.readFileSync(path.join(ROOT,'sw.js'),'utf8');
