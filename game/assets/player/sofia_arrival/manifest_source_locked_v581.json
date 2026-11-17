@@ -1,0 +1,207 @@
+{
+  "schema": "seme-fue-el-camion/source-locked-arrival-variants/v581",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "base_directory": "assets/player/sofia_arrival/",
+  "legacy_manifest": "assets/player/sofia_arrival/manifest.json",
+  "legacy_manifest_policy": "PRESERVED_UNCHANGED",
+  "source_provenance": "All referenced PNG/JSON files already exist; no pixels modified.",
+  "default_animation_fps": 8,
+  "variants": {
+    "original": {
+      "atlas": "original/original_atlas_12frames.png",
+      "metadata": "original/original_atlas.json",
+      "walk_frame_pattern": "original/walk_{index}.png",
+      "walk_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "idle_png": "original/idle_0.png",
+      "frame_px": [
+        320,
+        320
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9625
+      ],
+      "ground_y_px": 308,
+      "atlas_frame_count": 12,
+      "original_walk_frames": 6,
+      "mirrored_frames": 6,
+      "animations": {
+        "walk_wonder_right": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "walk_wonder_left": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "look_around": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      },
+      "source_artwork_label": "sofia_escolar_roja_atlas_12frames.png",
+      "status": "SOURCE_EXISTING"
+    },
+    "rosa": {
+      "atlas": "rosa/rosa_atlas_12frames.png",
+      "metadata": "rosa/rosa_atlas.json",
+      "walk_frame_pattern": "rosa/walk_{index}.png",
+      "walk_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "idle_png": "rosa/idle_0.png",
+      "frame_px": [
+        320,
+        320
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9625
+      ],
+      "ground_y_px": 308,
+      "atlas_frame_count": 12,
+      "original_walk_frames": 6,
+      "mirrored_frames": 6,
+      "animations": {
+        "walk_wonder_right": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "walk_wonder_left": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "look_around": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      },
+      "source_artwork_label": "sofia_rosa_morada_atlas_12frames.png",
+      "status": "SOURCE_EXISTING"
+    },
+    "uniforme": {
+      "atlas": "uniforme/uniforme_atlas_12frames.png",
+      "metadata": "uniforme/uniforme_atlas.json",
+      "walk_frame_pattern": "uniforme/walk_{index}.png",
+      "walk_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "idle_png": "uniforme/idle_0.png",
+      "frame_px": [
+        320,
+        320
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9625
+      ],
+      "ground_y_px": 308,
+      "atlas_frame_count": 12,
+      "original_walk_frames": 6,
+      "mirrored_frames": 6,
+      "animations": {
+        "walk_wonder_right": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "walk_wonder_left": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "look_around": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      },
+      "source_artwork_label": "sofia_reno_rojo_atlas_12frames.png",
+      "status": "SOURCE_EXISTING"
+    }
+  },
+  "runtime": {
+    "loader": "js/app/marine_intro.js",
+    "current_look_map": {
+      "original": "uniforme",
+      "rosa": "uniforme",
+      "uniforme": "uniforme",
+      "buzo": "uniforme",
+      "astronauta": "uniforme"
+    },
+    "note": "Current runtime maps looks to uniforme; existing V58.1 regression test requires it. No gameplay behavior changed."
+  },
+  "qa": {
+    "atlas_coordinate_integrity": "PASS",
+    "visual_differences": "NOT_TESTED",
+    "original_pixels_modified": false
+  }
+}
