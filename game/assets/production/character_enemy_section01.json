@@ -1,0 +1,217 @@
+{
+  "schema": "seme-fue-el-camion/source-locked-character-enemy-assets/v1",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "section": "01_characters_and_enemies",
+  "provenance": "Existing repository assets only; zero generated replacement sprites",
+  "policy": {
+    "preserve_original_pixels": true,
+    "preserve_physics_and_hitboxes": true,
+    "no_ai_replacement": true,
+    "no_duplicate_atlases": true
+  },
+  "marine_enemies": [
+    {
+      "id": "piranha",
+      "atlas": "assets/enemies/marine/piranha_atlas_v573.png",
+      "metadata": "assets/enemies/marine/piranha_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/piranha/",
+      "source_prefix": "pirana_atlas_",
+      "frames": 35,
+      "source_cell_px": [
+        305,
+        196
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "swim",
+        "bite",
+        "hurt",
+        "stun",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    {
+      "id": "shark",
+      "atlas": "assets/enemies/marine/shark_atlas_v573.png",
+      "metadata": "assets/enemies/marine/shark_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/shark/",
+      "source_prefix": "tiburon_atlas_",
+      "frames": 33,
+      "source_cell_px": [
+        337,
+        232
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "swim",
+        "bite",
+        "dash_bite",
+        "hurt",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    {
+      "id": "octopus",
+      "atlas": "assets/enemies/marine/octopus_atlas_v573.png",
+      "metadata": "assets/enemies/marine/octopus_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/octopus/",
+      "source_prefix": "pulpo_atlas_",
+      "frames": 37,
+      "source_cell_px": [
+        338,
+        212
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "idle",
+        "swim",
+        "bite",
+        "tentacle_slam",
+        "ink_attack",
+        "hurt",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    {
+      "id": "poseidon",
+      "atlas": "assets/enemies/marine/poseidon_atlas_v573.png",
+      "metadata": "assets/enemies/marine/poseidon_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/poseidon/",
+      "source_prefix": "poseidon_atlas_",
+      "frames": 24,
+      "source_cell_px": [
+        339,
+        283
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "idle_swim",
+        "trident_attack",
+        "tidal_attack",
+        "hurt",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    }
+  ],
+  "characters": {
+    "sofia": {
+      "runtime_default": "assets/player/sofia/",
+      "variants": {
+        "uniforme": "assets/player/variants/uniforme/",
+        "rosa": "assets/player/variants/rosa/"
+      },
+      "underwater": {
+        "atlas": "assets/player/sofia/sofia_buceadora_movimientos_rgba.png",
+        "metadata": "assets/player/sofia/sofia_buceadora_movimientos.json",
+        "attack_atlas": "assets/player/sofia/swim_strike_11frames_v581.png",
+        "attack_metadata": "assets/player/sofia/swim_strike_v581.json"
+      },
+      "arrival": {
+        "pivot_normalized": [
+          0.5,
+          0.9625
+        ],
+        "frame_px": [
+          320,
+          320
+        ],
+        "fps_original_manifest": 8,
+        "variants": [
+          {
+            "id": "original",
+            "folder": "assets/player/sofia_arrival/original/",
+            "atlas": "assets/player/sofia_arrival/original/original_atlas_12frames.png",
+            "metadata": "assets/player/sofia_arrival/original/original_atlas.json",
+            "original_walk_frames": 6,
+            "mirrored_atlas_frames": 12
+          },
+          {
+            "id": "rosa",
+            "folder": "assets/player/sofia_arrival/rosa/",
+            "atlas": "assets/player/sofia_arrival/rosa/rosa_atlas_12frames.png",
+            "metadata": "assets/player/sofia_arrival/rosa/rosa_atlas.json",
+            "original_walk_frames": 6,
+            "mirrored_atlas_frames": 12
+          },
+          {
+            "id": "uniforme",
+            "folder": "assets/player/sofia_arrival/uniforme/",
+            "atlas": "assets/player/sofia_arrival/uniforme/uniforme_atlas_12frames.png",
+            "metadata": "assets/player/sofia_arrival/uniforme/uniforme_atlas.json",
+            "original_walk_frames": 6,
+            "mirrored_atlas_frames": 12
+          }
+        ],
+        "loader": "js/app/marine_intro.js"
+      }
+    },
+    "estoker": {
+      "module": "js/app/estoker_anim_data.js",
+      "folder": "assets/cinematic/estoker_memory/",
+      "original_frames_total": 32,
+      "animations": {
+        "caminar_estoker": 7,
+        "explicar_estoker": 7,
+        "caminar_con_sofia": 6,
+        "conversacion_con_sofia": 12
+      },
+      "loader": "js/app/marine_intro.js"
+    },
+    "companions": [
+      {
+        "id": "luna",
+        "folder": "assets/companions/",
+        "idle_frames": 6,
+        "walk_frames": 4
+      },
+      {
+        "id": "morita",
+        "folder": "assets/companions/",
+        "idle_frames": 6,
+        "walk_frames": 4
+      }
+    ]
+  },
+  "pending_issues": [
+    {
+      "asset": "assets/player/sofia_arrival/manifest.json",
+      "status": "EXISTENTE_REQUIERE_CORRECCION",
+      "problem": "Paths point to nonexistent sofia_escolar_roja, sofia_rosa_morada, sofia_reno_rojo directories; actual asset folders are original, rosa, uniforme. This registry references real paths without overwriting the legacy file."
+    },
+    {
+      "asset": "assets/player/sofia/animation_manifest_v12.json",
+      "status": "BLOQUEADO_POR_FALTA_DE_FUENTE",
+      "problem": "States marked provisional are not evidence of complete authored animations. Preserve original source and label honestly."
+    },
+    {
+      "asset": "space and additional enemies",
+      "status": "NO_VERIFICADO",
+      "problem": "Do not manufacture canonical sprites where the repository currently uses procedural drawings/overlays."
+    }
+  ],
+  "qa": {
+    "test": "tests/character_enemy_assets_section01.test.js",
+    "viewer": "tools/preview_character_enemy_section01.html",
+    "note": "Source and coordinate QA; visual transitions and combat timing require in-game capture."
+  }
+}
