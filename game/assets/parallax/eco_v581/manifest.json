@@ -1,0 +1,273 @@
+{
+  "schema": "seme-fue-el-camion/parallax-eco-v581/v1",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "section": "02_parallax_atmospheric_overlays",
+  "provenance": {
+    "existing_base_art": "unchanged / not repackaged",
+    "new_ambient_overlays": "deterministic Python/Pillow RGBA artwork",
+    "generated_character_or_enemy_sprites": 0
+  },
+  "policy": {
+    "preserve_original_pixels": true,
+    "preserve_original_parallax_paths": true,
+    "no_duplicate_atlases": true,
+    "gameplay_colliders": false,
+    "physics_mutations": false,
+    "hitbox_mutations": false,
+    "safe_for_pwa": true
+  },
+  "worldBounds": "runtime-derived from G.world.bounds and G.world.scenes (no hard-coded 940×3072)",
+  "format": "PNG RGBA8888",
+  "worlds": {
+    "submarino": {
+      "originalBackgroundsPreserved": true,
+      "overlayLayers": [
+        {
+          "id": "01_luz_volumetrica_alpha",
+          "src": "assets/parallax/eco_v581/submarino/01_luz_volumetrica_alpha.png",
+          "speed": 0.07,
+          "alpha": 0.85,
+          "driftPxPerSecond": {
+            "x": 0.0,
+            "y": -0.12
+          },
+          "uniformScale": 1.0,
+          "minQuality": 0,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "e40a83b48a8046a3047e81ad57df211dd89450ad824b0a5c2da4c10c603ebd2d",
+          "bytes": 212748
+        },
+        {
+          "id": "02_burbujas_profundidad_alpha",
+          "src": "assets/parallax/eco_v581/submarino/02_burbujas_profundidad_alpha.png",
+          "speed": 0.38,
+          "alpha": 0.75,
+          "driftPxPerSecond": {
+            "x": 0.9,
+            "y": -3.5
+          },
+          "uniformScale": 0.95,
+          "minQuality": 1,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "57991c9a05d5f68891bf7b93929a8b8ef359b09f7964bf736be6436364a75a45",
+          "bytes": 11691
+        },
+        {
+          "id": "03_sedimento_en_suspension_alpha",
+          "src": "assets/parallax/eco_v581/submarino/03_sedimento_en_suspension_alpha.png",
+          "speed": 0.58,
+          "alpha": 0.56,
+          "driftPxPerSecond": {
+            "x": -0.28,
+            "y": -0.45
+          },
+          "uniformScale": 0.92,
+          "minQuality": 1,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "2e3322758c899e68846a2b8b8fbc6ef748cb818dad0c5da1652ca7ed0b83a57b",
+          "bytes": 7736
+        }
+      ]
+    },
+    "espacial": {
+      "originalBackgroundsPreserved": true,
+      "overlayLayers": [
+        {
+          "id": "01_nebulosa_difusa_alpha",
+          "src": "assets/parallax/eco_v581/espacial/01_nebulosa_difusa_alpha.png",
+          "speed": 0.035,
+          "alpha": 0.48,
+          "driftPxPerSecond": {
+            "x": 0.03,
+            "y": 0.0
+          },
+          "uniformScale": 1.1,
+          "minQuality": 0,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "29bb00476de885f692b835ff36445d458bc7affbd52b155c2a11c76f9fdac959",
+          "bytes": 68787
+        },
+        {
+          "id": "02_campo_estelar_alpha",
+          "src": "assets/parallax/eco_v581/espacial/02_campo_estelar_alpha.png",
+          "speed": 0.17,
+          "alpha": 0.81,
+          "driftPxPerSecond": {
+            "x": 0.04,
+            "y": -0.015
+          },
+          "uniformScale": 1.0,
+          "minQuality": 0,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "3164e7148b976a337b2a934d6c93b3c2aa9c9999d67f3de40e933b72d065b228",
+          "bytes": 9382
+        },
+        {
+          "id": "03_polvo_orbital_alpha",
+          "src": "assets/parallax/eco_v581/espacial/03_polvo_orbital_alpha.png",
+          "speed": 0.63,
+          "alpha": 0.45,
+          "driftPxPerSecond": {
+            "x": -0.25,
+            "y": 0.1
+          },
+          "uniformScale": 0.85,
+          "minQuality": 1,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "5f3bfbed11a2834edff4d008c96579e8ae79d931d6ddf23f3ecd2b52b6c43466",
+          "bytes": 6112
+        }
+      ]
+    },
+    "escuela": {
+      "originalBackgroundsPreserved": true,
+      "overlayLayers": [
+        {
+          "id": "01_haces_sol_alpha",
+          "src": "assets/parallax/eco_v581/escuela/01_haces_sol_alpha.png",
+          "speed": 0.11,
+          "alpha": 0.76,
+          "driftPxPerSecond": {
+            "x": 0.0,
+            "y": -0.02
+          },
+          "uniformScale": 1.1,
+          "minQuality": 0,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "d1d0fdd4b7eae09a003e901dd582fe59959829936987357069ca792eba2c62d1",
+          "bytes": 215537
+        },
+        {
+          "id": "02_particulas_aire_alpha",
+          "src": "assets/parallax/eco_v581/escuela/02_particulas_aire_alpha.png",
+          "speed": 0.48,
+          "alpha": 0.58,
+          "driftPxPerSecond": {
+            "x": 0.06,
+            "y": -0.2
+          },
+          "uniformScale": 0.9,
+          "minQuality": 1,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "29bd7cd6c5a7cb1972cee592062a005a68e1bc3b89ca30ec8cba9892070ec230",
+          "bytes": 5680
+        }
+      ]
+    },
+    "guadalajara": {
+      "originalBackgroundsPreserved": true,
+      "overlayLayers": [
+        {
+          "id": "01_bruma_urbana_alpha",
+          "src": "assets/parallax/eco_v581/guadalajara/01_bruma_urbana_alpha.png",
+          "speed": 0.15,
+          "alpha": 0.62,
+          "driftPxPerSecond": {
+            "x": 0.03,
+            "y": 0.02
+          },
+          "uniformScale": 1.0,
+          "minQuality": 0,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "5fd6a55e85a305e339d1281707321a232f5b4072b2ed8198bac70d858350f7e9",
+          "bytes": 17044
+        },
+        {
+          "id": "02_particulas_ambientales_alpha",
+          "src": "assets/parallax/eco_v581/guadalajara/02_particulas_ambientales_alpha.png",
+          "speed": 0.52,
+          "alpha": 0.52,
+          "driftPxPerSecond": {
+            "x": -0.09,
+            "y": -0.05
+          },
+          "uniformScale": 0.9,
+          "minQuality": 1,
+          "layer": "background_only",
+          "width": 768,
+          "height": 768,
+          "sha256": "4aa337fcbab2646be33cdcb8bf76b13c23649900d747858e3f1ab34d3928b334",
+          "bytes": 5174
+        }
+      ]
+    }
+  },
+  "originals_reference": {
+    "submarino": [
+      "assets/parallax/marino/00_oceano_vertical.webp",
+      "assets/parallax/marino/01_luz_volumen.webp",
+      "assets/parallax/submarino/01_profundidad.svg",
+      "assets/parallax/submarino/02_estructuras.svg",
+      "assets/parallax/marino/05_fauna_limpia.webp",
+      "assets/parallax/marino/06_arrecife_real.webp",
+      "assets/parallax/submarino/04_primer_plano.svg"
+    ],
+    "espacial": [
+      "assets/parallax/espacial/00_fondo_lejano.svg",
+      "assets/parallax/espacial/01_profundidad.svg",
+      "assets/parallax/espacial/02_estructuras.svg",
+      "assets/parallax/espacial/03_elementos.svg",
+      "assets/parallax/espacial/04_primer_plano.svg",
+      "assets/parallax/espacial/r2/panorama.webp",
+      "assets/parallax/espacial/r2/decoracion.webp"
+    ],
+    "escuela": [
+      "assets/parallax/escuela/azotea_superior/00_fondo_distante.webp",
+      "assets/parallax/escuela/azotea_superior/01_arquitectura.webp",
+      "assets/parallax/escuela/azotea_superior/02_vegetacion.webp",
+      "assets/parallax/escuela/azotea_superior/03_ambiente.webp",
+      "assets/parallax/escuela/azotea_superior/04_primer_plano.webp",
+      "assets/parallax/escuela/escuela_ruinas/00_fondo_distante.webp",
+      "assets/parallax/escuela/escuela_ruinas/01_arquitectura.webp",
+      "assets/parallax/escuela/escuela_ruinas/02_vegetacion.webp",
+      "assets/parallax/escuela/escuela_ruinas/03_ambiente.webp",
+      "assets/parallax/escuela/escuela_ruinas/04_primer_plano.webp",
+      "assets/parallax/escuela/patio_salida/00_fondo_distante.webp",
+      "assets/parallax/escuela/patio_salida/01_arquitectura.webp",
+      "assets/parallax/escuela/patio_salida/02_vegetacion.webp",
+      "assets/parallax/escuela/patio_salida/03_ambiente.webp",
+      "assets/parallax/escuela/patio_salida/04_primer_plano.webp"
+    ],
+    "guadalajara": [
+      "assets/parallax/guadalajara/azoteas/00_cielo_degradado.webp",
+      "assets/parallax/guadalajara/azoteas/01_nubes_reales.webp",
+      "assets/parallax/guadalajara/azoteas/02_arquitectura_anclada.webp",
+      "assets/parallax/guadalajara/azoteas/03_reflejos_luces.webp",
+      "assets/parallax/guadalajara/azoteas/04_bruma_frontal.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/00_cielo_degradado.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/03_reflejos_luces.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp",
+      "assets/parallax/guadalajara/mercado_parque/00_cielo_degradado.webp",
+      "assets/parallax/guadalajara/mercado_parque/01_nubes_reales.webp",
+      "assets/parallax/guadalajara/mercado_parque/02_arquitectura_anclada.webp",
+      "assets/parallax/guadalajara/mercado_parque/03_reflejos_luces.webp",
+      "assets/parallax/guadalajara/mercado_parque/04_bruma_frontal.webp"
+    ]
+  },
+  "install": {
+    "runtime_module": "js/app/parallax_eco_v581.js",
+    "hook": "render.js: after drawScenes(G,V), before drawNeighborhood()",
+    "service_worker": "optional installer adds overlay PNGs to CACHE and bumps cache ID",
+    "preview": "tools/preview_parallax_eco_v581.html"
+  }
+}

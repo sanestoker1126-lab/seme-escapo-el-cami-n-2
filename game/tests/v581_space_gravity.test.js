@@ -48,5 +48,5 @@ test('V58.1 espacio: fuera del volumen orbital se conserva gravedad terrestre y 
   assert.equal(PO.vy, PE.vy, 'el perfil espacial termina al salir del volumen de escena');
 
   const sw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'sw.js'), 'utf8');
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
 });

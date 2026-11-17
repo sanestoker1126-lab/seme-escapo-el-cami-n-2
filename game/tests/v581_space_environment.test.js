@@ -22,5 +22,5 @@ test('V58.1 espacial: las plataformas conservan collider existente y reciben asp
   assert.match(render, /p\.theme === 'espacial'[\s\S]*drawSpaceMeteoritePlatform\(p/);
   assert.match(render, /decoracion\.webp/);
   assert.match(render, /p\.x1[\s\S]*p\.x2[\s\S]*p\.y/);
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
 });

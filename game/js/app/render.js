@@ -2714,7 +2714,7 @@
     ctx.setTransform(k, 0, 0, k, ox, oy);
     const V = { x1: G.cam.x - 40, x2: G.cam.x + v.w + 40, y1: G.cam.y - 60, y2: G.cam.y + v.h + 60 };
     const W = G.world;
-    if (!G.room) { drawBackdrop(G, V); drawScenes(G, V); drawNeighborhood(G, V, T); drawStreet(G, V, T); drawToxiAtmosphere(G, V, T); }
+    if (!G.room) { drawBackdrop(G, V); drawScenes(G, V); if(NS.PARALLAX_REAL_V582)NS.PARALLAX_REAL_V582.draw(ctx,G,V,T); drawNeighborhood(G, V, T); drawStreet(G, V, T); drawToxiAtmosphere(G, V, T); }
     for (const r of W.rooms) drawRoomBackground(r, V);
     // A1/A2 environment art: optional, behind collision geometry and characters.
     // Never inserts platforms, pickups, hazards or enemies.

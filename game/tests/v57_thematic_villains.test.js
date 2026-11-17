@@ -153,7 +153,7 @@ test('V57: la cadena de evento y arte es consistente sin cambiar la geometría',
   assert.match(render, /f\.kind === 'piranha' \|\| f\.kind === 'shark'/);
   assert.match(render, /f\.kind === 'drone'/);
   assert.match(render, /s\.kind === 'plasma'/);
-  assert.match(read('sw.js'), /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(read('sw.js'), /camion-v58-1-phase4-parallax-real-v582-cache/);
   assert.equal(LV.SUBMARINO_MAP.width, 1976);
   assert.equal(LV.SUBMARINO_MAP.height, 5960);
   assert.equal(LV.ESPACIAL_MAP.width, 1976);

@@ -67,7 +67,7 @@ test('V56: renderer uses visible world clip and original background sequence', (
   assert.match(r, /if \(!inView\(V, sc\.x0, sc\.startY, sc\.x0 \+ sc\.drawW, sc\.endY\)\) continue/);
   assert.match(r, /ctx\.clip\(\)/);
   assert.match(r, /function drawToxiThreat\(/);
-  assert.match(r, /drawBackdrop\(G, V\); drawScenes\(G, V\); drawNeighborhood\(G, V, T\); drawStreet\(G, V, T\); drawToxiAtmosphere\(G, V, T\)/);
+  assert.match(r, /drawBackdrop\(G, V\); drawScenes\(G, V\); if\(NS\.PARALLAX_REAL_V582\)NS\.PARALLAX_REAL_V582\.draw\(ctx,G,V,T\); drawNeighborhood\(G, V, T\); drawStreet\(G, V, T\); drawToxiAtmosphere\(G, V, T\)/);
   assert.match(r, /drawRealParallax\(G, V, sc, 4, 5\)/);
 });
 

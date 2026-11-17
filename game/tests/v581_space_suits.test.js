@@ -15,7 +15,7 @@ test('V58.1 espacio: Sofía conserva astronauta automático y Luna/Morita usan f
   assert.match(sw, /const SUB_FRAMES=/, 'el service worker construye la lista de sprites sellados');
   assert.match(sw, /assets\/companions\/sub\/\$\{cat\}_idle_sub_0/, 'la lista incorpora sprites fuente de Luna y Morita');
   assert.match(sw, /\.\.\.SUB_FRAMES/, 'el service worker precarga los sprites sellados sin conexión');
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/, 'la PWA renueva renderer, trajes, arma y cinemática');
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/, 'la PWA renueva renderer, trajes, arma y cinemática');
 
   for (const cat of ['luna', 'morita']) {
     for (let i = 1; i <= 6; i++) {

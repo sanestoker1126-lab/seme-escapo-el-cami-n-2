@@ -61,7 +61,7 @@ test('V57.5: flashback extendido de 7 escenas, offline and game pauses',()=>{
  assert.ok(intro.includes('SALTAR CINEMÁTICA'));
  assert.ok(intro.includes('assets/cinematic/storyboard_marino/'));
  assert.ok(html.includes('marine_intro.js?v=58.1'));
- assert.ok(sw.includes('camion-v58-1-phase4-visual-fx-cache'));
+ assert.ok(sw.includes('camion-v58-1-phase4-parallax-real-v582-cache'));
  for(let i=1;i<=5;i++){
   const f=`assets/cinematic/storyboard_marino/escena_0${i}.webp`;
   assert.ok(fs.existsSync(path.join(ROOT,f)));assert.ok(sw.includes(f));

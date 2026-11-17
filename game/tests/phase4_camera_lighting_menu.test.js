@@ -55,6 +55,6 @@ test('Fase 4: menú de escritorio usa dos columnas y móvil conserva una columna
 
 test('Fase 4: PWA renueva el caché y precarga el renderer actualizado', () => {
   const sw = read('sw.js');
-  assert.match(sw, /const CACHE='camion-v58-1-phase4-visual-fx-cache'/);
+  assert.match(sw, /const CACHE='camion-v58-1-phase4-parallax-real-v582-cache'/);
   assert.match(sw, /js\/app\/render\.js\?v=58\.1/);
 });

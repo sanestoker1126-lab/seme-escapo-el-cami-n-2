@@ -53,6 +53,6 @@ test('R2: space background and 7-layer marine parallax, new PWA cache',()=>{
  assert.match(r,/function drawMarineParallax\(/);
  assert.match(r,/MARINE_SPEED = Object\.freeze\(\[0\.05/);
  assert.ok(h.includes('marine_atlases.js?v=58.1'));
- assert.ok(sw.includes('camion-v58-1-phase4-visual-fx-cache'));
+ assert.ok(sw.includes('camion-v58-1-phase4-parallax-real-v582-cache'));
  assert.ok(sw.includes('...MARINE_ATLAS_FILES,...SPACE_R2_FILES'));
 });

@@ -62,5 +62,5 @@ test('Android Canvas: la calidad baja reduce decoración pero preserva telegraph
 
 test('Android Canvas: la caché PWA se invalida para descargar el renderer actualizado', () => {
   const sw = read('sw.js');
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
 });

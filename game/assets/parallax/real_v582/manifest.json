@@ -1,0 +1,373 @@
+{
+  "schema": "seme-fue-el-camion/photophysical-source-preserving-parallax/v582",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "section": "02_parallax_realistic_overlays",
+  "provenance": {
+    "original_source_backgrounds": "untouched in target repo; referenced only",
+    "new_art": "16 procedurally synthesized transparent optical/environment overlays; not source photographs",
+    "generated_character_sprites": 0
+  },
+  "policy": {
+    "preserve_original_pixels": true,
+    "preserve_original_paths": true,
+    "no_new_colliders": true,
+    "no_gameplay_mutations": true,
+    "scale_x_equals_scale_y": true,
+    "separate_planes": true
+  },
+  "worldDimensions": "derived at runtime from G.world.bounds and scenes; no hardcoded level size",
+  "format": "PNG RGBA8888",
+  "render_order": "after drawScenes, before interactive geometry and characters",
+  "originals_reference": {
+    "submarino": [
+      "assets/parallax/marino/00_oceano_vertical.webp",
+      "assets/parallax/marino/01_luz_volumen.webp",
+      "assets/parallax/submarino/01_profundidad.svg",
+      "assets/parallax/submarino/02_estructuras.svg",
+      "assets/parallax/marino/05_fauna_limpia.webp",
+      "assets/parallax/marino/06_arrecife_real.webp",
+      "assets/parallax/submarino/04_primer_plano.svg"
+    ],
+    "espacial": [
+      "assets/parallax/espacial/00_fondo_lejano.svg",
+      "assets/parallax/espacial/01_profundidad.svg",
+      "assets/parallax/espacial/02_estructuras.svg",
+      "assets/parallax/espacial/03_elementos.svg",
+      "assets/parallax/espacial/04_primer_plano.svg",
+      "assets/parallax/espacial/r2/panorama.webp",
+      "assets/parallax/espacial/r2/decoracion.webp"
+    ],
+    "escuela": [
+      "assets/parallax/escuela/azotea_superior/00_fondo_distante.webp",
+      "assets/parallax/escuela/azotea_superior/01_arquitectura.webp",
+      "assets/parallax/escuela/azotea_superior/02_vegetacion.webp",
+      "assets/parallax/escuela/azotea_superior/03_ambiente.webp",
+      "assets/parallax/escuela/azotea_superior/04_primer_plano.webp",
+      "assets/parallax/escuela/escuela_ruinas/00_fondo_distante.webp",
+      "assets/parallax/escuela/escuela_ruinas/01_arquitectura.webp",
+      "assets/parallax/escuela/escuela_ruinas/02_vegetacion.webp",
+      "assets/parallax/escuela/escuela_ruinas/03_ambiente.webp",
+      "assets/parallax/escuela/escuela_ruinas/04_primer_plano.webp",
+      "assets/parallax/escuela/patio_salida/00_fondo_distante.webp",
+      "assets/parallax/escuela/patio_salida/01_arquitectura.webp",
+      "assets/parallax/escuela/patio_salida/02_vegetacion.webp",
+      "assets/parallax/escuela/patio_salida/03_ambiente.webp",
+      "assets/parallax/escuela/patio_salida/04_primer_plano.webp"
+    ],
+    "guadalajara": [
+      "assets/parallax/guadalajara/azoteas/00_cielo_degradado.webp",
+      "assets/parallax/guadalajara/azoteas/01_nubes_reales.webp",
+      "assets/parallax/guadalajara/azoteas/02_arquitectura_anclada.webp",
+      "assets/parallax/guadalajara/azoteas/03_reflejos_luces.webp",
+      "assets/parallax/guadalajara/azoteas/04_bruma_frontal.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/00_cielo_degradado.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/03_reflejos_luces.webp",
+      "assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp",
+      "assets/parallax/guadalajara/mercado_parque/00_cielo_degradado.webp",
+      "assets/parallax/guadalajara/mercado_parque/01_nubes_reales.webp",
+      "assets/parallax/guadalajara/mercado_parque/02_arquitectura_anclada.webp",
+      "assets/parallax/guadalajara/mercado_parque/03_reflejos_luces.webp",
+      "assets/parallax/guadalajara/mercado_parque/04_bruma_frontal.webp"
+    ]
+  },
+  "worlds": {
+    "submarino": {
+      "overlayLayers": [
+        {
+          "id": "01_caudales_luz_fisica",
+          "src": "assets/parallax/real_v582/submarino/01_caudales_luz_fisica.png",
+          "speed": 0.045,
+          "alpha": 0.66,
+          "driftPxPerSecond": {
+            "x": 0,
+            "y": -0.016
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "180c8e880038f82edcf1bdfa92232aafeb72e2777f85d60f2443b67f1e74b3c7",
+          "bytes": 399391
+        },
+        {
+          "id": "02_microplancton_sedimento",
+          "src": "assets/parallax/real_v582/submarino/02_microplancton_sedimento.png",
+          "speed": 0.18,
+          "alpha": 0.68,
+          "driftPxPerSecond": {
+            "x": 0.14,
+            "y": -0.32
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "e0de7b8466d2a9d0044112f9b08cc63be95e49ba7bdd59e013311a4c2372df96",
+          "bytes": 70865
+        },
+        {
+          "id": "03_burbujas_refraccion",
+          "src": "assets/parallax/real_v582/submarino/03_burbujas_refraccion.png",
+          "speed": 0.4,
+          "alpha": 0.75,
+          "driftPxPerSecond": {
+            "x": 0.06,
+            "y": -2.6
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "68e4881ea6b43d9d4f3ac22e478a16e0b2d217a941d7812cb5ba29344f883ea0",
+          "bytes": 74248
+        },
+        {
+          "id": "04_relieve_arrecife_bordes",
+          "src": "assets/parallax/real_v582/submarino/04_relieve_arrecife_bordes.png",
+          "speed": 0.72,
+          "alpha": 0.5,
+          "driftPxPerSecond": {
+            "x": 0.015,
+            "y": 0.003
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "ae7b815a39f863bb5f5e50e8151649346d368a38d423b8ab155761c7bf47d930",
+          "bytes": 300765
+        }
+      ],
+      "originalBackgroundsPreserved": true,
+      "floorCollision": "not supplied"
+    },
+    "espacial": {
+      "overlayLayers": [
+        {
+          "id": "01_nebulosa_volumetrica",
+          "src": "assets/parallax/real_v582/espacial/01_nebulosa_volumetrica.png",
+          "speed": 0.035,
+          "alpha": 0.61,
+          "driftPxPerSecond": {
+            "x": -0.006,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "86c5d623fefede935bddd77a84d1a4e798d016d2d1f8581e8f9d97203d3199f9",
+          "bytes": 534391
+        },
+        {
+          "id": "02_campo_estelar_optico",
+          "src": "assets/parallax/real_v582/espacial/02_campo_estelar_optico.png",
+          "speed": 0.13,
+          "alpha": 0.84,
+          "driftPxPerSecond": {
+            "x": -0.005,
+            "y": 0.003
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "8fa292af662ab13adcd9874d223837baeb51051560695b168f1fb876e3a93329",
+          "bytes": 312814
+        },
+        {
+          "id": "03_meteoroides_relieve",
+          "src": "assets/parallax/real_v582/espacial/03_meteoroides_relieve.png",
+          "speed": 0.53,
+          "alpha": 0.66,
+          "driftPxPerSecond": {
+            "x": -0.05,
+            "y": 0.026
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "1601cefced1e4fa1a8af05953e0163e6ea4837c0ef1d2bcbcb2962c0f5fe4421",
+          "bytes": 19475
+        },
+        {
+          "id": "04_gas_y_polvo_fino",
+          "src": "assets/parallax/real_v582/espacial/04_gas_y_polvo_fino.png",
+          "speed": 0.29,
+          "alpha": 0.33,
+          "driftPxPerSecond": {
+            "x": 0.006,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "d113741f2b965e140243cd7cfa4706dd845cb1f302a8b04825462e20529c3f9a",
+          "bytes": 323287
+        }
+      ],
+      "originalBackgroundsPreserved": true,
+      "floorCollision": "not supplied"
+    },
+    "escuela": {
+      "overlayLayers": [
+        {
+          "id": "01_sol_difuso_arquitectonico",
+          "src": "assets/parallax/real_v582/escuela/01_sol_difuso_arquitectonico.png",
+          "speed": 0.09,
+          "alpha": 0.57,
+          "driftPxPerSecond": {
+            "x": 0,
+            "y": -0.001
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "6a4321fecae64b02f94b11283e4f4dc20646bfe15e2a19e0b8e14f256c2f5b00",
+          "bytes": 201477
+        },
+        {
+          "id": "02_polvo_aire_solar",
+          "src": "assets/parallax/real_v582/escuela/02_polvo_aire_solar.png",
+          "speed": 0.41,
+          "alpha": 0.55,
+          "driftPxPerSecond": {
+            "x": 0.016,
+            "y": -0.16
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "7b49c9e8b704bcabf1221034fb404ab4cf770987a1775c61292335db0b6537f3",
+          "bytes": 51159
+        },
+        {
+          "id": "03_follaje_desenfocado",
+          "src": "assets/parallax/real_v582/escuela/03_follaje_desenfocado.png",
+          "speed": 0.62,
+          "alpha": 0.32,
+          "driftPxPerSecond": {
+            "x": 0,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "bbfc4345396810f7d6427d3d8d293949252022ef151346d335212f2bad59563e",
+          "bytes": 132243
+        },
+        {
+          "id": "04_humedad_ambiental",
+          "src": "assets/parallax/real_v582/escuela/04_humedad_ambiental.png",
+          "speed": 0.2,
+          "alpha": 0.34,
+          "driftPxPerSecond": {
+            "x": 0,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "6fde071d7d3dcee0431f463e5ad2576ff38cc37a4a0139d01f7394cb63324aec",
+          "bytes": 261905
+        }
+      ],
+      "originalBackgroundsPreserved": true,
+      "floorCollision": "not supplied"
+    },
+    "guadalajara": {
+      "overlayLayers": [
+        {
+          "id": "01_neblina_calida_urbana",
+          "src": "assets/parallax/real_v582/guadalajara/01_neblina_calida_urbana.png",
+          "speed": 0.06,
+          "alpha": 0.5,
+          "driftPxPerSecond": {
+            "x": 0.001,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "155f3c73acf1c98d104daa864b357a07f1833615754c285d82bc6ac314a228c4",
+          "bytes": 245710
+        },
+        {
+          "id": "02_bokeh_callejero",
+          "src": "assets/parallax/real_v582/guadalajara/02_bokeh_callejero.png",
+          "speed": 0.32,
+          "alpha": 0.54,
+          "driftPxPerSecond": {
+            "x": -0.014,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "e89f89e5b1756031ab8f3ae80855c6ad4d99dc1be46d421c61ee02831d0fff66",
+          "bytes": 515974
+        },
+        {
+          "id": "03_sombra_arbolado_urbano",
+          "src": "assets/parallax/real_v582/guadalajara/03_sombra_arbolado_urbano.png",
+          "speed": 0.55,
+          "alpha": 0.37,
+          "driftPxPerSecond": {
+            "x": 0,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 1,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "e55c4a24d8d2e4020ca7a3765144f0cb4b7285bcd8bcaa6b4f6ab7f32c6f5187",
+          "bytes": 131645
+        },
+        {
+          "id": "04_polvo_y_calor_ambiental",
+          "src": "assets/parallax/real_v582/guadalajara/04_polvo_y_calor_ambiental.png",
+          "speed": 0.13,
+          "alpha": 0.32,
+          "driftPxPerSecond": {
+            "x": 0.001,
+            "y": 0
+          },
+          "uniformScale": 1,
+          "minQuality": 0,
+          "renderPass": "background_only",
+          "width": 1536,
+          "height": 864,
+          "sha256": "6d27b7556bcf221ddf455e076a2b84f374d4468926441e1aaa57f456f42f289a",
+          "bytes": 359246
+        }
+      ],
+      "originalBackgroundsPreserved": true,
+      "floorCollision": "not supplied"
+    }
+  }
+}

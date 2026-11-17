@@ -41,7 +41,7 @@ test('Fase 3: partículas marinas deterministas, limitadas por calidad y dentro 
 
 test('Fase 3: el service worker invalida caché previa y precarga el renderer', () => {
   const sw = source('sw.js');
-  assert.match(sw, /const CACHE='camion-v58-1-phase4-visual-fx-cache'/);
+  assert.match(sw, /const CACHE='camion-v58-1-phase4-parallax-real-v582-cache'/);
   assert.match(sw, /js\/app\/render\.js\?v=58\.1/);
 });
 

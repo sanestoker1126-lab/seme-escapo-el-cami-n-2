@@ -41,7 +41,7 @@ test('integración marina: helper precargado, fondo ligado al paseo, trajes orig
   const css = read('css/marine_intro.css');
   const render = read('js/app/render.js');
   assert.ok(html.indexOf('marine_motion.js') < html.indexOf('marine_intro.js'));
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
   assert.match(sw, /js\/app\/marine_motion\.js\?v=58\.1/);
   assert.match(intro, /MOTION\.frameAtPhase/);
   assert.match(intro, /MOTION\.backgroundPan\(offset\)/);

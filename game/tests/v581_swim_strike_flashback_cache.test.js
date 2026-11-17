@@ -47,7 +47,7 @@ test('Estoker y Sofía comparten layout con separación y ancla de suelo',()=>{
 });
 test('Caché V58.1 no almacena respuestas HTTP fallidas; render restablece estado del canvas',()=>{
  const sw=fs.readFileSync(path.join(ROOT,'sw.js'),'utf8');
-	 assert.match(sw,/camion-v58-1-phase4-visual-fx-cache/);assert.match(sw,/res\.ok && res\.type==='basic'/);
+	 assert.match(sw,/camion-v58-1-phase4-parallax-real-v582-cache/);assert.match(sw,/res\.ok && res\.type==='basic'/);
  const render=fs.readFileSync(path.join(ROOT,'js/app/render.js'),'utf8');
  assert.match(render,/ctx\.globalCompositeOperation='source-over'/);
  assert.match(render,/ctx\.filter='none'/);

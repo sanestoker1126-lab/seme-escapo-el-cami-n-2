@@ -83,7 +83,7 @@ test('V58.1 espacio: HTML y PWA cargan el módulo y estilos de cinemática en ca
   const sw = read('sw.js');
   assert.match(html, /css\/space_intro\.css\?v=58\.1/);
   assert.match(html, /js\/app\/space_intro\.js\?v=58\.1/);
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
   assert.match(sw, /css\/space_intro\.css\?v=58\.1/);
   assert.match(sw, /js\/app\/space_intro\.js\?v=58\.1/);
 });

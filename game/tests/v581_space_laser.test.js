@@ -92,5 +92,5 @@ test('V58.1: teclado/táctil y HUD anuncian LÁSER en espacio y mantienen la pat
   assert.match(html, /LÁSER EN ESPACIO/);
   assert.match(render, /function drawLaserPistol\(/);
   assert.match(render, /G\.laserShots/);
-  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
 });
