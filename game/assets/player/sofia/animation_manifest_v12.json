@@ -366,7 +366,7 @@
       "image": "assets/player/sofia/sofia_submarina_complementaria.png",
       "metadata": "assets/player/sofia/sofia_submarina_complementaria.json",
       "metadata_image_field_obsolete": "atlas/sofia_submarina_complementaria.png",
-      "metadata_image_path_mismatch": true,
+      "metadata_image_path_mismatch": false,
       "frame_count": 103,
       "states": {
         "idle": {
@@ -695,7 +695,8 @@
       },
       "runtime_enabled": false,
       "status": "PROVISIONAL_DERIVED_TRANSFORMS_VISUAL_QA_PENDING",
-      "note": "Individual per-frame PNG exports referenced by sidecar do not exist. Atlas is present; derived motion is not verified."
+      "note": "Corrected sidecar.image to the real PNG filename. Preview-only transformed frames remain provisional; individual PNG exports are absent.",
+      "metadata_image_field_current": "sofia_submarina_complementaria.png"
     }
   },
   "qa": {
