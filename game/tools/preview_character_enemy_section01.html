@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA · Personajes y enemigos · Sección 01</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif}body{margin:0;background:#101722;color:#e8edf6;padding:16px}
+main{max-width:820px;margin:auto}header{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+select,button{font:inherit;padding:7px;border:1px solid #8491ab;border-radius:5px;background:#202a3e;color:white}
+canvas{width:100%;max-width:760px;aspect-ratio:760/390;border:1px solid #526179;background:#131b29;display:block;margin-top:12px}
+#status{font:12px ui-monospace,monospace;white-space:pre-wrap}p{font-size:13px;color:#b6c7db}
+</style></head><body><main><h1>QA técnico · Sección 01</h1><p>Reproduce únicamente PNG del repositorio: no hay sprites generados ni sustituidos.</p>
+<header><label>Fuente <select id="source"></select></label><label>Acción <select id="action"></select></label><button id="toggle">Pausar</button><button id="next">Frame +1</button></header>
+<canvas id="view" width="760" height="390"></canvas><pre id="status">Cargando fuentes originales...</pre>
+<p>El punto amarillo indica el pivote de referencia. Esta vista no valida hitboxes ni daño: esas pruebas corresponden al juego.</p></main>
+<script src="../js/app/marine_atlases.js"></script><script src="../js/app/estoker_anim_data.js"></script>
+<script>
+'use strict';
+const keys=['piranha','shark','octopus','poseidon','sofia_original','sofia_rosa','sofia_uniforme','estoker','luna','morita'];
+const sel=document.querySelector('#source'),act=document.querySelector('#action'),view=document.querySelector('#view'),ctx=view.getContext('2d');
+const status=document.querySelector('#status');
+for(const k of keys){const o=document.createElement('option');o.value=k;o.textContent=k;sel.append(o);}
+let playing=true,manualFrame=0,clock0=performance.now(),cache=new Map(),lastError='';
+function img(rel){if(!cache.has(rel)){const im=new Image();im.src='../'+rel;im.onerror=()=>lastError='No se pudo cargar: '+rel;cache.set(rel,im);}return cache.get(rel);}
+function marinePack(){return window.CAMION.MARINE_ATLASES[sel.value];}
+function actions(){const k=sel.value;if(marinePack())return Object.keys(marinePack().animations);
+ if(k.startsWith('sofia_'))return ['walk','idle'];if(k==='estoker')return Object.keys(window.CAMION.ESTOKER_ANIMS);return ['idle','walk'];}
+function refresh(){act.replaceChildren();for(const a of actions()){const o=document.createElement('option');o.textContent=o.value=a;act.append(o);}reset();}
+function reset(){manualFrame=0;clock0=performance.now();}
+sel.addEventListener('change',refresh);act.addEventListener('change',reset);
+document.querySelector('#toggle').onclick=e=>{playing=!playing;e.target.textContent=playing?'Pausar':'Reproducir';clock0=performance.now();};
+document.querySelector('#next').onclick=()=>{playing=false;document.querySelector('#toggle').textContent='Reproducir';manualFrame++;};
+function checker(){ctx.fillStyle='#111827';ctx.fillRect(0,0,760,390);
+ for(let y=0;y<390;y+=24)for(let x=0;x<760;x+=24)if(((x+y)/24)%2===0){ctx.fillStyle='#192435';ctx.fillRect(x,y,24,24);}
+ ctx.strokeStyle='#6586b4';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(380,0);ctx.lineTo(380,390);ctx.moveTo(0,295);ctx.lineTo(760,295);ctx.stroke();}
+function render(now){requestAnimationFrame(render);checker();lastError='';
+ const k=sel.value,a=act.value,elapsed=Math.max(0,now-clock0);
+ let src=null,rect=null,px=.5,py=1,ms=180,frameCount=0,i=0,cw=0,ch=0,loop=true;
+ const pack=marinePack();
+ if(pack){const seq=pack.animations[a];if(!seq)return;frameCount=seq.ids.length;ms=seq.ms;loop=seq.loop;
+ i=playing?Math.floor(elapsed/ms):manualFrame;i=loop?i%frameCount:Math.min(frameCount-1,i);
+ const j=seq.ids[i];rect=pack.frames[j];src=pack.src;[cw,ch]=pack.cell;px=.5;py=.5;
+ }else if(k.startsWith('sofia_')){const variant=k.slice(6),folder='assets/player/sofia_arrival/'+variant+'/';
+ frameCount=a==='idle'?1:6;ms=180;i=playing?Math.floor(elapsed/ms)%frameCount:manualFrame%frameCount;
+ src=folder+(a==='idle'?'idle_0.png':'walk_'+i+'.png');cw=ch=320;py=.9625;
+ }else if(k==='estoker'){const seq=window.CAMION.ESTOKER_ANIMS[a];if(!seq)return;
+ frameCount=seq.frames.length;ms=seq.frames[0].ms;loop=seq.loop;i=playing?Math.floor(elapsed/ms):manualFrame;
+ i=loop?i%frameCount:Math.min(frameCount-1,i);src=seq.frames[i].src;
+ }else{const cat=k, count=a==='idle'?6:4;frameCount=count;ms=a==='idle'?200:140;
+ i=playing?Math.floor(elapsed/ms)%count:manualFrame%count;
+ src='assets/companions/'+cat+'_'+a+'_v38_0'+(i+1)+'.png';}
+ if(!src)return;const im=img(src);if(im.complete&&im.naturalWidth){
+ const w=cw||im.naturalWidth,h=ch||im.naturalHeight,scale=Math.min(1.45,300/w,245/h);
+ const x=380,y=295;
+ if(rect){const [sx,sy,sw,sh,ox,oy]=rect;ctx.drawImage(im,sx,sy,sw,sh,x+(ox-w*px)*scale,y+(oy-h*py)*scale,sw*scale,sh*scale);}
+ else {ctx.drawImage(im,x-w*px*scale,y-h*py*scale,w*scale,h*scale);}
+ ctx.fillStyle='#ffe27b';ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill();
+ }
+ status.textContent='Fuente: '+src+'\nEstado: '+a+' · frame '+(i+1)+'/'+frameCount+' · '+ms+'ms/frame\n'+(lastError||'Imagen original: sin cambios');
+}
+refresh();requestAnimationFrame(render);
+</script></body></html>

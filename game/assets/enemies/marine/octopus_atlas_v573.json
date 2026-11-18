@@ -1,0 +1,525 @@
+{
+  "source_atlas": "octopus_atlas.png",
+  "source_metadata": "octopus_atlas.json",
+  "image": "octopus_atlas_v573.png",
+  "format": "RGBA8888",
+  "frames_count": 37,
+  "cell": {
+    "w": 338,
+    "h": 212
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "padding": 8,
+  "direction": "right",
+  "frames": {
+    "pulpo_atlas_000": {
+      "rect": [
+        48,
+        17,
+        242,
+        178,
+        48,
+        17
+      ],
+      "state": "idle"
+    },
+    "pulpo_atlas_001": {
+      "rect": [
+        392,
+        17,
+        229,
+        177,
+        54,
+        17
+      ],
+      "state": "idle"
+    },
+    "pulpo_atlas_002": {
+      "rect": [
+        732,
+        20,
+        226,
+        171,
+        56,
+        20
+      ],
+      "state": "idle"
+    },
+    "pulpo_atlas_003": {
+      "rect": [
+        1063,
+        20,
+        240,
+        172,
+        49,
+        20
+      ],
+      "state": "idle"
+    },
+    "pulpo_atlas_004": {
+      "rect": [
+        1398,
+        20,
+        245,
+        172,
+        46,
+        20
+      ],
+      "state": "idle"
+    },
+    "pulpo_atlas_005": {
+      "rect": [
+        1736,
+        20,
+        245,
+        172,
+        46,
+        20
+      ],
+      "state": "idle"
+    },
+    "pulpo_atlas_006": {
+      "rect": [
+        63,
+        255,
+        212,
+        125,
+        63,
+        43
+      ],
+      "state": "swim"
+    },
+    "pulpo_atlas_007": {
+      "rect": [
+        394,
+        256,
+        225,
+        123,
+        56,
+        44
+      ],
+      "state": "swim"
+    },
+    "pulpo_atlas_008": {
+      "rect": [
+        731,
+        257,
+        228,
+        122,
+        55,
+        45
+      ],
+      "state": "swim"
+    },
+    "pulpo_atlas_009": {
+      "rect": [
+        1062,
+        253,
+        242,
+        129,
+        48,
+        41
+      ],
+      "state": "swim"
+    },
+    "pulpo_atlas_010": {
+      "rect": [
+        1400,
+        253,
+        242,
+        129,
+        48,
+        41
+      ],
+      "state": "swim"
+    },
+    "pulpo_atlas_011": {
+      "rect": [
+        1734,
+        255,
+        250,
+        125,
+        44,
+        43
+      ],
+      "state": "swim"
+    },
+    "pulpo_atlas_012": {
+      "rect": [
+        57,
+        454,
+        224,
+        151,
+        57,
+        30
+      ],
+      "state": "bite"
+    },
+    "pulpo_atlas_013": {
+      "rect": [
+        390,
+        451,
+        233,
+        157,
+        52,
+        27
+      ],
+      "state": "bite"
+    },
+    "pulpo_atlas_014": {
+      "rect": [
+        721,
+        449,
+        247,
+        161,
+        45,
+        25
+      ],
+      "state": "bite"
+    },
+    "pulpo_atlas_015": {
+      "rect": [
+        1059,
+        449,
+        248,
+        162,
+        45,
+        25
+      ],
+      "state": "bite"
+    },
+    "pulpo_atlas_016": {
+      "rect": [
+        1383,
+        450,
+        275,
+        159,
+        31,
+        26
+      ],
+      "state": "bite"
+    },
+    "pulpo_atlas_017": {
+      "rect": [
+        1736,
+        458,
+        245,
+        144,
+        46,
+        34
+      ],
+      "state": "bite"
+    },
+    "pulpo_atlas_018": {
+      "rect": [
+        61,
+        676,
+        215,
+        131,
+        61,
+        40
+      ],
+      "state": "tentacle_slam"
+    },
+    "pulpo_atlas_019": {
+      "rect": [
+        398,
+        664,
+        218,
+        155,
+        60,
+        28
+      ],
+      "state": "tentacle_slam"
+    },
+    "pulpo_atlas_020": {
+      "rect": [
+        716,
+        664,
+        257,
+        155,
+        40,
+        28
+      ],
+      "state": "tentacle_slam"
+    },
+    "pulpo_atlas_021": {
+      "rect": [
+        1048,
+        672,
+        269,
+        139,
+        34,
+        36
+      ],
+      "state": "tentacle_slam"
+    },
+    "pulpo_atlas_022": {
+      "rect": [
+        1383,
+        680,
+        275,
+        124,
+        31,
+        44
+      ],
+      "state": "tentacle_slam"
+    },
+    "pulpo_atlas_023": {
+      "rect": [
+        1724,
+        681,
+        270,
+        122,
+        34,
+        45
+      ],
+      "state": "tentacle_slam"
+    },
+    "pulpo_atlas_024": {
+      "rect": [
+        70,
+        879,
+        197,
+        150,
+        70,
+        31
+      ],
+      "state": "ink_attack"
+    },
+    "pulpo_atlas_025": {
+      "rect": [
+        391,
+        880,
+        231,
+        147,
+        53,
+        32
+      ],
+      "state": "ink_attack"
+    },
+    "pulpo_atlas_026": {
+      "rect": [
+        730,
+        880,
+        229,
+        147,
+        54,
+        32
+      ],
+      "state": "ink_attack"
+    },
+    "pulpo_atlas_027": {
+      "rect": [
+        1061,
+        879,
+        244,
+        150,
+        47,
+        31
+      ],
+      "state": "ink_attack"
+    },
+    "pulpo_atlas_028": {
+      "rect": [
+        1395,
+        879,
+        251,
+        150,
+        43,
+        31
+      ],
+      "state": "ink_attack"
+    },
+    "pulpo_atlas_029": {
+      "rect": [
+        1707,
+        887,
+        304,
+        134,
+        17,
+        39
+      ],
+      "state": "ink_attack"
+    },
+    "pulpo_atlas_030": {
+      "rect": [
+        60,
+        1087,
+        218,
+        158,
+        60,
+        27
+      ],
+      "state": "hurt"
+    },
+    "pulpo_atlas_031": {
+      "rect": [
+        399,
+        1086,
+        215,
+        159,
+        61,
+        26
+      ],
+      "state": "hurt"
+    },
+    "pulpo_atlas_032": {
+      "rect": [
+        738,
+        1089,
+        213,
+        154,
+        62,
+        29
+      ],
+      "state": "hurt"
+    },
+    "pulpo_atlas_033": {
+      "rect": [
+        1076,
+        1095,
+        213,
+        141,
+        62,
+        35
+      ],
+      "state": "hurt"
+    },
+    "pulpo_atlas_034": {
+      "rect": [
+        1411,
+        1098,
+        220,
+        135,
+        59,
+        38
+      ],
+      "state": "death"
+    },
+    "pulpo_atlas_035": {
+      "rect": [
+        1751,
+        1110,
+        215,
+        111,
+        61,
+        50
+      ],
+      "state": "death"
+    },
+    "pulpo_atlas_036": {
+      "rect": [
+        56,
+        1327,
+        226,
+        102,
+        56,
+        55
+      ],
+      "state": "death"
+    }
+  },
+  "animations": {
+    "idle": {
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ms": 143,
+      "loop": true
+    },
+    "swim": {
+      "ids": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "ms": 111,
+      "loop": true
+    },
+    "bite": {
+      "ids": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "ms": 91,
+      "loop": false
+    },
+    "tentacle_slam": {
+      "ids": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "ms": 111,
+      "loop": false
+    },
+    "ink_attack": {
+      "ids": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "ms": 125,
+      "loop": false
+    },
+    "hurt": {
+      "ids": [
+        30,
+        31,
+        32,
+        33
+      ],
+      "ms": 111,
+      "loop": false
+    },
+    "death": {
+      "ids": [
+        34,
+        35,
+        36
+      ],
+      "ms": 200,
+      "loop": false
+    }
+  },
+  "qa_flags": [
+    [
+      "pulpo_atlas_013",
+      "trim touches crop edge; expected for trimmed sources"
+    ],
+    [
+      "pulpo_atlas_019",
+      "trim touches crop edge; expected for trimmed sources"
+    ],
+    [
+      "pulpo_atlas_020",
+      "trim touches crop edge; expected for trimmed sources"
+    ],
+    [
+      "pulpo_atlas_026",
+      "trim touches crop edge; expected for trimmed sources"
+    ]
+  ]
+}

@@ -1,0 +1,113 @@
+name: V58.1 source-locked PNG optimization
+
+on:
+  push:
+    branches:
+      - manus/release-candidate-v58.1-fase4
+    paths:
+      - .github/workflows/v581_lossless_sprite_optimization.yml
+  workflow_dispatch:
+
+concurrency:
+  group: v581-lossless-png-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source-locked optimizer
+        working-directory: game
+        run: node --test tests/v581_lossless_png_optimization.test.js
+      - name: Optimize source PNG files without any pixel or alpha changes
+        working-directory: game
+        run: node tools/arte/optimize_png_source_locked.js --profile runtime --apply --report optimization_result_v581.json
+      - name: Validate character and enemy manifests after optimization
+        working-directory: game
+        run: node --test tests/character_enemy_assets_section01.test.js tests/character_enemy_missing_sources_v581.test.js
+      - name: Commit only smaller lossless PNG assets to the same branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'game/assets/**/*.png'
+          if git diff --cached --quiet; then
+            echo 'All original PNGs already optimal with this lossless method.'
+            exit 0
+          fi
+          git diff --cached --name-only | while IFS= read -r file; do
+            case "$file" in game/assets/*.png|game/assets/*/*.png|game/assets/*/*/*.png|game/assets/*/*/*/*.png|game/assets/*/*/*/*/*.png) ;;
+              *) echo "Unexpected file staged: $file" >&2; exit 1 ;;
+            esac
+          done
+          git commit -m 'perf(assets): recompress original PNG IDAT losslessly'
+          # Preserve any concurrent independent commits on the target branch.
+          for attempt in 1 2 3; do
+            git fetch origin "${{ github.ref_name }}"
+            git rebase "origin/${{ github.ref_name }}"
+            if git push origin "HEAD:${{ github.ref_name }}"; then
+              exit 0
+            fi
+          done
+          echo 'Branch advanced during three safe push attempts; no force push used.' >&2
+          exit 1
+      - name: Package canonical game-ready PNG and original source frames
+        working-directory: game
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const {getTargets} = require('./tools/arte/optimize_png_source_locked');
+          const catalog = JSON.parse(fs.readFileSync('assets/production/character_enemy_section01.json','utf8'));
+          const files = new Set(getTargets(undefined,'runtime'));
+          const add = rel => { if (!fs.existsSync(rel) || !fs.statSync(rel).isFile()) throw Error('Missing source: '+rel); files.add(rel); };
+          for (const enemy of catalog.marine_enemies) {
+            add(enemy.metadata);
+            for (let i=0;i<enemy.frames;i++) add(enemy.frames_directory+enemy.source_prefix+String(i).padStart(3,'0')+'.png');
+          }
+          add(catalog.characters.sofia.underwater.metadata);
+          add(catalog.characters.sofia.underwater.attack_metadata);
+          add(catalog.characters.sofia.underwater.animation_manifest);
+          add('assets/player/sofia/sofia_submarina_complementaria.png');
+          add('assets/player/sofia/sofia_submarina_complementaria.json');
+          add(catalog.characters.sofia.arrival.source_locked_manifest);
+          for (const variant of catalog.characters.sofia.arrival.variants) add(variant.metadata);
+          const estoker = JSON.parse(fs.readFileSync('assets/cinematic/estoker_memory/manifest.json','utf8'));
+          add('assets/cinematic/estoker_memory/manifest.json');
+          for (const seq of Object.values(estoker.sequences)) add('assets/cinematic/estoker_memory/'+seq.atlas);
+          for (const mod of ['js/app/marine_atlases.js','js/app/estoker_anim_data.js','js/app/marine_intro.js','js/app/sofia_swim_override.js']) add(mod);
+          for (const rel of ['assets/production/character_enemy_section01.json','tools/arte/optimize_png_source_locked.js','tools/arte/README_OPTIMIZACION_V581.md','tools/preview_character_enemy_section01.html','tests/character_enemy_assets_section01.test.js','tests/character_enemy_missing_sources_v581.test.js','tests/v581_lossless_png_optimization.test.js']) add(rel);
+          add('optimization_result_v581.json');
+          fs.writeFileSync('v581_pack_filelist.txt', [...files].sort().join('\n')+'\n');
+          console.log(JSON.stringify({files:files.size,png:[...files].filter(x=>x.endsWith('.png')).length,metadata:[...files].filter(x=>x.endsWith('.json')).length}));
+          NODE
+          zip -q -9 ../V581_SECTION01_SOURCE_LOCKED_OPTIMIZED.zip -@ < v581_pack_filelist.txt
+          unzip -t -q ../V581_SECTION01_SOURCE_LOCKED_OPTIMIZED.zip
+          ls -lh ../V581_SECTION01_SOURCE_LOCKED_OPTIMIZED.zip
+      - name: Upload complete source-locked resource package
+        uses: actions/upload-artifact@v4
+        with:
+          name: v581-section01-optimized-real-assets
+          path: V581_SECTION01_SOURCE_LOCKED_OPTIMIZED.zip
+          if-no-files-found: error
+          compression-level: 0
+      - name: Publish detailed size and alpha integrity report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v581-png-lossless-report
+          path: game/optimization_result_v581.json
+          if-no-files-found: ignore

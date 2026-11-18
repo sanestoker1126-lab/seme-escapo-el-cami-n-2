@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "candidate": "V58.1 + expansión mundos Fase 1",
+  "logicalDepthLayers": 4,
+  "policy": "Conservar el fondo de cada escena, reutilizar arte parallax existente y no dibujar colisiones ni reemplazar sprites.",
+  "coverage": "Los planos terrestres se recortan al mapa y siguen cámara X/Y con cover proporcional; mar y espacio conservan sus renderizadores específicos.",
+  "worlds": {
+    "escuela": [
+      {"id":"fondo","speed":0.07,"role":"fondo propio por escena"},
+      {"id":"arquitectura","speed":0.12,"role":"profundidad arquitectónica"},
+      {"id":"vegetacion","speed":0.30,"role":"plano intermedio"},
+      {"id":"cercano","speed":0.55,"role":"marco cercano"}
+    ],
+    "guadalajara": [
+      {"id":"fondo","speed":0.07,"role":"fondo propio por escena"},
+      {"id":"nubes","speed":0.12,"role":"cielo y profundidad"},
+      {"id":"arquitectura","speed":0.30,"role":"hitos urbanos"},
+      {"id":"bruma","speed":0.55,"role":"atmósfera cercana"}
+    ],
+    "submarino": [
+      {"id":"oceano","speed":0.05,"sources":["assets/parallax/marino/00_oceano_vertical.webp"]},
+      {"id":"luz_y_distancia","speed":0.15,"sources":["assets/parallax/marino/01_luz_volumen.webp","assets/parallax/submarino/01_profundidad.svg"]},
+      {"id":"estructuras_y_vida","speed":0.35,"sources":["assets/parallax/submarino/02_estructuras.svg","assets/parallax/submarino/03_elementos.svg","assets/parallax/marino/05_fauna_limpia.webp","assets/parallax/marino/06_arrecife_real.webp"]},
+      {"id":"primer_plano","speed":0.80,"sources":["assets/parallax/submarino/04_primer_plano.svg"]}
+    ],
+    "espacial": [
+      {"id":"espacio_profundo","speed":0.05,"sources":["assets/parallax/espacial/r2/panorama.webp","assets/parallax/espacial/00_fondo_lejano.svg"]},
+      {"id":"distancia","speed":0.15,"sources":["assets/parallax/espacial/01_profundidad.svg"]},
+      {"id":"estructuras_y_elementos","speed":0.35,"sources":["assets/parallax/espacial/02_estructuras.svg","assets/parallax/espacial/03_elementos.svg"]},
+      {"id":"primer_plano","speed":0.80,"sources":["assets/parallax/espacial/04_primer_plano.svg","assets/parallax/espacial/r2/decoracion.webp"]}
+    ]
+  },
+  "scenes": {
+    "escuela": {"world":"escuela","group":"azotea_superior","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"arquitectura","sources":["assets/parallax/escuela/azotea_superior/01_arquitectura.webp"]},{"id":"vegetacion","sources":["assets/parallax/escuela/azotea_superior/02_vegetacion.webp"]},{"id":"cercano","sources":["assets/parallax/escuela/azotea_superior/04_primer_plano.webp"]}]},
+    "escuela_vecina": {"world":"escuela","group":"patio_salida","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"arquitectura","sources":["assets/parallax/escuela/patio_salida/01_arquitectura.webp"]},{"id":"vegetacion","sources":["assets/parallax/escuela/patio_salida/02_vegetacion.webp"]},{"id":"cercano","sources":["assets/parallax/escuela/patio_salida/04_primer_plano.webp"]}]},
+    "escuela_ruinas": {"world":"escuela","group":"escuela_ruinas","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"arquitectura","sources":["assets/parallax/escuela/escuela_ruinas/01_arquitectura.webp"]},{"id":"vegetacion","sources":["assets/parallax/escuela/escuela_ruinas/02_vegetacion.webp"]},{"id":"cercano","sources":["assets/parallax/escuela/escuela_ruinas/04_primer_plano.webp"]}]},
+    "guadalajara": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "gdl_noche": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "azoteas": {"world":"guadalajara","group":"azoteas","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/azoteas/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/azoteas/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/azoteas/04_bruma_frontal.webp"]}]},
+    "centro_historico": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "portales": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "zapopan": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "arcadas": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "metro": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "mercado_tapatio": {"world":"guadalajara","group":"mercado_parque","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/mercado_parque/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/mercado_parque/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/mercado_parque/04_bruma_frontal.webp"]}]},
+    "parque_metropolitano": {"world":"guadalajara","group":"mercado_parque","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/mercado_parque/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/mercado_parque/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/mercado_parque/04_bruma_frontal.webp"]}]},
+    "tlaquepaque": {"world":"guadalajara","group":"mercado_parque","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/mercado_parque/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/mercado_parque/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/mercado_parque/04_bruma_frontal.webp"]}]},
+    "anden_tren_ligero": {"world":"guadalajara","group":"barrios_inferiores","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/barrios_inferiores/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/barrios_inferiores/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/barrios_inferiores/04_bruma_frontal.webp"]}]},
+    "plaza_jacarandas": {"world":"guadalajara","group":"mercado_parque","layers":[{"id":"fondo","sources":["runtime:scene-background"]},{"id":"nubes","sources":["assets/parallax/guadalajara/mercado_parque/01_nubes_reales.webp"]},{"id":"arquitectura","sources":["assets/parallax/guadalajara/mercado_parque/02_arquitectura_anclada.webp"]},{"id":"bruma","sources":["assets/parallax/guadalajara/mercado_parque/04_bruma_frontal.webp"]}]},
+    "submarino": {"world":"submarino","layers":[{"id":"oceano","sources":["assets/parallax/marino/00_oceano_vertical.webp"]},{"id":"luz_y_distancia","sources":["assets/parallax/marino/01_luz_volumen.webp","assets/parallax/submarino/01_profundidad.svg"]},{"id":"estructuras_y_vida","sources":["assets/parallax/submarino/02_estructuras.svg","assets/parallax/submarino/03_elementos.svg","assets/parallax/marino/05_fauna_limpia.webp","assets/parallax/marino/06_arrecife_real.webp"]},{"id":"primer_plano","sources":["assets/parallax/submarino/04_primer_plano.svg"]}]},
+    "espacial": {"world":"espacial","layers":[{"id":"espacio_profundo","sources":["assets/parallax/espacial/r2/panorama.webp","assets/parallax/espacial/00_fondo_lejano.svg"]},{"id":"distancia","sources":["assets/parallax/espacial/01_profundidad.svg"]},{"id":"estructuras_y_elementos","sources":["assets/parallax/espacial/02_estructuras.svg","assets/parallax/espacial/03_elementos.svg"]},{"id":"primer_plano","sources":["assets/parallax/espacial/04_primer_plano.svg","assets/parallax/espacial/r2/decoracion.webp"]}]}
+  }
+}

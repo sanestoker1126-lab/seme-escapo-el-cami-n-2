@@ -1,0 +1,29 @@
+SE ME FUE EL CAMIÓN — V57.1 · ISLA Y PARALLAX MARINO
+
+Incluye el juego web completo y la primera integración del mundo submarino.
+
+CONTENIDO NUEVO
+- Panorama marino panorámico dividido en 3 tramos verticales, fondo real de 2304×3072 y seis capas adicionales.
+- Isla de inicio seca y gran zona de agua hasta la salida inferior.
+- Introducción de Sofía caminando confundida + flashback de su papá Estoker.
+- Los peligros y objetivos del nivel se explican en 5 escenas; se pueden saltar.
+- El motor se pausa durante la secuencia y continúa al cerrar.
+- El retrato de Estoker es provisional. Poseidón como jefe y corrientes físicas están PENDIENTES.
+
+CÓMO EJECUTAR
+Desde la carpeta que contiene este archivo:
+  python3 -m http.server 8000
+Abre: http://localhost:8000/Se_Me_Fue_El_Camion.html
+Elige MISIÓN 3 · EL SUBMARINO (si está bloqueada, el progreso normal o modo práctica).
+Mantén CINEMÁTICAS activadas en OPCIONES.
+
+Requiere un servidor HTTP para el service worker; abrir por file:// no es compatible.
+Es un juego Web/PWA, NO contiene un APK de Android.
+
+PRUEBAS
+  node --test tests/v571_marine_phase1.test.js
+  node --test --test-concurrency=2 tests/*.test.js
+La suite enfocada (sin world.test.js) pasó 107/107.
+La prueba pesada de alcance global world.test.js no terminó dentro del tiempo disponible.
+
+DETALLES: docs/MARINO_ISLA_FLASHBACK_FASE1.md

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1300" viewBox="0 0 1920 2600" preserveAspectRatio="xMidYMid meet">
+<title>Parallax espacial — primer plano lateral despejado</title>
+<defs>
+  <linearGradient id="rockL" x1="0" y1="0" x2=".9" y2="1">
+    <stop stop-color="#777ba7"/><stop offset=".46" stop-color="#464b80"/><stop offset="1" stop-color="#20274f"/>
+  </linearGradient>
+  <linearGradient id="crystal" x1="0" y1="0" x2=".7" y2="1">
+    <stop stop-color="#c7f8ff"/><stop offset=".44" stop-color="#53c9e9"/><stop offset="1" stop-color="#4654b9"/>
+  </linearGradient>
+  <radialGradient id="edgeGlow"><stop stop-color="#7699da" stop-opacity=".22"/><stop offset="1" stop-color="#435193" stop-opacity="0"/></radialGradient>
+</defs>
+<!-- Siluetas contenidas en los márgenes: el corredor central permanece vacío. -->
+<ellipse cx="105" cy="660" rx="190" ry="360" fill="url(#edgeGlow)"/>
+<ellipse cx="1815" cy="1900" rx="190" ry="390" fill="url(#edgeGlow)"/>
+<path d="M-45 80 L170 18 L255 112 L204 205 L268 300 L128 356 L-24 287Z" fill="url(#rockL)" opacity=".46" stroke="#9ca8d0" stroke-opacity=".24" stroke-width="5"/>
+<path d="M1960 440 L1760 360 L1677 452 L1718 555 L1642 640 L1805 702 L1965 620Z" fill="url(#rockL)" opacity=".42" stroke="#9ca8d0" stroke-opacity=".22" stroke-width="5"/>
+<path d="M-58 1180 L112 1124 L221 1195 L199 1302 L264 1394 L103 1458 L-35 1382Z" fill="url(#rockL)" opacity=".34" stroke="#9ca8d0" stroke-opacity=".2" stroke-width="5"/>
+<path d="M1985 1660 L1795 1592 L1695 1684 L1737 1785 L1660 1874 L1820 1934 L1980 1850Z" fill="url(#rockL)" opacity=".36" stroke="#9ca8d0" stroke-opacity=".2" stroke-width="5"/>
+<path d="M-42 2240 L128 2180 L238 2253 L212 2360 L278 2450 L112 2520 L-28 2440Z" fill="url(#rockL)" opacity=".38" stroke="#9ca8d0" stroke-opacity=".2" stroke-width="5"/>
+<path d="M1970 2260 L1798 2190 L1690 2270 L1725 2378 L1658 2470 L1820 2530 L1980 2450Z" fill="url(#rockL)" opacity=".34" stroke="#9ca8d0" stroke-opacity=".2" stroke-width="5"/>
+<!-- Cristales pequeños anclados al borde, sin invadir la zona de juego. -->
+<g fill="url(#crystal)" stroke="#b8f5ff" stroke-opacity=".55" stroke-width="3" opacity=".5">
+  <path d="M112 388 L146 292 L174 388Z"/><path d="M166 398 L196 330 L220 398Z"/>
+  <path d="M1742 752 L1770 652 L1800 752Z"/><path d="M1698 770 L1720 706 L1742 770Z"/>
+  <path d="M120 1512 L151 1418 L180 1512Z"/><path d="M1760 1985 L1788 1897 L1816 1985Z"/>
+  <path d="M176 2550 L202 2470 L229 2550Z"/><path d="M1698 2558 L1730 2462 L1760 2558Z"/>
+</g>
+<g fill="#d9e8ff" opacity=".48">
+  <circle cx="64" cy="515" r="3"/><circle cx="246" cy="910" r="2"/><circle cx="70" cy="1750" r="2.5"/>
+  <circle cx="1860" cy="900" r="2.4"/><circle cx="1892" cy="1430" r="2"/><circle cx="1788" cy="2130" r="2.6"/>
+</g>
+</svg>

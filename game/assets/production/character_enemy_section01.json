@@ -1,0 +1,234 @@
+{
+  "schema": "seme-fue-el-camion/source-locked-character-enemy-assets/v1",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "section": "01_characters_and_enemies",
+  "provenance": "Existing repository assets only; zero generated replacement sprites",
+  "policy": {
+    "preserve_original_pixels": true,
+    "preserve_physics_and_hitboxes": true,
+    "no_ai_replacement": true,
+    "no_duplicate_atlases": true
+  },
+  "marine_enemies": [
+    {
+      "id": "piranha",
+      "atlas": "assets/enemies/marine/piranha_atlas_v573.png",
+      "metadata": "assets/enemies/marine/piranha_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/piranha/",
+      "source_prefix": "pirana_atlas_",
+      "frames": 35,
+      "source_cell_px": [
+        305,
+        196
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "swim",
+        "bite",
+        "hurt",
+        "stun",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    {
+      "id": "shark",
+      "atlas": "assets/enemies/marine/shark_atlas_v573.png",
+      "metadata": "assets/enemies/marine/shark_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/shark/",
+      "source_prefix": "tiburon_atlas_",
+      "frames": 33,
+      "source_cell_px": [
+        337,
+        232
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "swim",
+        "bite",
+        "dash_bite",
+        "hurt",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    {
+      "id": "octopus",
+      "atlas": "assets/enemies/marine/octopus_atlas_v573.png",
+      "metadata": "assets/enemies/marine/octopus_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/octopus/",
+      "source_prefix": "pulpo_atlas_",
+      "frames": 37,
+      "source_cell_px": [
+        338,
+        212
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "idle",
+        "swim",
+        "bite",
+        "tentacle_slam",
+        "ink_attack",
+        "hurt",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    {
+      "id": "poseidon",
+      "atlas": "assets/enemies/marine/poseidon_atlas_v573.png",
+      "metadata": "assets/enemies/marine/poseidon_atlas_v573.json",
+      "frames_directory": "assets/enemies/marine/frames/poseidon/",
+      "source_prefix": "poseidon_atlas_",
+      "frames": 24,
+      "source_cell_px": [
+        339,
+        283
+      ],
+      "original_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "animations": [
+        "idle_swim",
+        "trident_attack",
+        "tidal_attack",
+        "hurt",
+        "death"
+      ],
+      "loader": "js/app/marine_atlases.js -> js/app/render.js",
+      "status": "SOURCE_EXISTING_RUNTIME"
+    }
+  ],
+  "characters": {
+    "sofia": {
+      "runtime_default": "assets/player/sofia/",
+      "variants": {
+        "uniforme": "assets/player/variants/uniforme/",
+        "rosa": "assets/player/variants/rosa/"
+      },
+      "underwater": {
+        "atlas": "assets/player/sofia/sofia_buceadora_movimientos_rgba.png",
+        "metadata": "assets/player/sofia/sofia_buceadora_movimientos.json",
+        "attack_atlas": "assets/player/sofia/swim_strike_11frames_v581.png",
+        "attack_metadata": "assets/player/sofia/swim_strike_v581.json",
+        "animation_manifest": "assets/player/sofia/animation_manifest_v12.json"
+      },
+      "arrival": {
+        "pivot_normalized": [
+          0.5,
+          0.9625
+        ],
+        "frame_px": [
+          320,
+          320
+        ],
+        "fps_original_manifest": 8,
+        "variants": [
+          {
+            "id": "original",
+            "folder": "assets/player/sofia_arrival/original/",
+            "atlas": "assets/player/sofia_arrival/original/original_atlas_12frames.png",
+            "metadata": "assets/player/sofia_arrival/original/original_atlas.json",
+            "original_walk_frames": 6,
+            "mirrored_atlas_frames": 12
+          },
+          {
+            "id": "rosa",
+            "folder": "assets/player/sofia_arrival/rosa/",
+            "atlas": "assets/player/sofia_arrival/rosa/rosa_atlas_12frames.png",
+            "metadata": "assets/player/sofia_arrival/rosa/rosa_atlas.json",
+            "original_walk_frames": 6,
+            "mirrored_atlas_frames": 12
+          },
+          {
+            "id": "uniforme",
+            "folder": "assets/player/sofia_arrival/uniforme/",
+            "atlas": "assets/player/sofia_arrival/uniforme/uniforme_atlas_12frames.png",
+            "metadata": "assets/player/sofia_arrival/uniforme/uniforme_atlas.json",
+            "original_walk_frames": 6,
+            "mirrored_atlas_frames": 12
+          }
+        ],
+        "loader": "js/app/marine_intro.js",
+        "source_locked_manifest": "assets/player/sofia_arrival/manifest_source_locked_v581.json"
+      }
+    },
+    "estoker": {
+      "module": "js/app/estoker_anim_data.js",
+      "folder": "assets/cinematic/estoker_memory/",
+      "original_frames_total": 32,
+      "animations": {
+        "caminar_estoker": 7,
+        "explicar_estoker": 7,
+        "caminar_con_sofia": 6,
+        "conversacion_con_sofia": 12
+      },
+      "loader": "js/app/marine_intro.js"
+    },
+    "companions": [
+      {
+        "id": "luna",
+        "folder": "assets/companions/",
+        "idle_frames": 6,
+        "walk_frames": 4
+      },
+      {
+        "id": "morita",
+        "folder": "assets/companions/",
+        "idle_frames": 6,
+        "walk_frames": 4
+      }
+    ]
+  },
+  "pending_issues": [
+    {
+      "asset": "assets/player/sofia_arrival/manifest.json",
+      "status": "LEGACY_PRESERVED_ALTERNATIVE_CREATED",
+      "problem": "Original manifest names missing folders; source-locked manifest_source_locked_v581.json references actual paths without overwriting legacy."
+    },
+    {
+      "asset": "assets/player/sofia/animation_manifest_v12.json",
+      "status": "CREATED_SOURCE_LOCKED_VISUAL_QA_PENDING",
+      "problem": "New v12 source-locked index references existing PNG/JSON and marks derived complementary poses provisional; does not certify authored completeness."
+    },
+    {
+      "asset": "space and additional enemies",
+      "status": "NO_VERIFICADO",
+      "problem": "Do not manufacture canonical sprites where the repository currently uses procedural drawings/overlays."
+    },
+    {
+      "asset": "assets/player/sofia/sofia_submarina_complementaria.json",
+      "status": "METADATA_IMAGE_PATH_CORRECTED_VISUAL_QA_PENDING",
+      "problem": "The sidecar now resolves the real PNG. Derived preview frames are not accepted as independent poses, and individual PNG exports are still absent."
+    },
+    {
+      "asset": "PNG recompression runtime profile",
+      "status": "TOOL_COMMITTED_EXECUTION_PENDING",
+      "problem": "Lossless PNG IDAT optimizer is committed and unit-tested on a synthetic RGBA image, but real repo PNG bytes have not been processed. Run --profile runtime --apply on a checkout to produce optimized PNG binaries."
+    }
+  ],
+  "qa": {
+    "test": "tests/character_enemy_assets_section01.test.js",
+    "viewer": "tools/preview_character_enemy_section01.html",
+    "note": "Source and coordinate QA; visual transitions and combat timing require in-game capture.",
+    "generated_test": "tests/character_enemy_missing_sources_v581.test.js",
+    "png_optimizer": "tools/arte/optimize_png_source_locked.js",
+    "png_optimizer_test": "tests/v581_lossless_png_optimization.test.js",
+    "png_optimization_status": "SOURCE_LOSSLESS_TOOL_COMMITTED_NOT_RUN_AGAINST_REPOSITORY_PNG_BYTES",
+    "cinematic_variant_mapping": "FIXED_ACTUAL_SELECTED_LOOK"
+  }
+}

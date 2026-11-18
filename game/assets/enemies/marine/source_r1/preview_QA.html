@@ -1,0 +1,22 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOFÍA · Atlas marinos QA</title><style>
+:root{font:15px system-ui;background:#0a1521;color:#f4fafc}body{margin:0 auto;max-width:1200px;padding:24px}
+h1{font-size:24px}section{margin:24px 0;padding:20px;border:1px solid #2d4c62;border-radius:16px;background:#12283a}
+.canvas{width:100%;max-width:440px;height:280px;object-fit:contain;border-radius:10px;border:1px solid #4a6070;background:repeating-conic-gradient(#f4f4f4 0 25%,#ddd 0 50%) 0 0 / 24px 24px}
+button{cursor:pointer;background:#095a87;color:white;padding:10px;border:0;border-radius:9px;margin:4px}
+small{color:#b4d3e1} .flex{display:flex;gap:20px;flex-wrap:wrap;align-items:center}</style></head><body>
+<h1>SOFÍA · Atlas de enemigos marinos — Vista de QA</h1><p>Inspección de las secuencias gráficas sin modificar la escala visual original. Las cajas de colisión son una guía y deben ajustarse en el motor.</p>
+<div id="app"></div><script>
+const names=['tiburon','pirana','pulpo','poseidon']; const app=document.getElementById('app');
+async function init(name){const data=await(await fetch(name+'_atlas.json')).json();const sec=document.createElement('section');
+const title=document.createElement('h2');title.textContent=name.toUpperCase();sec.appendChild(title);
+const wrap=document.createElement('div');wrap.className='flex';sec.appendChild(wrap);
+const canvas=document.createElement('canvas');canvas.width=440;canvas.height=280;canvas.className='canvas';wrap.appendChild(canvas);
+const controls=document.createElement('div');wrap.appendChild(controls);
+const label=document.createElement('small');controls.appendChild(label);
+const pic=new Image;pic.src=data.image;await pic.decode();let anim=Object.keys(data.animations)[0],idx=0,last=0;
+for(const key of Object.keys(data.animations)){const b=document.createElement('button');b.textContent=key;b.onclick=()=>{anim=key;idx=0;label.textContent=key};controls.appendChild(b)}label.textContent=anim;
+const ctx=canvas.getContext('2d');function draw(t){const a=data.animations[anim];if(t-last>=a.frame_duration_ms){idx=a.loop?(idx+1)%a.frames.length:Math.min(idx+1,a.frames.length-1);last=t}
+ctx.clearRect(0,0,canvas.width,canvas.height);const fr=data.frames[a.frames[idx]];if(fr){const f=fr.frame;const scale=Math.min(1.45,340/data.cell.w,240/data.cell.h);const xx=(canvas.width-data.cell.w*scale)/2+fr.origin.x*scale;const yy=(canvas.height-data.cell.h*scale)/2+fr.origin.y*scale;ctx.drawImage(pic,f.x,f.y,f.w,f.h,xx,yy,f.w*scale,f.h*scale)}requestAnimationFrame(draw)}requestAnimationFrame(draw);app.appendChild(sec)}
+for(const name of names)init(name).catch(e=>{const p=document.createElement('p');p.textContent=name+': '+e.message;app.appendChild(p)});
+</script></body></html>

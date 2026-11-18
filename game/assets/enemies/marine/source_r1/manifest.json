@@ -1,0 +1,79 @@
+{
+  "project": "Sofia - Mundo submarino",
+  "version": "atlas-marino-r1",
+  "coordinate_system": "canvas: x right, y down",
+  "rendering": "preserve source 1:1 scale; center anchor; mirror for facing left (no double mirroring)",
+  "animation_note": "These are generated keyframe illustrations; visual/gameplay hitboxes need runtime QA, not directly integrated into game.",
+  "characters": {
+    "tiburon": {
+      "atlas": "tiburon_atlas.png",
+      "map": "tiburon_atlas.json",
+      "frames": 33,
+      "fx_frames": 1,
+      "animations": [
+        "swim",
+        "bite",
+        "dash_bite",
+        "hurt",
+        "death"
+      ],
+      "size": [
+        1926,
+        1296
+      ]
+    },
+    "pirana": {
+      "atlas": "pirana_atlas.png",
+      "map": "pirana_atlas.json",
+      "frames": 35,
+      "fx_frames": 10,
+      "animations": [
+        "swim",
+        "bite",
+        "hurt",
+        "stun",
+        "death"
+      ],
+      "size": [
+        1734,
+        1080
+      ]
+    },
+    "pulpo": {
+      "atlas": "pulpo_atlas.png",
+      "map": "pulpo_atlas.json",
+      "frames": 37,
+      "fx_frames": 0,
+      "animations": [
+        "idle",
+        "swim",
+        "bite",
+        "tentacle_slam",
+        "ink_attack",
+        "hurt",
+        "death"
+      ],
+      "size": [
+        1932,
+        1372
+      ]
+    },
+    "poseidon": {
+      "atlas": "poseidon_atlas.png",
+      "map": "poseidon_atlas.json",
+      "frames": 24,
+      "fx_frames": 3,
+      "animations": [
+        "idle_swim",
+        "trident_attack",
+        "tidal_attack",
+        "hurt",
+        "death"
+      ],
+      "size": [
+        1938,
+        1068
+      ]
+    }
+  }
+}

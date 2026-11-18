@@ -1,0 +1,130 @@
+{
+  "project": "Sofia — caminar asombrada",
+  "sprite_size": [
+    320,
+    320
+  ],
+  "sheet_grid": [
+    12,
+    1
+  ],
+  "frame_count_per_outfit": 12,
+  "fps": 8,
+  "source": "original artwork generated from the supplied Sofía references",
+  "variants": {
+    "sofia_escolar_roja": {
+      "display_name": "Sofía escolar roja / moño rojo",
+      "atlas": "sofia_escolar_roja/sofia_escolar_roja_atlas_12frames.png",
+      "json": "sofia_escolar_roja/sofia_escolar_roja_atlas.json",
+      "gif": "sofia_escolar_roja/sofia_escolar_roja_preview.gif",
+      "animations": {
+        "walk_wonder_right": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "walk_wonder_left": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "look_around": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      }
+    },
+    "sofia_rosa_morada": {
+      "display_name": "Sofía rosa y morada / moño turquesa",
+      "atlas": "sofia_rosa_morada/sofia_rosa_morada_atlas_12frames.png",
+      "json": "sofia_rosa_morada/sofia_rosa_morada_atlas.json",
+      "gif": "sofia_rosa_morada/sofia_rosa_morada_preview.gif",
+      "animations": {
+        "walk_wonder_right": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "walk_wonder_left": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "look_around": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      }
+    },
+    "sofia_reno_rojo": {
+      "display_name": "Sofía vestido rojo / cuernos de reno",
+      "atlas": "sofia_reno_rojo/sofia_reno_rojo_atlas_12frames.png",
+      "json": "sofia_reno_rojo/sofia_reno_rojo_atlas.json",
+      "gif": "sofia_reno_rojo/sofia_reno_rojo_preview.gif",
+      "animations": {
+        "walk_wonder_right": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "walk_wonder_left": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "look_around": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      }
+    }
+  }
+}

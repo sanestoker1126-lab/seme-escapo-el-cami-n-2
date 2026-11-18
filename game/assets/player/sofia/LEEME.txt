@@ -1,0 +1,22 @@
+SOFÍA BUCEADORA · ATLAS DE MOVIMIENTOS (2.5D)
+
+Fuente: hoja de 1536 x 1024 píxeles generada previamente. Total: 100 frames.
+Se procesó el canal alfa REAL y se aislaron los cuerpos por componente conectado,
+sin dibujar ni modificar su anatomía y manteniendo antialias 2 px.
+
+Contenido:
+- sofia_buceadora_movimientos_rgba.png : atlas RGBA con 8 px de separación
+  y 2 px de extrusión en cada sprite.
+- sofia_buceadora_movimientos.json: coordenadas, animaciones, pivotes y duraciones.
+- frames/ : archivos PNG individuales (con transparencia) agrupados.
+- qa_frames.csv: inventario y medidas de cada frame.
+- qa_contornos_fuente.png: imagen técnica para validar bounding boxes sobre la hoja.
+- sofia_diver_animator.js: clase de integración HTML Canvas.
+- extraer_sofia_atlas.py : extractor reproducible.
+
+AVISO DE CALIDAD:
+Las filas de la hoja son una propuesta visual de animación; algunas posiciones
+pueden requerir ajuste manual de timing y escala para bucles perfectos.
+Los efectos de agua tocando la silueta original no se pueden separar de modo
+fiable sin edición manual; se conservaron. Burbujas sueltas se excluyeron.
+Este paquete no implica que el juego esté actualizado o probado en su motor.

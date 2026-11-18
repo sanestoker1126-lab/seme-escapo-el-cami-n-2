@@ -1,0 +1,30 @@
+{
+  "version": "57.9.0",
+  "source": "Se_Me_Fue_El_Camion_V57_8_FISICA_AGUA_IDLE_CAMINAR.zip",
+  "changes": [
+    "6 currents with falloff",
+    "neutral buoyancy preserved outside currents",
+    "2 added sharks",
+    "3 added piranhas",
+    "current arrows and HUD cue",
+    "underwater particles and schools",
+    "predator telegraphs"
+  ],
+  "tests": {
+    "node_test_without_world_reach": {
+      "passed": 139,
+      "failed": 0
+    },
+    "world_quick_without_reach": {
+      "passed": 7,
+      "failed": 0
+    },
+    "reachability_full": "not completed; previous full suite timed out"
+  },
+  "pwa": {
+    "cache": "camion-v57-9-corrientes-fauna",
+    "listed_files": 266,
+    "missing": 0
+  },
+  "visual_mobile": "not tested on device"
+}

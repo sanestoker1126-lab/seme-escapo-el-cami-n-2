@@ -1,0 +1,1087 @@
+{
+  "name": "poseidon",
+  "image": "poseidon_atlas.png",
+  "format": "RGBA8888",
+  "transparent": true,
+  "size": {
+    "w": 1938,
+    "h": 1068
+  },
+  "cell": {
+    "w": 323,
+    "h": 267
+  },
+  "anchor": "center",
+  "direction": "right",
+  "fps_target": 60,
+  "collision_guide": {
+    "hurtbox_local": {
+      "x": 65,
+      "y": 61,
+      "w": 194,
+      "h": 152
+    },
+    "attackbox_local": {
+      "x": 220,
+      "y": 48,
+      "w": 97,
+      "h": 150
+    },
+    "not_certified": true
+  },
+  "frames": {
+    "poseidon_atlas_000": {
+      "filename": "poseidon_atlas_000",
+      "frame": {
+        "x": 34,
+        "y": 9,
+        "w": 254,
+        "h": 249
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 254,
+        "h": 249
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 34,
+        "y": 9
+      },
+      "sourceCrop": [
+        3,
+        1,
+        254,
+        249
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_001": {
+      "filename": "poseidon_atlas_001",
+      "frame": {
+        "x": 359,
+        "y": 18,
+        "w": 251,
+        "h": 230
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 251,
+        "h": 230
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 36,
+        "y": 18
+      },
+      "sourceCrop": [
+        261,
+        9,
+        251,
+        230
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_002": {
+      "filename": "poseidon_atlas_002",
+      "frame": {
+        "x": 676,
+        "y": 32,
+        "w": 263,
+        "h": 202
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 263,
+        "h": 202
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 30,
+        "y": 32
+      },
+      "sourceCrop": [
+        506,
+        22,
+        263,
+        202
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_003": {
+      "filename": "poseidon_atlas_003",
+      "frame": {
+        "x": 998,
+        "y": 43,
+        "w": 265,
+        "h": 180
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 265,
+        "h": 180
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 29,
+        "y": 43
+      },
+      "sourceCrop": [
+        759,
+        30,
+        265,
+        180
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_004": {
+      "filename": "poseidon_atlas_004",
+      "frame": {
+        "x": 1319,
+        "y": 52,
+        "w": 269,
+        "h": 163
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 269,
+        "h": 163
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 27,
+        "y": 52
+      },
+      "sourceCrop": [
+        1013,
+        36,
+        269,
+        163
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_005": {
+      "filename": "poseidon_atlas_005",
+      "frame": {
+        "x": 1645,
+        "y": 65,
+        "w": 262,
+        "h": 137
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 262,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 30,
+        "y": 65
+      },
+      "sourceCrop": [
+        1274,
+        46,
+        262,
+        137
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_006": {
+      "filename": "poseidon_atlas_006",
+      "frame": {
+        "x": 67,
+        "y": 279,
+        "w": 188,
+        "h": 242
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 188,
+        "h": 242
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 67,
+        "y": 12
+      },
+      "sourceCrop": [
+        7,
+        256,
+        188,
+        242
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_007": {
+      "filename": "poseidon_atlas_007",
+      "frame": {
+        "x": 388,
+        "y": 281,
+        "w": 192,
+        "h": 238
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 238
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 65,
+        "y": 14
+      },
+      "sourceCrop": [
+        257,
+        260,
+        192,
+        238
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_008": {
+      "filename": "poseidon_atlas_008",
+      "frame": {
+        "x": 683,
+        "y": 286,
+        "w": 248,
+        "h": 228
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 248,
+        "h": 228
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 37,
+        "y": 19
+      },
+      "sourceCrop": [
+        465,
+        268,
+        248,
+        228
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_009": {
+      "filename": "poseidon_atlas_009",
+      "frame": {
+        "x": 981,
+        "y": 299,
+        "w": 298,
+        "h": 202
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 202
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 12,
+        "y": 32
+      },
+      "sourceCrop": [
+        710,
+        287,
+        298,
+        202
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_010": {
+      "filename": "poseidon_atlas_010",
+      "frame": {
+        "x": 1301,
+        "y": 310,
+        "w": 305,
+        "h": 180
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 305,
+        "h": 180
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 9,
+        "y": 43
+      },
+      "sourceCrop": [
+        974,
+        304,
+        305,
+        180
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_011": {
+      "filename": "poseidon_atlas_011",
+      "frame": {
+        "x": 1631,
+        "y": 293,
+        "w": 291,
+        "h": 215
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 291,
+        "h": 215
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 16,
+        "y": 26
+      },
+      "sourceCrop": [
+        1244,
+        283,
+        291,
+        215
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_012": {
+      "filename": "poseidon_atlas_012",
+      "frame": {
+        "x": 58,
+        "y": 547,
+        "w": 206,
+        "h": 241
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 206,
+        "h": 241
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 58,
+        "y": 13
+      },
+      "sourceCrop": [
+        0,
+        513,
+        206,
+        241
+      ],
+      "action": "tidal_attack"
+    },
+    "poseidon_atlas_013": {
+      "filename": "poseidon_atlas_013",
+      "frame": {
+        "x": 371,
+        "y": 553,
+        "w": 226,
+        "h": 229
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 226,
+        "h": 229
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 48,
+        "y": 19
+      },
+      "sourceCrop": [
+        246,
+        524,
+        226,
+        229
+      ],
+      "action": "tidal_attack"
+    },
+    "poseidon_atlas_014": {
+      "filename": "poseidon_atlas_014",
+      "frame": {
+        "x": 682,
+        "y": 553,
+        "w": 251,
+        "h": 229
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 251,
+        "h": 229
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 36,
+        "y": 19
+      },
+      "sourceCrop": [
+        486,
+        523,
+        251,
+        229
+      ],
+      "action": "tidal_attack"
+    },
+    "poseidon_atlas_015": {
+      "filename": "poseidon_atlas_015",
+      "frame": {
+        "x": 995,
+        "y": 561,
+        "w": 270,
+        "h": 213
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 270,
+        "h": 213
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 26,
+        "y": 27
+      },
+      "sourceCrop": [
+        728,
+        532,
+        270,
+        213
+      ],
+      "action": "tidal_attack"
+    },
+    "poseidon_atlas_016": {
+      "filename": "poseidon_atlas_016",
+      "frame": {
+        "x": 1304,
+        "y": 560,
+        "w": 299,
+        "h": 214
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 299,
+        "h": 214
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 12,
+        "y": 26
+      },
+      "sourceCrop": [
+        978,
+        527,
+        299,
+        214
+      ],
+      "action": "tidal_attack"
+    },
+    "poseidon_atlas_017": {
+      "filename": "poseidon_atlas_017",
+      "frame": {
+        "x": 1633,
+        "y": 563,
+        "w": 286,
+        "h": 208
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 286,
+        "h": 208
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 18,
+        "y": 29
+      },
+      "sourceCrop": [
+        1250,
+        535,
+        286,
+        208
+      ],
+      "action": "tidal_attack"
+    },
+    "poseidon_atlas_018": {
+      "filename": "poseidon_atlas_018",
+      "frame": {
+        "x": 56,
+        "y": 818,
+        "w": 211,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 211,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 56,
+        "y": 17
+      },
+      "sourceCrop": [
+        9,
+        766,
+        211,
+        232
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_019": {
+      "filename": "poseidon_atlas_019",
+      "frame": {
+        "x": 376,
+        "y": 826,
+        "w": 217,
+        "h": 217
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 53,
+        "y": 25
+      },
+      "sourceCrop": [
+        249,
+        781,
+        217,
+        217
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_020": {
+      "filename": "poseidon_atlas_020",
+      "frame": {
+        "x": 699,
+        "y": 821,
+        "w": 216,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 216,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 53,
+        "y": 20
+      },
+      "sourceCrop": [
+        493,
+        772,
+        216,
+        226
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_021": {
+      "filename": "poseidon_atlas_021",
+      "frame": {
+        "x": 1009,
+        "y": 845,
+        "w": 243,
+        "h": 179
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 243,
+        "h": 179
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 40,
+        "y": 44
+      },
+      "sourceCrop": [
+        732,
+        820,
+        243,
+        179
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_022": {
+      "filename": "poseidon_atlas_022",
+      "frame": {
+        "x": 1330,
+        "y": 866,
+        "w": 246,
+        "h": 137
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 246,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 38,
+        "y": 65
+      },
+      "sourceCrop": [
+        988,
+        862,
+        246,
+        137
+      ],
+      "action": "main"
+    },
+    "poseidon_atlas_023": {
+      "filename": "poseidon_atlas_023",
+      "frame": {
+        "x": 1633,
+        "y": 867,
+        "w": 287,
+        "h": 135
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 287,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 323,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "origin": {
+        "x": 18,
+        "y": 66
+      },
+      "sourceCrop": [
+        1247,
+        865,
+        287,
+        135
+      ],
+      "action": "main"
+    }
+  },
+  "animations": {
+    "idle_swim": {
+      "frames": [
+        "poseidon_atlas_000",
+        "poseidon_atlas_001",
+        "poseidon_atlas_002",
+        "poseidon_atlas_003",
+        "poseidon_atlas_004",
+        "poseidon_atlas_005"
+      ],
+      "frame_duration_ms": 111,
+      "loop": true,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "trident_attack": {
+      "frames": [
+        "poseidon_atlas_006",
+        "poseidon_atlas_007",
+        "poseidon_atlas_008",
+        "poseidon_atlas_009",
+        "poseidon_atlas_010",
+        "poseidon_atlas_011"
+      ],
+      "frame_duration_ms": 100,
+      "loop": false,
+      "damage": 22,
+      "active_attack_frames": [
+        3,
+        4
+      ]
+    },
+    "tidal_attack": {
+      "frames": [
+        "poseidon_atlas_012",
+        "poseidon_atlas_013",
+        "poseidon_atlas_014",
+        "poseidon_atlas_015",
+        "poseidon_atlas_016",
+        "poseidon_atlas_017"
+      ],
+      "frame_duration_ms": 125,
+      "loop": false,
+      "damage": 28,
+      "active_attack_frames": [
+        3,
+        4
+      ]
+    },
+    "hurt": {
+      "frames": [
+        "poseidon_atlas_018",
+        "poseidon_atlas_019",
+        "poseidon_atlas_020"
+      ],
+      "frame_duration_ms": 125,
+      "loop": false,
+      "damage": 0,
+      "active_attack_frames": []
+    },
+    "death": {
+      "frames": [
+        "poseidon_atlas_021",
+        "poseidon_atlas_022",
+        "poseidon_atlas_023"
+      ],
+      "frame_duration_ms": 167,
+      "loop": false,
+      "damage": 0,
+      "active_attack_frames": []
+    }
+  },
+  "fx": {
+    "image": "poseidon_fx.png",
+    "size": {
+      "w": 890,
+      "h": 171
+    },
+    "frames": {
+      "poseidon_fx_000": {
+        "filename": "poseidon_fx_000",
+        "frame": {
+          "x": 35,
+          "y": 37,
+          "w": 108,
+          "h": 97
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 108,
+          "h": 97
+        },
+        "sourceSize": {
+          "w": 178,
+          "h": 171
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 35,
+          "y": 37
+        },
+        "sourceCrop": [
+          890,
+          554,
+          108,
+          97
+        ],
+        "action": "water_magic"
+      },
+      "poseidon_fx_001": {
+        "filename": "poseidon_fx_001",
+        "frame": {
+          "x": 187,
+          "y": 19,
+          "w": 160,
+          "h": 133
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 133
+        },
+        "sourceSize": {
+          "w": 178,
+          "h": 171
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 9,
+          "y": 19
+        },
+        "sourceCrop": [
+          1117,
+          541,
+          160,
+          133
+        ],
+        "action": "water_magic"
+      },
+      "poseidon_fx_002": {
+        "filename": "poseidon_fx_002",
+        "frame": {
+          "x": 377,
+          "y": 9,
+          "w": 136,
+          "h": 153
+        },
+        "rotated": false,
+        "trimmed": true,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 136,
+          "h": 153
+        },
+        "sourceSize": {
+          "w": 178,
+          "h": 171
+        },
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "origin": {
+          "x": 21,
+          "y": 9
+        },
+        "sourceCrop": [
+          1400,
+          543,
+          136,
+          153
+        ],
+        "action": "water_magic"
+      }
+    }
+  }
+}

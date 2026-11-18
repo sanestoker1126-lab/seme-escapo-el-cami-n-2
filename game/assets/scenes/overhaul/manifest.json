@@ -1,0 +1,38 @@
+{
+  "schema": "se-me-fue-el-camion-background-overhaul",
+  "source_candidate": "V58.1",
+  "phase": 1,
+  "completed_scenes": 10,
+  "campaign_scenes": 18,
+  "image_dimensions_px": [1776, 2368],
+  "format": "WebP",
+  "runtime_budget_bytes": 5772848,
+  "assets": [
+    {"level_id":"escuela","file":"bg_escuela.webp","world":"escuela"},
+    {"level_id":"guadalajara","file":"bg_gdl_centro.webp","world":"guadalajara"},
+    {"level_id":"escuela_vecina","file":"bg_escuela_patio.webp","world":"escuela"},
+    {"level_id":"gdl_noche","file":"bg_gdl_noche.webp","world":"guadalajara"},
+    {"level_id":"azoteas","file":"bg_azoteas.webp","world":"guadalajara"},
+    {"level_id":"escuela_ruinas","file":"bg_escuela_ruinas.webp","world":"escuela"},
+    {"level_id":"centro_historico","file":"bg_centro_historico.webp","world":"guadalajara"},
+    {"level_id":"portales","file":"bg_portales.webp","world":"guadalajara"},
+    {"level_id":"zapopan","file":"bg_zapopan.webp","world":"guadalajara"},
+    {"level_id":"arcadas","file":"bg_terminal.webp","world":"guadalajara"}
+  ],
+  "pending_level_ids": [
+    "metro",
+    "mercado_tapatio",
+    "parque_metropolitano",
+    "tlaquepaque",
+    "anden_tren_ligero",
+    "plaza_jacarandas",
+    "submarino",
+    "espacial"
+  ],
+  "notes": [
+    "Generated PNG source art is retained outside the runtime project; only optimized WebP assets ship in the game tree.",
+    "No player, companion, enemy, collision, physics, mission progression, or world dimensions were changed.",
+    "The School and Portales painted-surface flags were disabled so the pre-existing map platforms render from the engine's original platform skin assets, keeping physical coordinates unchanged.",
+    "The service worker cache key was advanced and all ten WebP files were added to its precache list."
+  ]
+}

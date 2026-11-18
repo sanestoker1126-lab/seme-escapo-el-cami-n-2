@@ -1,0 +1,100 @@
+{
+  "schema": "seme-fue-el-camion-parallax-v55",
+  "version": 1,
+  "sceneDimensions": {
+    "width": 940,
+    "height": 3072
+  },
+  "art": {
+    "viewBox": [
+      0,
+      0,
+      1920,
+      2600
+    ],
+    "intrinsic": [
+      960,
+      1300
+    ],
+    "type": "image/svg+xml"
+  },
+  "speeds": [
+    0.1,
+    0.12,
+    0.14,
+    0.22,
+    0.4,
+    0.68,
+    1.0
+  ],
+  "order": "far-to-near",
+  "themes": {
+    "submarino": [
+      {
+        "src": "assets/parallax/submarino/00_fondo_lejano.svg",
+        "speed": 0.1,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/submarino/05_corriente_profunda.svg",
+        "speed": 0.12,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/submarino/01_profundidad.svg",
+        "speed": 0.22,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/submarino/02_estructuras.svg",
+        "speed": 0.4,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/submarino/03_elementos.svg",
+        "speed": 0.68,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/submarino/04_primer_plano.svg",
+        "speed": 1.0,
+        "front": true
+      }
+    ],
+    "espacial": [
+      {
+        "src": "assets/parallax/espacial/00_fondo_lejano.svg",
+        "speed": 0.1,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/espacial/05_nebulosa_distante.svg",
+        "speed": 0.14,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/espacial/01_profundidad.svg",
+        "speed": 0.22,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/espacial/02_estructuras.svg",
+        "speed": 0.4,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/espacial/03_elementos.svg",
+        "speed": 0.68,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/espacial/04_primer_plano.svg",
+        "speed": 1.0,
+        "front": true
+      }
+    ]
+  },
+  "alpha": true,
+  "tile": false,
+  "remark": "Las capas nuevas se sitúan entre el fondo lejano y la profundidad; los primeros planos permanecen al frente y dejan libre el corredor central."
+}

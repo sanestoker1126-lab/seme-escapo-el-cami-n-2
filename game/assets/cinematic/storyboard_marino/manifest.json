@@ -1,0 +1,45 @@
+{
+  "source": "hoja_original.png",
+  "frames": [
+    {
+      "image": "escena_01.webp",
+      "crop_y": [
+        72,
+        210
+      ],
+      "storyboard_panel": 1
+    },
+    {
+      "image": "escena_02.webp",
+      "crop_y": [
+        214,
+        357
+      ],
+      "storyboard_panel": 2
+    },
+    {
+      "image": "escena_03.webp",
+      "crop_y": [
+        364,
+        511
+      ],
+      "storyboard_panel": 3
+    },
+    {
+      "image": "escena_04.webp",
+      "crop_y": [
+        517,
+        671
+      ],
+      "storyboard_panel": 4
+    },
+    {
+      "image": "escena_05.webp",
+      "crop_y": [
+        677,
+        847
+      ],
+      "storyboard_panel": 5
+    }
+  ]
+}

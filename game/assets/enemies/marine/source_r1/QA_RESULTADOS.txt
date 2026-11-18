@@ -1,0 +1,10 @@
+SOFÍA — Validación mecánica de atlas marinos R1
+
+- TIBURON: 33 cuadros, 1 FX, transparencia RGBA, 33 imágenes únicas
+- PIRANA: 35 cuadros, 10 FX, transparencia RGBA, 35 imágenes únicas
+- PULPO: 37 cuadros, 0 FX, transparencia RGBA, 37 imágenes únicas
+- POSEIDON: 24 cuadros, 3 FX, transparencia RGBA, 24 imágenes únicas
+
+Comprobaciones realizadas: transparencia RGBA real, JSON válido, rectángulos dentro de atlas, márgenes >=8px, animaciones completas, ausencia de cuadros idénticos.
+No comprobado: hitboxes de contacto dentro del motor, daño real a Sofía, sincronización física en 60 FPS ni calidad de todas las transiciones en ejecución.
+Poseidón conserva su diseño humano con piernas y tridente.

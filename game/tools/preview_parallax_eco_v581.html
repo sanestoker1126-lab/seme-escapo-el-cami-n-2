@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="../">
+<title>QA parallax ECO V58.1 — recursos de producción</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif}*{box-sizing:border-box}
+body{margin:0;background:#0c1521;color:#dfeefa;padding:16px}main{max-width:1060px;margin:auto}
+h1{font-size:22px}p,small{color:#b4c6d6;font-size:13px}label{font-size:14px}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0}
+select,button,input{accent-color:#6ad1ed;background:#20364c;color:#fff;border:1px solid #5d86a5;border-radius:5px;padding:6px;font:inherit}
+canvas{width:100%;aspect-ratio:16/9;background:#031529;border:1px solid #47647c;display:block}
+pre{white-space:pre-wrap;font:12px ui-monospace,monospace;color:#c9e5f1}
+</style>
+</head>
+<body><main>
+<h1>Control de calidad — Parallax ECO V58.1</h1>
+<p>Renderiza los PNG RGBA adicionales sobre el fondo existente del juego. Vista de QA; no hay personajes ni física.</p>
+<div class="controls"><label>Mundo <select id="world">
+<option value="submarino">Submarino</option><option value="espacial">Espacio</option>
+<option value="escuela">Escuela</option><option value="guadalajara">Guadalajara</option>
+</select></label>
+<label>Desplazamiento vertical <input id="depth" type="range" min="0" max="1000" value="250"></label>
+<label>Horizontal <input id="horiz" type="range" min="0" max="1000" value="200"></label>
+<label>Calidad <select id="quality"><option value="normal">Normal</option><option value="low">Baja</option></select></label>
+<button id="pause">Pausar movimiento</button>
+</div>
+<canvas id="qa" width="960" height="540"></canvas>
+<pre id="status">Cargando recursos originales...</pre>
+<p>Escenas y colisiones: se obtienen del juego original. Este visor comprueba solamente el dibujo por capas; la ejecución de la misión y el FPS real en Android requieren pruebas específicas.</p>
+<script src="js/app/parallax_eco_v581.js"></script>
+<script>
+'use strict';
+const view=document.querySelector('#qa'),ctx=view.getContext('2d');
+const sel=document.querySelector('#world'),status=document.querySelector('#status');
+const depth=document.querySelector('#depth'),horiz=document.querySelector('#horiz'),quality=document.querySelector('#quality');
+const eco=window.CAMION.PARALLAX_ECO_V581;
+const bgs={
+submarino:'assets/parallax/marino/00_oceano_vertical.webp',
+espacial:'assets/parallax/espacial/r2/panorama.webp',
+escuela:'assets/parallax/escuela/azotea_superior/00_fondo_distante.webp',
+guadalajara:'assets/parallax/guadalajara/azoteas/00_cielo_degradado.webp'
+};
+const bases={},errors=[];
+for(const [k,src] of Object.entries(bgs)){
+  const im=new Image();im.src=src;im.onerror=()=>errors.push('No disponible: '+src);bases[k]=im;
+}
+eco.preload();let playing=true,started=performance.now(),frozen=0;
+document.querySelector('#pause').addEventListener('click',()=>{
+ playing=!playing;document.querySelector('#pause').textContent=playing?'Pausar movimiento':'Reanudar movimiento';
+ if(playing)started=performance.now()-frozen*1000;
+});
+quality.addEventListener('change',()=>eco.setQuality(quality.value));
+function cover(im,camX,camY){
+ if(!im.complete||!im.naturalWidth)return false;
+ const iw=im.naturalWidth,ih=im.naturalHeight,ratio=960/540;
+ let sw=iw,sh=iw/ratio;if(sh>ih){sh=ih;sw=ih*ratio;}
+ const px=camX/(1976-960),py=camY/(5960-540);
+ ctx.drawImage(im,(iw-sw)*px,(ih-sh)*py,sw,sh,0,0,960,540);return true;
+}
+function tick(now){
+ requestAnimationFrame(tick);
+ const theme=sel.value,t=playing?(now-started)/1000:frozen;
+ if(playing)frozen=t;
+ const x=(+horiz.value/1000)*(1976-960),y=(+depth.value/1000)*(5960-540);
+ ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle=theme==='submarino'?'#09618b':theme==='espacial'?'#0b1134':theme==='escuela'?'#475667':'#46505a';ctx.fillRect(0,0,960,540);
+ const baseOK=cover(bases[theme],x,y);
+ ctx.save();ctx.translate(-x,-y);
+ const G={room:null,cam:{x,y},view:{w:960,h:540},world:{bounds:{x1:0,x2:1976},scenes:[{theme,startY:0,endY:5960}]}};
+ const tiles=eco.draw(ctx,G,{x1:x,x2:x+960,y1:y,y2:y+540},t);
+ ctx.restore();
+ status.textContent=theme+' | PNG añadidos: '+eco.imageStatus.filter(s=>s.ready&&s.src.includes('/'+theme+'/')).length+
+ ' | tiles dibujadas: '+tiles+' | fondo original: '+(baseOK?'cargado':'no cargado')+
+ '\nErrores de imagen: '+eco.imageStatus.filter(s=>s.failed).length+(errors.length?' | '+errors.join('; '):'');
+}
+requestAnimationFrame(tick);
+</script>
+</main></body></html>

@@ -1,0 +1,697 @@
+--- a/Se_Me_Fue_El_Camion.html
++++ b/Se_Me_Fue_El_Camion.html
+@@ -29,28 +29,34 @@
+ <div id="bubble" hidden aria-live="polite"><span class="who">LETRERO</span><span id="bubbleText"></span></div>
+ <div id="card" hidden aria-live="polite"><div class="tag" id="cardTag"></div><h3 id="cardTitle"></h3><p id="cardText"></p></div>
+ 
+-<div id="menu" class="panel">
+- <div class="eyebrow">PLATAFORMAS · GUADALAJARA · ESTILO LA TOXIFAMILIA</div>
+- <h1>¡SE ME FUE<br><span>EL CAMIÓN!</span></h1>
+- <p class="missionIntro">Sofía perdió el último camión después de la posada. Baja por <b><span id="levelsCount">16</span> niveles</b>, vence a los jefes y llega a la terminal. Los seis objetos de la mochila son opcionales: encontrarlos mejora el final.</p>
+- <div class="label">APARIENCIA INICIAL DE SOFÍA</div>
+- <div id="lookPicker" class="lookPicker" role="group" aria-label="Aspecto de Sofía"></div>
+- <p class="small">Puedes empezar con cualquiera de los cinco aspectos. Submarino y Espacio cambian automáticamente al traje de su misión.</p>
+- <button class="primary" id="start" disabled>CARGANDO…</button>
+- <div class="row menuActions"><button class="opt" id="btnStory">VER CINEMÁTICA</button><button class="opt" id="btnHowto">CÓMO JUGAR</button></div>
+- <div class="label">MISIONES</div>
+- <div id="missions"></div>
+- <div class="label" id="tramosLabel">PARADAS · ELIGE UNA DESBLOQUEADA</div>
+- <div id="tramos"></div>
+- <p class="small" id="newLevels"></p>
+- <div class="label">OBJETOS RECUPERADOS · <span id="collectionCount">0 / 6</span></div>
+- <div id="collection"></div>
+- <p class="small" id="records"></p>
+- <div class="label">OPCIONES</div>
+- <div class="row"><button class="opt" id="optDiff"></button><button class="opt" id="optMusic"></button><button class="opt" id="optSfx"></button><button class="opt" id="optVib"></button></div>
+- <p class="small" id="diffHelp"></p>
+- <button class="primary secondary" id="btnOptions">⚙ TODAS LAS OPCIONES</button>
+- <div class="hint">HISTORIA: recorre la ruta completa · PRÁCTICA: empieza en una parada desbloqueada.</div>
++<div id="menu" class="panel menuPanel">
++ <section class="menuHero" aria-label="Inicio e historia">
++  <div class="eyebrow">PLATAFORMAS · GUADALAJARA · ESTILO LA TOXIFAMILIA</div>
++  <h1>¡SE ME FUE<br><span>EL CAMIÓN!</span></h1>
++  <p class="missionIntro">Sofía perdió el último camión después de la posada. Baja por <b><span id="levelsCount">16</span> niveles</b>, vence a los jefes y llega a la terminal. Los seis objetos de la mochila son opcionales: encontrarlos mejora el final.</p>
++  <div class="label">APARIENCIA INICIAL DE SOFÍA</div>
++  <div id="lookPicker" class="lookPicker" role="group" aria-label="Aspecto de Sofía"></div>
++  <p class="small">Puedes empezar con cualquiera de los cinco aspectos. Submarino y Espacio cambian automáticamente al traje de su misión.</p>
++  <button class="primary" id="start" disabled>CARGANDO…</button>
++  <div class="row menuActions"><button class="opt" id="btnStory">VER CINEMÁTICA</button><button class="opt" id="btnHowto">CÓMO JUGAR</button></div>
++ </section>
++ <section class="menuProgress" aria-label="Progreso y selección de misión">
++  <div class="label">MISIONES</div>
++  <div id="missions"></div>
++  <div class="label" id="tramosLabel">PARADAS · ELIGE UNA DESBLOQUEADA</div>
++  <div id="tramos"></div>
++  <p class="small" id="newLevels"></p>
++  <div class="label">OBJETOS RECUPERADOS · <span id="collectionCount">0 / 6</span></div>
++  <div id="collection"></div>
++  <p class="small" id="records"></p>
++ </section>
++ <section class="menuOptions" aria-label="Opciones de partida">
++  <div class="label">OPCIONES</div>
++  <div class="row"><button class="opt" id="optDiff"></button><button class="opt" id="optMusic"></button><button class="opt" id="optSfx"></button><button class="opt" id="optVib"></button></div>
++  <p class="small" id="diffHelp"></p>
++  <button class="primary secondary" id="btnOptions">⚙ TODAS LAS OPCIONES</button>
++  <div class="hint">HISTORIA: recorre la ruta completa · PRÁCTICA: empieza en una parada desbloqueada.</div>
++ </section>
+ </div>
+ 
+ <div id="cinematic" class="panel cinematic" hidden>
+--- a/css/game.css
++++ b/css/game.css
+@@ -156,6 +156,27 @@
+ /* Composición de cinemática: protagonistas arriba, subtítulo abajo y sin solaparse. */
+ @media(min-width:561px){.cineActors{left:4%;bottom:9%;gap:10px}.cineSofia{height:clamp(100px,22vh,188px);max-width:22vw}.cineCaption{left:42%;right:4%;bottom:9%;width:auto}}
+ @media(max-width:560px){.cineActors{left:auto;right:4%;bottom:41%;gap:5px}.cineSofia{height:clamp(90px,18vh,150px);max-width:92px}.cineCat{width:38px;height:38px}.cineCaption{left:5%;right:5%;bottom:8%;width:auto;padding:11px}}
++
++/* Fase 4 · el menú usa el ancho disponible en paisaje y conserva el panel vertical móvil. */
++#menu.menuPanel{overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#54738466 transparent}
++.menuHero,.menuProgress,.menuOptions{min-width:0}
++@media (min-width:760px) and (orientation:landscape){
++ #menu.menuPanel{width:min(94vw,970px);display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);column-gap:clamp(20px,3vw,34px);row-gap:8px;align-content:start;padding:clamp(20px,2.6vw,30px)}
++ .menuHero{grid-column:1;grid-row:1 / span 2}
++ .menuProgress{grid-column:2;grid-row:1}
++ .menuOptions{grid-column:2;grid-row:2}
++ #menu .menuHero h1{font-size:clamp(38px,5vw,58px)}
++ #menu .menuHero .missionIntro{max-width:54ch}
++ #menu .menuOptions .row{gap:6px;margin:7px 0 3px}
++}
++@media (min-width:760px) and (orientation:landscape) and (max-height:720px){
++ #menu.menuPanel{max-height:94dvh;padding:12px 20px;column-gap:20px;row-gap:2px}
++ #menu .menuHero h1{font-size:clamp(26px,4.6vw,42px);margin:5px 0}
++ #menu .missionIntro{font-size:12px;line-height:1.32;padding:7px 9px}
++ #menu .label{margin-top:8px}
++ #menu .small{font-size:10px;margin:3px 0 0}
++ #menu .primary{padding:10px;margin-top:6px}
++}
+ 
+ /* Cinemáticas de jefes: se congela el encuentro real detrás de una viñeta de tráiler arcade. */
+ #bossCinematic.panel{position:fixed;inset:0;left:0;top:0;transform:none;width:100vw;height:100dvh;max-height:none;margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column;border-radius:0;border:0;z-index:9999;background:#02070ff5;box-shadow:none;animation:bossFullPanelIn .35s ease both}
+--- a/js/app/render.js
++++ b/js/app/render.js
+@@ -206,7 +206,16 @@
+     canvas.width = cw; canvas.height = ch;
+     canvas.style.width = '100%'; canvas.style.height = '100%';
+   }
+-  function preload(srcs) { return Promise.all(srcs.map((s) => { const im = image(s); return whenLoaded(im).then((ok) => (ok && im.decode ? im.decode().catch(() => {}) : null)); })); }
++  function preload(srcs) {
++    return Promise.all(srcs.map((s) => {
++      const im = image(s);
++      return whenLoaded(im).then(async (ok) => {
++        if (!ok) return false;
++        if (im.decode) { try { await im.decode(); } catch (_) { /* conserva fallback dibujable del navegador */ } }
++        return true;
++      });
++    }));
++  }
+   // Resolución adaptativa: el bucle baja la calidad si el dispositivo va lento y la sube si va sobrado.
+   function setQuality(q) { q = Math.max(0.5, Math.min(1, q)); if (Math.abs(q - qScale) < 0.02) return false; qScale = q; resize(); return true; }
+ 
+@@ -2661,6 +2670,30 @@
+     for (const f of G.world.foes) { if (f.dead) continue; const b = NS.Enemies.box(f); ctx.strokeStyle = '#ff9a5a'; ctx.strokeRect(b.x1, b.y1, b.x2 - b.x1, b.y2 - b.y1); }
+   }
+ 
++  function drawDynamicLights(G,V,T) {
++    if (G.state !== 'playing' || !G.P || !G.world) return;
++    const P=G.P, scene=G.room || G.world.scenes[G.tramo], theme=scene && scene.theme || 'escuela';
++    const low=qScale<.72, pulse=.9+.1*Math.sin(T*1.55+G.tramo);
++    const rgb=theme==='submarino'?'76,226,242':theme==='espacial'?'154,187,255':theme==='guadalajara'?'255,190,122':'255,211,153';
++    const radius=(theme==='espacial'?260:theme==='submarino'?235:215)*(low?.82:1);
++    const light=(x,y,r,a)=>{
++      const g=ctx.createRadialGradient(x,y,2,x,y,r);
++      g.addColorStop(0,`rgba(${rgb},${a*pulse})`);
++      g.addColorStop(.42,`rgba(${rgb},${a*.34*pulse})`);
++      g.addColorStop(1,`rgba(${rgb},0)`);
++      ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2);
++    };
++    ctx.save();
++    ctx.beginPath();ctx.rect(V.x1,V.y1,V.x2-V.x1,V.y2-V.y1);ctx.clip();
++    ctx.globalCompositeOperation='screen';
++    light(P.x,P.y-10,radius,low?.055:.115);
++    if(!low&&theme==='submarino'){
++      const boss=G.world.foes.find(f=>f.kind==='poseidon'&&f.isBoss&&!f.dead&&Math.abs(f.x-P.x)<radius*1.2&&Math.abs(f.y-P.y)<radius*1.2);
++      if(boss)light(boss.x,boss.y-boss.h*.18,radius*.62,.09);
++    }
++    ctx.restore();
++  }
++
+   /** Dibuja un fotograma. T = tiempo de animación (s). */
+   function draw(G, T) {
+     if (contextLost || !ctx) return;
+@@ -2670,10 +2703,14 @@
+     ctx.fillStyle = '#101725';
+     ctx.fillRect(0, 0, cw, ch);
+     if (!G.world || !G.P) return;
+-    const v = G.view, k = dpr * v.zoom;
+-    const shake = G.shakeT > 0 ? Math.sin(G.shakeT * 90) * G.shakeT * 16 * ropt.shake : 0;
+-    // Redondeo a píxel físico de la cámara: evita el temblor de subpíxel en el fondo pintado.
+-    const ox = Math.round(-G.cam.x * k), oy = Math.round(-G.cam.y * k + shake * dpr);
++    const v = G.view;
++    const pulse = G.state === 'playing' && G.shakeT > 0 ? Math.min(0.012, G.shakeT * 0.035) * ropt.shake : 0;
++    const k = dpr * v.zoom * (1 + pulse);
++    const shakeX = G.shakeT > 0 && G.state === 'playing' ? Math.cos(G.shakeT * 73) * G.shakeT * 10 * ropt.shake : 0;
++    const shakeY = G.shakeT > 0 && G.state === 'playing' ? Math.sin(G.shakeT * 90) * G.shakeT * 16 * ropt.shake : 0;
++    // El pulso se ancla al centro de cámara y se redondea a píxel físico para evitar bordes vacíos y subpíxel.
++    const ox = Math.round(cw * 0.5 - (G.cam.x + v.w * 0.5) * k + shakeX * dpr);
++    const oy = Math.round(ch * 0.5 - (G.cam.y + v.h * 0.5) * k + shakeY * dpr);
+     ctx.setTransform(k, 0, 0, k, ox, oy);
+     const V = { x1: G.cam.x - 40, x2: G.cam.x + v.w + 40, y1: G.cam.y - 60, y2: G.cam.y + v.h + 60 };
+     const W = G.world;
+@@ -2703,6 +2740,7 @@
+     drawWaters(G, V, true);
+     drawWaterFx(G, V);
+     drawParticles(G, V);
++    drawDynamicLights(G,V,T);
+     // Solo el primer plano se dibuja delante de Sofía; los bordes dejan libre el corredor.
+     if (!G.room) {
+       for (const sc of W.scenes) {
+--- a/js/app/ui.js
++++ b/js/app/ui.js
+@@ -13,6 +13,7 @@
+     const LV = NS.LEVELS.LEVEL_SEQUENCE, NLV = LV.length;
+     const MISSIONS = NS.LEVELS.MISSIONS || [{ id: 'escuela', label: 'MISIÓN 1', levels: LV }];
+     const TOTAL_LEVELS = MISSIONS.reduce((n, M) => n + M.levels.length, 0);
++    const optionButtons = Array.from(document.querySelectorAll('#optionsPanel [data-opt]'));
+     let selMission = 0;
+     const missionUnlocked = (save, id) => (save.missions && save.missions[id]) || 0;
+     const CINEMATIC = [
+@@ -43,6 +44,8 @@
+     let toastT = 0, toastPri = -1, bannerT = 0, bubbleT = 0, cardT = 0, introIndex = 0, introThen = null;
+     let cinematicIndex = 0, cinematicThen = null, cinematicT = 0, bossCineData = null, bossCineThen = null, bossCineIndex = 0, bossCineT = 0, activePanel = null;
+     const hudCache = {};
++    let missionBuildKey = null, tramoBuildKey = null, lookBuilt = false, itemBuildKey = null, recordTextCache = null;
++    const LOOK_OPTIONS = [['original', 'ORIGINAL'], ['uniforme', 'UNIFORME'], ['rosa', 'ROSA'], ['buzo', 'BUZO'], ['astronauta', 'ASTRONAUTA']];
+ 
+     function show(id) {
+       activePanel = id || null;
+@@ -144,68 +147,92 @@
+     /* ---------- Menú principal ---------- */
+     function paintMenu(G, opt) {
+       const save = G.save, free = !!(opt && opt.freeSelect);
+-      // Barra de misiones.
+-      const mbox = $('missions');
+-      if (mbox) {
+-        mbox.innerHTML = '';
+-        MISSIONS.forEach((M, mi) => {
+-          const open = free || missionUnlocked(save, M.id) >= 1;
+-          const isNewM = M.levels.some((d) => d.isNew);
+-          const b = document.createElement('button');
+-          b.className = 'mission' + (mi === selMission ? ' sel' : '') + (open ? '' : ' locked') + (isNewM ? ' new' : '');
+-          const short = M.label.replace(/^MISIÓN \d+ · /, '');
+-          b.innerHTML = (open ? '' : '🔒 ') + 'M' + (mi + 1) + '<small>' + esc(short) + '</small>';
+-          b.disabled = !open;
+-          b.setAttribute('aria-label', open ? 'Misión ' + (mi + 1) + ': ' + short : 'Misión ' + (mi + 1) + ' bloqueada');
+-          b.onclick = () => { selMission = mi; paintMenu(G, opt); };
+-          mbox.appendChild(b);
+-        });
+-      }
+-      // Si la misión elegida quedó bloqueada, salta a la primera abierta.
++      // Corrige selección bloqueada antes de pintar; evita crear una barra visualmente desincronizada.
+       if (!(free || missionUnlocked(save, MISSIONS[selMission].id) >= 1)) {
+         const alt = MISSIONS.findIndex((M) => free || missionUnlocked(save, M.id) >= 1);
+         selMission = alt < 0 ? 0 : alt;
+       }
++      // Los botones se reconstruyen solo si cambia el estado de desbloqueo; la selección solo cambia clases.
++      const mbox = $('missions');
++      const missionKey = String(free) + ':' + MISSIONS.map((M) => M.id + '=' + (free || missionUnlocked(save, M.id) >= 1 ? 1 : 0)).join('|');
++      if (mbox) {
++        if (missionBuildKey !== missionKey) {
++          const fragment = document.createDocumentFragment();
++          MISSIONS.forEach((M, mi) => {
++            const open = free || missionUnlocked(save, M.id) >= 1, isNewM = M.levels.some((d) => d.isNew);
++            const b = document.createElement('button'), short = M.label.replace(/^MISIÓN \d+ · /, '');
++            b.className = 'mission' + (open ? '' : ' locked') + (isNewM ? ' new' : '');
++            b.innerHTML = (open ? '' : '🔒 ') + 'M' + (mi + 1) + '<small>' + esc(short) + '</small>';
++            b.disabled = !open;
++            b.setAttribute('aria-label', open ? 'Misión ' + (mi + 1) + ': ' + short : 'Misión ' + (mi + 1) + ' bloqueada');
++            b.setAttribute('aria-pressed', String(mi === selMission));
++            b.onclick = () => { selMission = mi; paintMenu(G, opt); };
++            fragment.appendChild(b);
++          });
++          mbox.replaceChildren(fragment);
++          missionBuildKey = missionKey;
++        }
++        Array.from(mbox.children).forEach((b, mi) => {
++          const M = MISSIONS[mi], open = free || missionUnlocked(save, M.id) >= 1;
++          b.classList.toggle('sel', mi === selMission);
++          b.setAttribute('aria-pressed', String(mi === selMission));
++          b.disabled = !open;
++        });
++      }
+       const M = MISSIONS[selMission];
+       const unlocked = free ? M.levels.length : missionUnlocked(save, M.id);
+       const box = $('tramos');
+-      box.innerHTML = '';
+-      M.levels.forEach((def, i) => {
+-        const ok = i < unlocked || free;
+-        const ch = ST.CHAPTERS[def.storyIndex], title = (ch && ch.title) || def.label;
+-        const b = document.createElement('button');
+-        b.className = 'tramo' + (ok ? '' : ' locked') + (def.isNew ? ' new' : '');
+-        b.textContent = ok ? String(i + 1) : '·';
+-        b.title = ok ? title + (def.isNew ? ' (NUEVO)' : '') : 'Bloqueado: llega a la parada de este tramo';
+-        b.setAttribute('aria-label', ok ? 'Empezar en la parada ' + (i + 1) + ': ' + title : 'Parada ' + (i + 1) + ' bloqueada');
+-        b.disabled = !ok;
+-        b.onclick = () => cb.start(selMission, i);
+-        box.appendChild(b);
+-      });
++      const tramoKey = selMission + ':' + unlocked + ':' + String(free);
++      if (box && tramoBuildKey !== tramoKey) {
++        const fragment = document.createDocumentFragment(), missionIndex = selMission;
++        M.levels.forEach((def, i) => {
++          const ok = i < unlocked || free, ch = ST.CHAPTERS[def.storyIndex], title = (ch && ch.title) || def.label;
++          const b = document.createElement('button');
++          b.className = 'tramo' + (ok ? '' : ' locked') + (def.isNew ? ' new' : '');
++          b.textContent = ok ? String(i + 1) : '·';
++          b.title = ok ? title + (def.isNew ? ' (NUEVO)' : '') : 'Bloqueado: llega a la parada de este tramo';
++          b.setAttribute('aria-label', ok ? 'Empezar en la parada ' + (i + 1) + ': ' + title : 'Parada ' + (i + 1) + ' bloqueada');
++          b.disabled = !ok;
++          b.onclick = () => cb.start(missionIndex, i);
++          fragment.appendChild(b);
++        });
++        box.replaceChildren(fragment);
++        tramoBuildKey = tramoKey;
++      }
+       const tl = $('tramosLabel');
+       if (tl) tl.textContent = M.label + ' · ELIGE UNA PARADA';
+       const looks = $('lookPicker');
+       if (looks) {
+-        looks.replaceChildren();
+-        for (const [key, label] of [['original', 'ORIGINAL'], ['uniforme', 'UNIFORME'], ['rosa', 'ROSA'], ['buzo', 'BUZO'], ['astronauta', 'ASTRONAUTA']]) {
+-          const b = document.createElement('button');
+-          b.type = 'button';
+-          b.className = 'lookOption' + (opt.ninaLook === key ? ' selected' : '');
+-          b.textContent = label;
+-          b.setAttribute('aria-pressed', String(opt.ninaLook === key));
+-          b.onclick = () => cb.look(key);
+-          looks.appendChild(b);
++        if (!lookBuilt) {
++          const fragment = document.createDocumentFragment();
++          for (const [key, label] of LOOK_OPTIONS) {
++            const b = document.createElement('button');
++            b.type = 'button'; b.className = 'lookOption'; b.textContent = label;
++            b.setAttribute('aria-pressed', 'false'); b.onclick = () => cb.look(key);
++            fragment.appendChild(b);
++          }
++          looks.replaceChildren(fragment); lookBuilt = true;
+         }
++        Array.from(looks.children).forEach((b, i) => {
++          const selected = opt.ninaLook === LOOK_OPTIONS[i][0];
++          b.classList.toggle('selected', selected); b.setAttribute('aria-pressed', String(selected));
++        });
+       }
+       const col = $('collection');
+-      col.innerHTML = ST.ITEMS.map((it) => '<span class="it' + (save.items[it.id] ? ' got' : '') + '" title="' + esc(it.name) + '">' + (save.items[it.id] ? esc(it.name) : '???') + '</span>').join('');
++      const itemKey = ST.ITEMS.map((it) => save.items[it.id] ? '1' : '0').join('');
++      if (col && itemBuildKey !== itemKey) {
++        col.innerHTML = ST.ITEMS.map((it) => '<span class="it' + (save.items[it.id] ? ' got' : '') + '" title="' + esc(it.name) + '">' + (save.items[it.id] ? esc(it.name) : '???') + '</span>').join('');
++        itemBuildKey = itemKey;
++      }
+       const found = ST.ITEMS.filter((it) => save.items[it.id]).length;
+-      $('collectionCount').textContent = found + ' / ' + ST.ITEMS.length;
++      const countEl = $('collectionCount'), countText = found + ' / ' + ST.ITEMS.length;
++      if (countEl && countEl.textContent !== countText) countEl.textContent = countText;
+       const rec = [];
+       if (save.bestTime) rec.push('Mejor tiempo ' + fmtTime(save.bestTime));
+       if (save.bestScore) rec.push('Récord ' + save.bestScore + ' pts');
+       if (save.wins) rec.push(save.wins + (save.wins === 1 ? ' llegada' : ' llegadas'));
+-      $('records').textContent = rec.join(' · ') || 'Sin récords todavía.';
++      const recordText = rec.join(' · ') || 'Sin récords todavía.';
++      if (recordTextCache !== recordText) { $('records').textContent = recordText; recordTextCache = recordText; }
+       const nNew = MISSIONS.reduce((n, M) => n + M.levels.filter((d) => d.isNew).length, 0);
+       if ($('levelsCount')) $('levelsCount').textContent = String(TOTAL_LEVELS);
+       if ($('newLevels')) $('newLevels').textContent = nNew ? nNew + ' niveles nuevos marcados con ★' : '';
+@@ -221,19 +248,21 @@
+       ninaLook: (v) => ({ original: 'ORIGINAL', uniforme: 'UNIFORME', rosa: 'ROSA', buzo: 'BUZO', astronauta: 'ASTRONAUTA' }[v] || 'ORIGINAL')
+     };
+     function paintOpts(opt) {
++      const writeText = (el, value) => { if (el && el.textContent !== value) el.textContent = value; };
+       for (const pre of ['', 'p']) {
+         const m = $(pre + 'optMusic'), s = $(pre + 'optSfx'), v = $(pre + 'optVib');
+-        if (m) m.textContent = 'MÚSICA: ' + OPT_LABEL.musicVol(opt.musicVol);
+-        if (s) s.textContent = 'EFECTOS: ' + OPT_LABEL.sfxVol(opt.sfxVol);
+-        if (v) v.textContent = 'VIBRACIÓN: ' + OPT_LABEL.vib(opt.vib);
++        writeText(m, 'MÚSICA: ' + OPT_LABEL.musicVol(opt.musicVol));
++        writeText(s, 'EFECTOS: ' + OPT_LABEL.sfxVol(opt.sfxVol));
++        writeText(v, 'VIBRACIÓN: ' + OPT_LABEL.vib(opt.vib));
+       }
+       const d = C.difficulty[opt.difficulty] || C.difficulty.normal;
+-      $('optDiff').textContent = 'DIFICULTAD: ' + d.label;
+-      $('diffHelp').textContent = d.lives + ' vidas · enemigos ' + (d.foeDensity < 1 ? 'escasos y lentos' : d.foeDensity > 1 ? 'numerosos y rápidos' : 'normales') + ' · caída dañina desde ' + Math.round(d.fallDamage / 10) + ' m' + (opt.relaxed ? ' · MODO RELAJADO' : '');
+-      for (const b of document.querySelectorAll('#optionsPanel [data-opt]')) {
++      writeText($('optDiff'), 'DIFICULTAD: ' + d.label);
++      writeText($('diffHelp'), d.lives + ' vidas · enemigos ' + (d.foeDensity < 1 ? 'escasos y lentos' : d.foeDensity > 1 ? 'numerosos y rápidos' : 'normales') + ' · caída dañina desde ' + Math.round(d.fallDamage / 10) + ' m' + (opt.relaxed ? ' · MODO RELAJADO' : ''));
++      for (const b of optionButtons) {
+         const k = b.dataset.opt, f = OPT_LABEL[k];
+-        if (f) b.textContent = f(opt[k]);
+-        b.setAttribute('aria-label', (b.closest('.optRow')?.querySelector('span')?.textContent || k) + ': ' + b.textContent);
++        if (f) writeText(b, f(opt[k]));
++        const label = (b.closest('.optRow')?.querySelector('span')?.textContent || k) + ': ' + b.textContent;
++        if (b.getAttribute('aria-label') !== label) b.setAttribute('aria-label', label);
+       }
+     }
+     let optReturn = 'menu', resetArmed = 0;
+--- a/sw.js
++++ b/sw.js
+@@ -1,7 +1,7 @@
+ // ¡Se me fue el camión! — service worker (V57).
+ // Precarga el juego completo (código versionado, fondos de los niveles —incluidos submarino y espacial—, sprites y audio) para jugar sin red.
+-// Caché Fase 3: fuerza la recarga del renderer con efectos marinos y espaciales.
+-const CACHE='camion-v58-1-marine-space-fx-phase3-cache';
++// Caché Fase 4: renueva renderer, luces, cámara y estilos responsivos del menú.
++const CACHE='camion-v58-1-phase4-visual-fx-cache';
+ const CODE=['css/space_intro.css?v=58.1','js/app/space_intro.js?v=58.1','css/marine_intro.css?v=58.1','js/app/marine_intro.js?v=58.1','js/app/marine_atlases.js?v=58.1','js/app/estoker_anim_data.js?v=58.1','js/app/marine_feet.js?v=58.1','js/app/marine_motion.js?v=58.1',"css/game.css?v=58.1", "css/toxifamilia_style.css?v=58.1", "css/toxifamilia.css?v=58.1", "js/core/util.js?v=58.1", "js/core/config.js?v=58.1", "js/core/levels.js?v=58.1", "js/core/story.js?v=58.1", "js/core/toxifamilia_style.js?v=58.1", "js/core/toxifamilia.js?v=58.1", "js/core/physics.js?v=58.1", "js/core/enemies.js?v=58.1", "js/core/obstacles.js?v=58.1", "js/core/world.js?v=58.1", "js/core/game.js?v=58.1", "js/app/art_data.js?v=58.1", "js/app/sofia_swim_override.js?v=58.1", "js/app/render.js?v=58.1", "js/app/input.js?v=58.1", "js/app/audio.js?v=58.1", "js/app/ui.js?v=58.1", "js/app/main.js?v=58.1", "js/app/toxifamilia_cinematic.js?v=58.1"];
+ const SHELL=['assets/cinematic/papito_estoker_provisional.svg','Se_Me_Fue_El_Camion.html','index.html','manifest.webmanifest','icon-192.png','icon-512.png','assets/audio/cancion_fondo_v40.mp3','assets/audio/guadalajara_aventura_v24.mp3','assets/audio/ambiente_escuela_v24.mp3','assets/audio/ambiente_calles_guadalajara_v24.mp3','assets/audio/luna_maullido_v24.mp3','assets/audio/morita_maullido_v24.mp3','assets/audio/luna_ronroneo_v31.mp3','assets/audio/morita_ronroneo_v31.mp3','assets/audio/luna_alerta_v31.mp3','assets/audio/morita_alerta_v31.mp3','assets/audio/sofia_otro_gato_usuario_v38.mp3','assets/audio/motor_camion_guadalajara_v25.mp3','assets/audio/boss_intro_v37.mp3','assets/audio/boss_windup_v37.mp3','assets/audio/boss_hit_v37.mp3','assets/audio/boss_defeat_v37.mp3','assets/vehicles/camion_frame_01.png','assets/vehicles/camion_frame_02.png','assets/vehicles/camion_frame_03.png','assets/vehicles/camion_frame_04.png','assets/companions/luna.png','assets/companions/luna_shoulder.png','assets/companions/morita.png','assets/companions/morita_shoulder.png'];
+ const SCENES=["assets/scenes/escuela_fondo.png", "assets/scenes/guadalajara_fondo.png", "assets/scenes/generated/anden_tren_ligero_guadalajara.png", "assets/scenes/generated/centro_historico_guadalajara.png", "assets/scenes/generated/escuela_pasillo_lluvia.png", "assets/scenes/generated/escuela_patio_tarde.png", "assets/scenes/generated/guadalajara_colonia_noche.png", "assets/scenes/generated/mercado_tapatio_amanecer.png", "assets/scenes/generated/parque_metropolitano_atardecer.png", "assets/scenes/generated/plaza_jacarandas_noche.png", "assets/scenes/generated/sofevi_centro_zigzag.png", "assets/scenes/generated/terminal_guadalajara_amanecer.png", "assets/scenes/generated/zapopan_basilica_noche.png", "assets/scenes/generated/submarino_fondo.png", "assets/scenes/generated/espacial_fondo.png"];
+--- a/tests/phase3_space_marine_fx.test.js
++++ b/tests/phase3_space_marine_fx.test.js
+@@ -41,7 +41,7 @@
+ 
+ test('Fase 3: el service worker invalida caché previa y precarga el renderer', () => {
+   const sw = source('sw.js');
+-  assert.match(sw, /const CACHE='camion-v58-1-marine-space-fx-phase3-cache'/);
++  assert.match(sw, /const CACHE='camion-v58-1-phase4-visual-fx-cache'/);
+   assert.match(sw, /js\/app\/render\.js\?v=58\.1/);
+ });
+ 
+--- a/tests/v572_marine_atlases_space.test.js
++++ b/tests/v572_marine_atlases_space.test.js
+@@ -53,6 +53,6 @@
+  assert.match(r,/function drawMarineParallax\(/);
+  assert.match(r,/MARINE_SPEED = Object\.freeze\(\[0\.05/);
+  assert.ok(h.includes('marine_atlases.js?v=58.1'));
+- assert.ok(sw.includes('camion-v58-1-marine-space-fx-phase3-cache'));
++ assert.ok(sw.includes('camion-v58-1-phase4-visual-fx-cache'));
+  assert.ok(sw.includes('...MARINE_ATLAS_FILES,...SPACE_R2_FILES'));
+ });
+--- a/tests/v573_marine_cinematic.test.js
++++ b/tests/v573_marine_cinematic.test.js
+@@ -61,7 +61,7 @@
+  assert.ok(intro.includes('SALTAR CINEMÁTICA'));
+  assert.ok(intro.includes('assets/cinematic/storyboard_marino/'));
+  assert.ok(html.includes('marine_intro.js?v=58.1'));
+- assert.ok(sw.includes('camion-v58-1-marine-space-fx-phase3-cache'));
++ assert.ok(sw.includes('camion-v58-1-phase4-visual-fx-cache'));
+  for(let i=1;i<=5;i++){
+   const f=`assets/cinematic/storyboard_marino/escena_0${i}.webp`;
+   assert.ok(fs.existsSync(path.join(ROOT,f)));assert.ok(sw.includes(f));
+--- a/tests/v57_thematic_villains.test.js
++++ b/tests/v57_thematic_villains.test.js
+@@ -42,7 +42,7 @@
+     assert.ok(f.y > f.waterZone.y && f.y < f.waterZone.y2);
+     seen.set(f.waterZone.id, (seen.get(f.waterZone.id) || 0) + 1);
+   }
+-  assert.ok([...seen.values()].every(n => n <= 6), 'océano continuo V57.9: máximo seis pirañas repartidas por profundidad');
++  assert.ok([...seen.values()].every(n => n <= 8), 'océano continuo: máximo ocho pirañas por zona tras ajustar la densidad de los mapas largos');
+   assert.ok(space.foes.some(f => f.kind === 'drone' && !f.isBoss), 'drones comunes en órbita');
+   assert.ok(space.foes.some(f => f.kind === 'drone' && f.isBoss), 'dron centinela como jefe');
+   assert.ok(space.foes.every(f => f.kind !== 'pigeon' && f.kind !== 'bat'), 'sin palomas/murciélagos en espacio');
+@@ -153,9 +153,9 @@
+   assert.match(render, /f\.kind === 'piranha' \|\| f\.kind === 'shark'/);
+   assert.match(render, /f\.kind === 'drone'/);
+   assert.match(render, /s\.kind === 'plasma'/);
+-  assert.match(read('sw.js'), /camion-v58-1-space-enemies-cache/);
+-  assert.equal(LV.SUBMARINO_MAP.width, 940);
+-  assert.equal(LV.SUBMARINO_MAP.height, 3072);
+-  assert.equal(LV.ESPACIAL_MAP.width, 940);
+-  assert.equal(LV.ESPACIAL_MAP.height, 3072);
++  assert.match(read('sw.js'), /camion-v58-1-phase4-visual-fx-cache/);
++  assert.equal(LV.SUBMARINO_MAP.width, 1976);
++  assert.equal(LV.SUBMARINO_MAP.height, 5960);
++  assert.equal(LV.ESPACIAL_MAP.width, 1976);
++  assert.equal(LV.ESPACIAL_MAP.height, 5960);
+ });
+--- a/tests/v581_android_canvas_resilience.test.js
++++ b/tests/v581_android_canvas_resilience.test.js
+@@ -62,5 +62,5 @@
+ 
+ test('Android Canvas: la caché PWA se invalida para descargar el renderer actualizado', () => {
+   const sw = read('sw.js');
+-  assert.match(sw, /camion-v58-1-space-enemies-cache/);
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+ });
+--- a/tests/v581_marine_motion_fx.test.js
++++ b/tests/v581_marine_motion_fx.test.js
+@@ -41,7 +41,7 @@
+   const css = read('css/marine_intro.css');
+   const render = read('js/app/render.js');
+   assert.ok(html.indexOf('marine_motion.js') < html.indexOf('marine_intro.js'));
+-  assert.match(sw, /camion-v58-1-marine-space-fx-phase3-cache/);
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+   assert.match(sw, /js\/app\/marine_motion\.js\?v=58\.1/);
+   assert.match(intro, /MOTION\.frameAtPhase/);
+   assert.match(intro, /MOTION\.backgroundPan\(offset\)/);
+--- a/tests/v581_space_cinematic.test.js
++++ b/tests/v581_space_cinematic.test.js
+@@ -83,7 +83,7 @@
+   const sw = read('sw.js');
+   assert.match(html, /css\/space_intro\.css\?v=58\.1/);
+   assert.match(html, /js\/app\/space_intro\.js\?v=58\.1/);
+-  assert.match(sw, /camion-v58-1-space-enemies-cache/);
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+   assert.match(sw, /css\/space_intro\.css\?v=58\.1/);
+   assert.match(sw, /js\/app\/space_intro\.js\?v=58\.1/);
+ });
+--- a/tests/v581_space_environment.test.js
++++ b/tests/v581_space_environment.test.js
+@@ -22,5 +22,5 @@
+   assert.match(render, /p\.theme === 'espacial'[\s\S]*drawSpaceMeteoritePlatform\(p/);
+   assert.match(render, /decoracion\.webp/);
+   assert.match(render, /p\.x1[\s\S]*p\.x2[\s\S]*p\.y/);
+-  assert.match(sw, /camion-v58-1-space-enemies-cache/);
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+ });
+--- a/tests/v581_space_gravity.test.js
++++ b/tests/v581_space_gravity.test.js
+@@ -48,5 +48,5 @@
+   assert.equal(PO.vy, PE.vy, 'el perfil espacial termina al salir del volumen de escena');
+ 
+   const sw = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'sw.js'), 'utf8');
+-  assert.match(sw, /camion-v58-1-space-enemies-cache/);
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+ });
+--- a/tests/v581_space_laser.test.js
++++ b/tests/v581_space_laser.test.js
+@@ -92,5 +92,5 @@
+   assert.match(html, /LÁSER EN ESPACIO/);
+   assert.match(render, /function drawLaserPistol\(/);
+   assert.match(render, /G\.laserShots/);
+-  assert.match(sw, /camion-v58-1-space-enemies-cache/);
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/);
+ });
+--- a/tests/v581_space_suits.test.js
++++ b/tests/v581_space_suits.test.js
+@@ -15,7 +15,7 @@
+   assert.match(sw, /const SUB_FRAMES=/, 'el service worker construye la lista de sprites sellados');
+   assert.match(sw, /assets\/companions\/sub\/\$\{cat\}_idle_sub_0/, 'la lista incorpora sprites fuente de Luna y Morita');
+   assert.match(sw, /\.\.\.SUB_FRAMES/, 'el service worker precarga los sprites sellados sin conexión');
+-  assert.match(sw, /camion-v58-1-space-enemies-cache/, 'la PWA renueva renderer, trajes, arma y cinemática');
++  assert.match(sw, /camion-v58-1-phase4-visual-fx-cache/, 'la PWA renueva renderer, trajes, arma y cinemática');
+ 
+   for (const cat of ['luna', 'morita']) {
+     for (let i = 1; i <= 6; i++) {
+--- a/tests/v581_swim_strike_flashback_cache.test.js
++++ b/tests/v581_swim_strike_flashback_cache.test.js
+@@ -47,7 +47,7 @@
+ });
+ test('Caché V58.1 no almacena respuestas HTTP fallidas; render restablece estado del canvas',()=>{
+  const sw=fs.readFileSync(path.join(ROOT,'sw.js'),'utf8');
+-	 assert.match(sw,/camion-v58-1-space-enemies-cache/);assert.match(sw,/res\.ok && res\.type==='basic'/);
++	 assert.match(sw,/camion-v58-1-phase4-visual-fx-cache/);assert.match(sw,/res\.ok && res\.type==='basic'/);
+  const render=fs.readFileSync(path.join(ROOT,'js/app/render.js'),'utf8');
+  assert.match(render,/ctx\.globalCompositeOperation='source-over'/);
+  assert.match(render,/ctx\.filter='none'/);
+--- /dev/null
++++ b/INFORME_FASE4_CAMARA_LUCES_MENU_ES.md
+@@ -0,0 +1,46 @@
++# Informe ECO — Fase 4: cámara, iluminación y menú
++
++**Proyecto:** ¡Se me fue el camión!  
++**Base preservada:** candidata integrada V58.1 Fase 3  
++**Estado:** **RELEASE_CANDIDATE**; no es RELEASE 1.0  
++**SHA-256 de la base:** `e77c3e77d52d5f4491b58e4bb8428c1bb4567584968f848251ff7348f549eee1`
++
++## Alcance ejecutado
++
++Esta fase se limitó al pulso visual de cámara, iluminación Canvas por mundo, optimización de reconstrucción del menú, presentación responsiva y una corrección del estado devuelto por la precarga. No se modificaron físicas, geometría de niveles, progresión, combate, sprites originales ni audio.
++
++- **Cámara:** el pulso de impacto actúa alrededor del centro de la cámara; el zoom adicional está limitado a 1,2 %, usa `shakeT` y respeta la opción de sacudida. El desplazamiento se redondea a píxel físico para reducir vibración subpíxel y riesgo de bordes vacíos.
++- **Iluminación dinámica:** gradientes radiales discretos con paleta según Escuela, Guadalajara, Submarino o Espacio; se recortan al área visible y solo se dibujan durante el juego. La calidad baja reduce el radio/intensidad; en calidad normal/alta Poseidón recibe un acento tenue cuando está cerca de Sofía. La iluminación queda antes del parallax frontal y fuera de la UI DOM.
++- **Menú:** las listas de misiones, paradas y apariencia se conservan y solo se reconstruyen cuando cambia el estado que determina su contenido. La selección actualiza clases/atributos accesibles sin reemplazar innecesariamente los nodos. En paisaje amplio usa dos columnas; en móvil conserva una columna con desplazamiento vertical.
++- **Precarga:** `Render.preload()` devolvía el resultado `undefined` de `Image.decode()` después de una decodificación exitosa, pero el arranque lo interpretaba como `false`. Ahora devuelve estado booleano explícito tras la carga; si `decode()` falla pero la imagen ya cargó, mantiene el fallback dibujable del navegador. Esto quitó el aviso engañoso “No se pudo cargar todo el arte” observado durante QA.
++- **PWA:** se mantiene el identificador de caché de Fase 4 para invalidar el renderer anterior.
++
++## Verificación ejecutada
++
++### Pruebas automatizadas
++
++- Sintaxis: `node --check` en los módulos tocados (`render.js`, `ui.js`, `game.js`, `sw.js`) y en los archivos JavaScript de `tests/`.
++- Suite focalizada: **66/66 pruebas aprobadas, 0 fallos** en 14 módulos relacionados con cámara/menú/Fase 4, ciclo de partida, efectos de Fase 3, enemigos, cinemáticas, caché PWA y sistemas marino/espacial.
++- Se añadieron regresiones para el retorno booleano de precarga, cámara acotada, iluminación por mundo, reutilización de nodos DOM y distribución responsiva.
++- Se actualizaron assertions de pruebas heredadas de versiones previas que ya no correspondían a la expansión de mapas/densidad aplicada en Fases 1–2: dimensiones marino/espacial 1976×5960 y máximo de 8 pirañas por zona. Es mantenimiento de expectativas de tests; no cambia gameplay.
++
++### Navegador headless
++
++La página real se abrió en Chromium headless, en modo QA y sin registrar Service Worker durante esta captura. Se capturaron los cuatro mundos y el menú; no se observaron excepciones JavaScript.
++
++- Menú paisaje: viewport 1920×1080, panel medido 970×587; el contenido medido no excedió el alto del panel (`scrollHeight` 585 / `clientHeight` 585). Los cuatro selectores de misión estaban disponibles y “Jugar” habilitado.
++- Menú móvil: viewport 412×915, una columna con scroll y los cuatro selectores accesibles.
++- Reutilización DOM: se mantuvieron las identidades de los botones de misión, parada y apariencia al repintar el menú.
++- Gameplay: capturas en Escuela, Guadalajara, Submarino y Espacio a 1600×900; adicionalmente, Espacio en 412×915.
++- Medición de animación: **60,3 FPS** de `requestAnimationFrame` durante 2,5 s a 1600×900 en Chromium headless. Es una comprobación del sandbox, no una medición en hardware Android ni una garantía de 60 FPS en el Moto G15.
++
++Las capturas con efectos activos y la referencia con el estado en pausa se guardan bajo `reports/screenshots/phase4/`.
++
++## Pendientes y límites
++
++1. **Android 15 / Motorola Moto G15:** validación física pendiente; no se declara aprobada.
++2. **PWA instalada/offline:** esta fase verifica el versionado y las pruebas de caché del código, pero no sustituye una instalación y actualización offline en Android.
++3. **Arte heredado fuera de Fase 4:** la captura base de Fase 3 ya mostraba una banda superior anaranjada en el encuadre marino y grandes formas geométricas en el fondo espacial. Fase 4 no modifica los fondos ni corrige esos elementos; requieren una revisión de arte/parallax separada.
++4. No se repitieron pruebas de alcanzabilidad ni físicas: esta fase no cambia geometría, movimiento ni colisiones. Continúan valiendo únicamente los resultados documentados en sus fases anteriores.
++
++Por estos límites, el resultado se entrega como **candidata ECO Fase 4**, no como juego terminado ni publicación certificada.
+--- /dev/null
++++ b/MANIFEST_FASE4.json
+@@ -0,0 +1,80 @@
++{
++  "project": "¡Se me fue el camión!",
++  "phase": "FASE4_CAMARA_LUCES_MENU",
++  "source_version": "V58.1 FASE3_CANDIDATO",
++  "status": "RELEASE_CANDIDATE",
++  "release_1_0": false,
++  "base_archive": "/home/ubuntu/game/eco/V58_1_phase3/SE_ME_FUE_EL_CAMION_V58_1_FASE3_CANDIDATO.zip",
++  "base_sha256": "e77c3e77d52d5f4491b58e4bb8428c1bb4567584968f848251ff7348f549eee1",
++  "scope": [
++    "Pulso de cámara visual, centrado y limitado; respeta la opción de sacudida.",
++    "Iluminación radial suave por mundo, acotada al viewport y reducida por nivel de calidad.",
++    "Menú con reutilización condicional de nodos y layout paisaje/móvil responsivo.",
++    "Retorno booleano explícito de preload para evitar aviso falso tras Image.decode().",
++    "Invalidación del caché PWA de Fase 4."
++  ],
++  "preserved": [
++    "Físicas, timestep y colisiones sin cambios.",
++    "Geometría, progresión y contenido de niveles sin cambios.",
++    "Sprites originales y audio sin cambios."
++  ],
++  "changed_text_files": [
++    "INFORME_FASE4_CAMARA_LUCES_MENU_ES.md",
++    "MANIFEST_FASE4.json",
++    "Se_Me_Fue_El_Camion.html",
++    "css/game.css",
++    "js/app/render.js",
++    "js/app/ui.js",
++    "sw.js",
++    "tests/phase3_space_marine_fx.test.js",
++    "tests/phase4_camera_lighting_menu.test.js",
++    "tests/v572_marine_atlases_space.test.js",
++    "tests/v573_marine_cinematic.test.js",
++    "tests/v57_thematic_villains.test.js",
++    "tests/v581_android_canvas_resilience.test.js",
++    "tests/v581_marine_motion_fx.test.js",
++    "tests/v581_space_cinematic.test.js",
++    "tests/v581_space_environment.test.js",
++    "tests/v581_space_gravity.test.js",
++    "tests/v581_space_laser.test.js",
++    "tests/v581_space_suits.test.js",
++    "tests/v581_swim_strike_flashback_cache.test.js"
++  ],
++  "automated_qa": {
++    "syntax_checks": "node --check de módulos afectados y tests/*.js",
++    "focused_test_modules": 14,
++    "tests_passed": 66,
++    "tests_failed": 0
++  },
++  "browser_qa": {
++    "environment": "Chromium headless en sandbox; modo QA, sin prueba de dispositivo físico",
++    "worlds_captured": ["escuela", "guadalajara", "submarino", "espacial"],
++    "viewports": ["1920x1080 menú paisaje", "412x915 menú móvil", "1600x900 gameplay", "412x915 espacio gameplay"],
++    "javascript_exceptions": 0,
++    "menu_dom_reuse": true,
++    "menu_mobile_scroll": true,
++    "menu_landscape_overflow": false,
++    "raf_sample_fps": 60.3,
++    "raf_sample_duration_ms": 2505
++  },
++  "visual_evidence": [
++    "reports/screenshots/phase4/menu_phase4_landscape.png",
++    "reports/screenshots/phase4/menu_phase4_portrait.png",
++    "reports/screenshots/phase4/world_1_phase4_on.png",
++    "reports/screenshots/phase4/world_1_phase4_off.png",
++    "reports/screenshots/phase4/world_2_phase4_on.png",
++    "reports/screenshots/phase4/world_2_phase4_off.png",
++    "reports/screenshots/phase4/world_3_phase4_on.png",
++    "reports/screenshots/phase4/world_3_phase4_off.png",
++    "reports/screenshots/phase4/world_4_phase4_on.png",
++    "reports/screenshots/phase4/world_4_phase4_off.png",
++    "reports/screenshots/phase4/world_4_phase4_mobile.png"
++  ],
++  "pending": [
++    "Prueba física en Motorola Moto G15 con Android 15.",
++    "Instalación y actualización PWA offline en Android.",
++    "Revisión ECO separada de banda superior en el encuadre submarino y formas geométricas heredadas del fondo espacial, presentes ya en Fase 3."
++  ],
++  "evidence_directory": "reports/screenshots/phase4/",
++  "report": "INFORME_FASE4_CAMARA_LUCES_MENU_ES.md"
++}
+--- /dev/null
++++ b/tests/phase4_camera_lighting_menu.test.js
+@@ -0,0 +1,60 @@
++'use strict';
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const path = require('node:path');
++const ROOT = path.join(__dirname, '..');
++const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
++
++const render = read('js/app/render.js');
++
++test('Fase 4: preload devuelve estado booleano tras decode y evita alertas falsas de recursos faltantes', () => {
++  const start = render.indexOf('function preload(srcs)');
++  const end = render.indexOf('// Resolución adaptativa', start);
++  const preload = render.slice(start, end);
++  assert.ok(preload.includes('if (!ok) return false'));
++  assert.ok(preload.includes('await im.decode()'));
++  assert.ok(preload.includes('return true'));
++});
++
++test('Fase 4: impactos producen un pulso de cámara pequeño, centrado y opcional', () => {
++  assert.match(render, /const pulse = G\.state === 'playing'[\s\S]{0,180}0\.012/);
++  assert.match(render, /const shakeX = G\.shakeT[\s\S]{0,140}ropt\.shake/);
++  assert.match(render, /cw \* 0\.5 - \(G\.cam\.x \+ v\.w \* 0\.5\) \* k/);
++  assert.match(render, /ch \* 0\.5 - \(G\.cam\.y \+ v\.h \* 0\.5\) \* k/);
++});
++
++test('Fase 4: iluminación ambiental por mundo es acotada por calidad y no cubre la interfaz', () => {
++  assert.match(render, /function drawDynamicLights\(G,V,T\)/);
++  assert.match(render, /createRadialGradient/);
++  assert.match(render, /globalCompositeOperation='screen'/);
++  assert.match(render, /qScale<\.72/);
++  const tail = render.slice(render.indexOf('function draw(G, T)'));
++  assert.ok(tail.indexOf('drawDynamicLights(G,V,T)') > tail.indexOf('drawPlayer(G, T)'));
++  assert.ok(tail.indexOf('drawDynamicLights(G,V,T)') < tail.indexOf('drawRealParallax(G,V,sc,4,5)'));
++});
++
++test('Fase 4: el menú reutiliza botones y solo reconstruye estructura si cambia su estado', () => {
++  const ui = read('js/app/ui.js');
++  assert.match(ui, /let missionBuildKey = null, tramoBuildKey = null/);
++  assert.match(ui, /document\.createDocumentFragment\(\)/);
++  assert.match(ui, /missionBuildKey !==/);
++  assert.match(ui, /tramoBuildKey !==/);
++  assert.match(ui, /aria-pressed/);
++});
++
++test('Fase 4: menú de escritorio usa dos columnas y móvil conserva una columna desplazable', () => {
++  const html = read('Se_Me_Fue_El_Camion.html');
++  const css = read('css/game.css');
++  assert.match(html, /class="menuHero"/);
++  assert.match(html, /class="menuProgress"/);
++  assert.match(html, /class="menuOptions"/);
++  assert.match(css, /@media\s*\(min-width:\s*760px\)\s*and\s*\(orientation:\s*landscape\)/);
++  assert.match(css, /#menu\.menuPanel\s*\{[^}]*display:\s*grid/);
++});
++
++test('Fase 4: PWA renueva el caché y precarga el renderer actualizado', () => {
++  const sw = read('sw.js');
++  assert.match(sw, /const CACHE='camion-v58-1-phase4-visual-fx-cache'/);
++  assert.match(sw, /js\/app\/render\.js\?v=58\.1/);
++});

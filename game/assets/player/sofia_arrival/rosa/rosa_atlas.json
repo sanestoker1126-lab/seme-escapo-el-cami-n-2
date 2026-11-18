@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "image": "rosa_atlas_12frames.png",
+    "size": {
+      "w": 3840,
+      "h": 320
+    },
+    "scale": "1",
+    "format": "RGBA8888",
+    "source_artwork_image_reference": "sofia_rosa_morada_atlas_12frames.png"
+  },
+  "frames": [
+    {
+      "filename": "sofia_rosa_morada_derecha_00.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_derecha_01.png",
+      "frame": {
+        "x": 320,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_derecha_02.png",
+      "frame": {
+        "x": 640,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_derecha_03.png",
+      "frame": {
+        "x": 960,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_derecha_04.png",
+      "frame": {
+        "x": 1280,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_derecha_05.png",
+      "frame": {
+        "x": 1600,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_izquierda_00.png",
+      "frame": {
+        "x": 1920,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_izquierda_01.png",
+      "frame": {
+        "x": 2240,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_izquierda_02.png",
+      "frame": {
+        "x": 2560,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_izquierda_03.png",
+      "frame": {
+        "x": 2880,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_izquierda_04.png",
+      "frame": {
+        "x": 3200,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    },
+    {
+      "filename": "sofia_rosa_morada_izquierda_05.png",
+      "frame": {
+        "x": 3520,
+        "y": 0,
+        "w": 320,
+        "h": 320
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.9625
+      },
+      "duration_ms": 125
+    }
+  ],
+  "animations": {
+    "walk_wonder_right": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "walk_wonder_left": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "look_around": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6
+    ]
+  },
+  "playback": {
+    "fps": 8,
+    "loop": true,
+    "base_ground_y": 308
+  }
+}

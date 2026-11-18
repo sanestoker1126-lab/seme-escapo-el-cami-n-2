@@ -1,0 +1,711 @@
+{
+  "schema": "seme-fue-el-camion/sofia-source-locked-animations/v12",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "character": "sofia",
+  "policy": {
+    "preserve_original_pixels": true,
+    "preserve_physics_and_hitboxes": true,
+    "no_ai_replacement": true,
+    "no_duplicate_atlases": true
+  },
+  "provenance": "Index of existing repository source PNG/JSON only. No new authored frames.",
+  "runtime_loader": "js/app/sofia_swim_override.js",
+  "atlases": {
+    "diver": {
+      "image": "assets/player/sofia/sofia_buceadora_movimientos_rgba.png",
+      "metadata": "assets/player/sofia/sofia_buceadora_movimientos.json",
+      "frame_count": 100,
+      "states": {
+        "idle": {
+          "frame_ids": [
+            "idle_00",
+            "idle_01",
+            "idle_02",
+            "idle_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 180,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "caminar_inicio": {
+          "frame_ids": [
+            "caminar_inicio_00",
+            "caminar_inicio_01",
+            "caminar_inicio_02"
+          ],
+          "frame_count": 3,
+          "duration_ms": 110,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "impulso_nado": {
+          "frame_ids": [
+            "impulso_nado_00",
+            "impulso_nado_01",
+            "impulso_nado_02",
+            "impulso_nado_03",
+            "impulso_nado_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 85,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "nadar_derecha": {
+          "frame_ids": [
+            "nadar_derecha_00",
+            "nadar_derecha_01",
+            "nadar_derecha_02",
+            "nadar_derecha_03",
+            "nadar_derecha_04",
+            "nadar_derecha_05",
+            "nadar_derecha_06",
+            "nadar_derecha_07",
+            "nadar_derecha_08",
+            "nadar_derecha_09"
+          ],
+          "frame_count": 10,
+          "duration_ms": 90,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "nadar_izquierda": {
+          "frame_ids": [
+            "nadar_izquierda_00",
+            "nadar_izquierda_01",
+            "nadar_izquierda_02",
+            "nadar_izquierda_03",
+            "nadar_izquierda_04",
+            "nadar_izquierda_05",
+            "nadar_izquierda_06",
+            "nadar_izquierda_07",
+            "nadar_izquierda_08",
+            "nadar_izquierda_09"
+          ],
+          "frame_count": 10,
+          "duration_ms": 90,
+          "loop": true,
+          "direction": "left",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "bucear_abajo": {
+          "frame_ids": [
+            "bucear_abajo_00",
+            "bucear_abajo_01",
+            "bucear_abajo_02",
+            "bucear_abajo_03",
+            "bucear_abajo_04",
+            "bucear_abajo_05",
+            "bucear_abajo_06"
+          ],
+          "frame_count": 7,
+          "duration_ms": 100,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "salir_de_picada": {
+          "frame_ids": [
+            "salir_de_picada_00",
+            "salir_de_picada_01",
+            "salir_de_picada_02",
+            "salir_de_picada_03",
+            "salir_de_picada_04",
+            "salir_de_picada_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 100,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "frenar_agua": {
+          "frame_ids": [
+            "frenar_agua_00",
+            "frenar_agua_01",
+            "frenar_agua_02"
+          ],
+          "frame_count": 3,
+          "duration_ms": 125,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "voltereta": {
+          "frame_ids": [
+            "voltereta_00",
+            "voltereta_01",
+            "voltereta_02",
+            "voltereta_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 90,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "estabilizar_agua": {
+          "frame_ids": [
+            "estabilizar_agua_00",
+            "estabilizar_agua_01",
+            "estabilizar_agua_02",
+            "estabilizar_agua_03",
+            "estabilizar_agua_04",
+            "estabilizar_agua_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 120,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "caminar_fondo": {
+          "frame_ids": [
+            "caminar_fondo_00",
+            "caminar_fondo_01",
+            "caminar_fondo_02",
+            "caminar_fondo_03",
+            "caminar_fondo_04",
+            "caminar_fondo_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 115,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "correr_fondo": {
+          "frame_ids": [
+            "correr_fondo_00",
+            "correr_fondo_01",
+            "correr_fondo_02"
+          ],
+          "frame_count": 3,
+          "duration_ms": 95,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "impulso_submarino": {
+          "frame_ids": [
+            "impulso_submarino_00",
+            "impulso_submarino_01",
+            "impulso_submarino_02",
+            "impulso_submarino_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 85,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "agacharse_fondo": {
+          "frame_ids": [
+            "agacharse_fondo_00",
+            "agacharse_fondo_01",
+            "agacharse_fondo_02",
+            "agacharse_fondo_03",
+            "agacharse_fondo_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 130,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "impulsarse": {
+          "frame_ids": [
+            "impulsarse_00",
+            "impulsarse_01"
+          ],
+          "frame_count": 2,
+          "duration_ms": 90,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "giro_agua": {
+          "frame_ids": [
+            "giro_agua_00",
+            "giro_agua_01",
+            "giro_agua_02",
+            "giro_agua_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 100,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "recuperar_equilibrio": {
+          "frame_ids": [
+            "recuperar_equilibrio_00",
+            "recuperar_equilibrio_01",
+            "recuperar_equilibrio_02"
+          ],
+          "frame_count": 3,
+          "duration_ms": 125,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "recibir_golpe_caer": {
+          "frame_ids": [
+            "recibir_golpe_caer_00",
+            "recibir_golpe_caer_01",
+            "recibir_golpe_caer_02",
+            "recibir_golpe_caer_03",
+            "recibir_golpe_caer_04",
+            "recibir_golpe_caer_05",
+            "recibir_golpe_caer_06"
+          ],
+          "frame_count": 7,
+          "duration_ms": 120,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "center",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "levantarse": {
+          "frame_ids": [
+            "levantarse_00",
+            "levantarse_01",
+            "levantarse_02",
+            "levantarse_03",
+            "levantarse_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 135,
+          "loop": false,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        },
+        "recuperar_guardia": {
+          "frame_ids": [
+            "recuperar_guardia_00",
+            "recuperar_guardia_01",
+            "recuperar_guardia_02"
+          ],
+          "frame_count": 3,
+          "duration_ms": 150,
+          "loop": true,
+          "direction": "right",
+          "pivot_mode": "ground",
+          "provenance": "existing_repository_atlas",
+          "qa_status": "SOURCE_EXISTS_VISUAL_QA_REQUIRED"
+        }
+      },
+      "status": "SOURCE_EXISTING_RUNTIME"
+    },
+    "swim_strike": {
+      "image": "assets/player/sofia/swim_strike_11frames_v581.png",
+      "metadata": "assets/player/sofia/swim_strike_v581.json",
+      "frame_count": 11,
+      "animation": "strike",
+      "fps": 22,
+      "loop": false,
+      "source_frame_ids": [
+        "giro_agua_00",
+        "giro_agua_01",
+        "impulso_submarino_00",
+        "impulso_submarino_01",
+        "impulso_submarino_02",
+        "impulso_submarino_03",
+        "giro_agua_02",
+        "giro_agua_03",
+        "frenar_agua_00",
+        "frenar_agua_01",
+        "frenar_agua_02"
+      ],
+      "status": "SOURCE_EXISTING_RUNTIME",
+      "note": "Composed from existing poses, not 11 independently authored attack frames."
+    },
+    "complementary": {
+      "image": "assets/player/sofia/sofia_submarina_complementaria.png",
+      "metadata": "assets/player/sofia/sofia_submarina_complementaria.json",
+      "metadata_image_field_obsolete": "atlas/sofia_submarina_complementaria.png",
+      "metadata_image_path_mismatch": false,
+      "frame_count": 103,
+      "states": {
+        "idle": {
+          "frame_ids": [
+            "idle_00",
+            "idle_01",
+            "idle_02",
+            "idle_03",
+            "idle_04",
+            "idle_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 210,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "walk_floor": {
+          "frame_ids": [
+            "walk_floor_00",
+            "walk_floor_01",
+            "walk_floor_02",
+            "walk_floor_03",
+            "walk_floor_04",
+            "walk_floor_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 115,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "run_floor": {
+          "frame_ids": [
+            "run_floor_00",
+            "run_floor_01",
+            "run_floor_02",
+            "run_floor_03",
+            "run_floor_04",
+            "run_floor_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 82,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "crouch": {
+          "frame_ids": [
+            "crouch_00",
+            "crouch_01",
+            "crouch_02",
+            "crouch_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 150,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "jump": {
+          "frame_ids": [
+            "jump_00",
+            "jump_01",
+            "jump_02",
+            "jump_03",
+            "jump_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 95,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "fall": {
+          "frame_ids": [
+            "fall_00",
+            "fall_01",
+            "fall_02",
+            "fall_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 115,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "land": {
+          "frame_ids": [
+            "land_00",
+            "land_01",
+            "land_02",
+            "land_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 88,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "swim_horizontal": {
+          "frame_ids": [
+            "swim_horizontal_00",
+            "swim_horizontal_01",
+            "swim_horizontal_02",
+            "swim_horizontal_03",
+            "swim_horizontal_04",
+            "swim_horizontal_05",
+            "swim_horizontal_06",
+            "swim_horizontal_07"
+          ],
+          "frame_count": 8,
+          "duration_ms": 110,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "swim_fast": {
+          "frame_ids": [
+            "swim_fast_00",
+            "swim_fast_01",
+            "swim_fast_02",
+            "swim_fast_03",
+            "swim_fast_04",
+            "swim_fast_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 65,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "swim_up": {
+          "frame_ids": [
+            "swim_up_00",
+            "swim_up_01",
+            "swim_up_02",
+            "swim_up_03",
+            "swim_up_04",
+            "swim_up_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 108,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "swim_down": {
+          "frame_ids": [
+            "swim_down_00",
+            "swim_down_01",
+            "swim_down_02",
+            "swim_down_03",
+            "swim_down_04",
+            "swim_down_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 108,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "float": {
+          "frame_ids": [
+            "float_00",
+            "float_01",
+            "float_02",
+            "float_03",
+            "float_04",
+            "float_05"
+          ],
+          "frame_count": 6,
+          "duration_ms": 210,
+          "loop": true,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "dive_entry": {
+          "frame_ids": [
+            "dive_entry_00",
+            "dive_entry_01",
+            "dive_entry_02",
+            "dive_entry_03",
+            "dive_entry_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 100,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "dive_exit": {
+          "frame_ids": [
+            "dive_exit_00",
+            "dive_exit_01",
+            "dive_exit_02",
+            "dive_exit_03",
+            "dive_exit_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 115,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "hurt": {
+          "frame_ids": [
+            "hurt_00",
+            "hurt_01",
+            "hurt_02",
+            "hurt_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 90,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "recovery": {
+          "frame_ids": [
+            "recovery_00",
+            "recovery_01",
+            "recovery_02",
+            "recovery_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 120,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "knockout": {
+          "frame_ids": [
+            "knockout_00",
+            "knockout_01",
+            "knockout_02",
+            "knockout_03",
+            "knockout_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 145,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "center",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "collect": {
+          "frame_ids": [
+            "collect_00",
+            "collect_01",
+            "collect_02",
+            "collect_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 105,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "interact": {
+          "frame_ids": [
+            "interact_00",
+            "interact_01",
+            "interact_02",
+            "interact_03"
+          ],
+          "frame_count": 4,
+          "duration_ms": 130,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        },
+        "victory": {
+          "frame_ids": [
+            "victory_00",
+            "victory_01",
+            "victory_02",
+            "victory_03",
+            "victory_04"
+          ],
+          "frame_count": 5,
+          "duration_ms": 155,
+          "loop": false,
+          "direction": null,
+          "pivot_mode": "feet",
+          "provenance": "derived_preview",
+          "qa_status": "PROVISIONAL_VISUAL_QA_REQUIRED"
+        }
+      },
+      "runtime_enabled": false,
+      "status": "PROVISIONAL_DERIVED_TRANSFORMS_VISUAL_QA_PENDING",
+      "note": "Corrected sidecar.image to the real PNG filename. Preview-only transformed frames remain provisional; individual PNG exports are absent.",
+      "metadata_image_field_current": "sofia_submarina_complementaria.png"
+    }
+  },
+  "qa": {
+    "metadata_frame_ids": "PASS",
+    "pixels_replaced": false,
+    "individual_png_exports_required_for_atlas_runtime": false,
+    "visual_transitions": "NOT_TESTED",
+    "combat_timing": "NOT_TESTED",
+    "source_only": true
+  },
+  "missing_artwork_policy": "Unverified or independently missing poses remain missing; no generated canonical frames."
+}

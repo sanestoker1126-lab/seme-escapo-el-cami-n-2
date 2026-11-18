@@ -1,0 +1,4 @@
+V57.4
+- Llegada a la isla: Sofía usa 3 variantes de caminata asombrada en la cinemática submarina.
+- Atlas submarino: se integra sofia_buceadora_movimientos_rgba.png (100 frames) para la reproducción de nado.
+- Enemigos marinos: se conserva la integración jugable y se anexa el paquete fuente R1 para referencia.

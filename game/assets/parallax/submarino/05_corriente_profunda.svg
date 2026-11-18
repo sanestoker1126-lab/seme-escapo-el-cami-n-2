@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1300" viewBox="0 0 1920 2600" preserveAspectRatio="xMidYMid meet">
+<title>Submarino — corrientes profundas</title>
+<defs>
+  <linearGradient id="current" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#45d9e5" stop-opacity="0"/>
+    <stop offset=".48" stop-color="#91f7ee" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#45d9e5" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="haze">
+    <stop offset="0" stop-color="#67d9d5" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#2479a0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#8af5ed" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#8af5ed" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#8af5ed" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<ellipse cx="420" cy="760" rx="490" ry="350" fill="url(#haze)"/>
+<ellipse cx="1540" cy="1790" rx="520" ry="390" fill="url(#haze)" opacity=".7"/>
+<g fill="none" stroke="url(#current)" stroke-linecap="round">
+  <path d="M-100 560 C180 460 350 500 520 570 S850 680 1070 580 S1450 420 2020 520" stroke-width="20" opacity=".42"/>
+  <path d="M-120 620 C150 520 340 560 510 630 S860 735 1090 640 S1500 485 2050 585" stroke-width="8" opacity=".52"/>
+  <path d="M-90 1490 C170 1370 370 1420 570 1510 S930 1620 1140 1515 S1500 1340 2020 1450" stroke-width="17" opacity=".32"/>
+  <path d="M-120 1550 C180 1430 380 1480 570 1570 S940 1680 1160 1575 S1510 1400 2050 1510" stroke-width="7" opacity=".46"/>
+  <path d="M-100 2250 C180 2150 370 2180 560 2260 S930 2370 1150 2270 S1510 2080 2020 2200" stroke-width="15" opacity=".27"/>
+</g>
+<g fill="url(#ribbon)" opacity=".68">
+  <path d="M240 0 C390 260 170 440 320 700 C430 900 410 1120 260 1330 C130 1510 150 1740 330 1950 C450 2090 430 2330 300 2600 L410 2600 C550 2320 560 2080 440 1920 C270 1700 300 1520 420 1350 C570 1130 580 900 450 680 C300 430 520 250 350 0Z"/>
+  <path d="M1520 0 C1370 240 1580 470 1450 690 C1310 920 1340 1110 1510 1320 C1650 1500 1630 1730 1460 1950 C1330 2130 1360 2360 1500 2600 L1605 2600 C1450 2350 1440 2150 1570 1980 C1750 1750 1770 1490 1610 1280 C1460 1080 1450 920 1570 710 C1720 460 1500 240 1630 0Z"/>
+</g>
+<g fill="#c5fbf2" opacity=".3">
+  <circle cx="690" cy="480" r="5"/><circle cx="760" cy="1110" r="3"/><circle cx="1080" cy="760" r="4"/>
+  <circle cx="1210" cy="1730" r="5"/><circle cx="830" cy="2050" r="3"/><circle cx="1040" cy="2380" r="4"/>
+</g>
+</svg>

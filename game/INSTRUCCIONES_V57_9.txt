@@ -1,0 +1,16 @@
+¡SE ME FUE EL CAMIÓN! · V57.9
+
+JUEGO COMPLETO: sirva la carpeta del juego por HTTP/HTTPS (no file://).
+Para probar en PC: python -m http.server 8000, luego abra http://localhost:8000.
+En el menú elija MISIÓN 3 · EL SUBMARINO.
+
+NUEVO:
+- Corrientes visibles y físicas a seis profundidades, nunca en isla seca.
+- Flechas muestran dirección; Sofía puede nadar en contra o usar DASH.
+- Nado neutro fuera de corrientes.
+- Tiburones y pirañas distribuidos por el descenso con señales de ataque.
+- Más vida ambiental y lectura de corriente en pantalla.
+- Poseidón, Estoker, isla, cinemática, y atlas R1 conservados.
+
+Pruebas de módulos: 139 aprobadas. Pruebas básicas de mundo: 7 aprobadas.
+Pruebas de alcanzabilidad exhaustiva y prueba visual en Android: pendientes.

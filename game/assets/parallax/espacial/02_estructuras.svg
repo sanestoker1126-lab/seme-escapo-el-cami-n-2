@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1300" viewBox="0 0 1920 2600" preserveAspectRatio="xMidYMid meet">
+  <title>Espacio — estaciones orbitales distantes</title>
+  <defs>
+    <linearGradient id="hull" x1="0" y1="0" x2="0.3" y2="1">
+      <stop stop-color="#b9d7ed"/><stop offset="0.45" stop-color="#607ea5"/><stop offset="1" stop-color="#273965"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#498fcb"/><stop offset="1" stop-color="#1d3c78"/>
+    </linearGradient>
+    <g id="station" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-88 0H-50M50 0H88" stroke="#9bb8d2" stroke-width="7"/>
+      <path d="M-86-31H-53V31H-86ZM53-31H86V31H53Z" fill="url(#panel)" stroke="#a8c8e3" stroke-width="4"/>
+      <path d="M-75-26V26M-64-26V26M-86 0H-53M64-26V26M75-26V26M53 0H86" stroke="#88c8f2" stroke-opacity=".55" stroke-width="2"/>
+      <path d="M-49 0Q-35-24-18-24H18Q35-24 49 0Q35 24 18 24H-18Q-35 24-49 0Z" fill="url(#hull)" stroke="#d0e6f3" stroke-width="4"/>
+      <circle r="11" fill="#65d8ee" stroke="#c8f5ff" stroke-width="3"/>
+      <path d="M0-25V-39M-10-39H10" stroke="#b7ccdf" stroke-width="3"/>
+      <circle cx="-29" cy="-2" r="3" fill="#8ef0ef" stroke="none"/>
+      <circle cx="29" cy="-2" r="3" fill="#8ef0ef" stroke="none"/>
+    </g>
+  </defs>
+  <!-- Estaciones pequeñas, separadas del eje de juego y de los objetos interactivos. -->
+  <g opacity=".48" transform="translate(170 470) rotate(-12) scale(.78)"><use href="#station"/></g>
+  <g opacity=".40" transform="translate(1750 1010) rotate(9) scale(.66)"><use href="#station"/></g>
+  <g opacity=".44" transform="translate(210 1760) rotate(7) scale(.72)"><use href="#station"/></g>
+  <g opacity=".38" transform="translate(1710 2320) rotate(-8) scale(.62)"><use href="#station"/></g>
+  <g fill="#d9eaff" opacity=".48">
+    <circle cx="285" cy="520" r="2.4"/><circle cx="1632" cy="886" r="2"/>
+    <circle cx="318" cy="1835" r="2.2"/><circle cx="1608" cy="2268" r="2.6"/>
+  </g>
+</svg>
