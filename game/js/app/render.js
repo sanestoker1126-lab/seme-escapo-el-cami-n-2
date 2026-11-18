@@ -149,6 +149,32 @@
     return c;
   }
 
+  /* V58.1 · SVG rasterizado UNA vez a un lienzo de tamaño acotado.
+     Dibujar un SVG directamente obliga al navegador a rasterizarlo al tamaño de destino en píxeles
+     físicos: en el nivel marino (zoom 140 %) eso eran texturas de hasta ~4560×6176 px (~107 MB cada una),
+     por encima del límite de 4096 px de muchas GPU Android; la GPU se quedaba sin memoria y el canvas
+     mostraba franjas horizontales en lugar del juego. Aquí se rasteriza una sola vez con el lado mayor
+     ≤ SVG_RASTER_MAX y luego se escala como mapa de bits (barato y dentro de los límites de textura).
+     Si el lienzo no se puede crear, devuelve null y la capa decorativa se omite (nunca el SVG crudo). */
+  const SVG_RASTER_MAX = 2048;
+  const svgRasters = new Map();
+  function svgBitmap(src) {
+    if (svgRasters.has(src)) return svgRasters.get(src);
+    const im = image(src);
+    if (!ready(im)) return null;
+    let c = null;
+    try {
+      const iw = im.naturalWidth, ih = im.naturalHeight;
+      const s = Math.min(1.5, SVG_RASTER_MAX / Math.max(iw, ih));
+      c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(iw * s)); c.height = Math.max(1, Math.round(ih * s));
+      const x = c.getContext('2d');
+      if (!x) c = null; else x.drawImage(im, 0, 0, c.width, c.height);
+    } catch (_) { c = null; }
+    svgRasters.set(src, c);
+    return c;
+  }
+
   let canvas, ctx, dpr = 1, cw = 1, ch = 1, debug = false, qScale = 1, contextLost = false;
   // V50: opciones visuales (menú OPCIONES).
   const ropt = { shake: 1, landingRing: true, ninaLook: 'original' };
@@ -600,9 +626,10 @@
     }
     // Láminas SVG originales a distancia, sin deformarlas ni rasterizarlas cada frame.
     function stratum(src,speed,alpha,bandY,coverW) {
-      const im=image(src);if(!ready(im))return;
-      const sca=span*coverW/im.naturalWidth;
-      const dw=im.naturalWidth*sca,dh=im.naturalHeight*sca;
+      // Mapa de bits acotado (svgBitmap), nunca el SVG crudo: ver nota junto a svgBitmap.
+      const im=svgBitmap(src);if(!im)return;
+      const sca=span*coverW/im.width;
+      const dw=im.width*sca,dh=im.height*sca;
       const dx=B.x1+(span-dw)/2+progressX*(1-speed)*.027;
       const dy=sc.startY+bandY*sc.scale-progressY*(1-speed)*.015;
       ctx.globalAlpha=alpha;
