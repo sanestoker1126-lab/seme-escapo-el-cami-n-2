@@ -8,13 +8,13 @@ const imgSize=(pathName)=>{const b=fs.readFileSync(path.join(ROOT,pathName));
   // WebP dimensions are read from Pillow (manifest) so this test validates
   // image magic rather than assuming all WebP subtypes have the same header.
   assert.equal(b.toString('latin1',0,4),'RIFF');assert.equal(b.toString('latin1',8,12),'WEBP');};
-test('Marino fase1: siete capas reales y efectos no interactivos',()=>{
+test('Marino fase1: ocho capas reales y efectos no interactivos',()=>{
  const m=JSON.parse(read('assets/parallax/marino/manifest_v571.json'));
- assert.equal(m.layers.length,7);
- assert.deepEqual(m.layers.map(l=>l.parallax),[.05,.08,.15,.25,.35,.5,.8]);
+ assert.equal(m.layers.length,8);
+ assert.deepEqual(m.layers.map(l=>l.parallax),[.05,.08,.12,.15,.25,.35,.5,.8]);
  for(const l of m.layers)assert.ok(fs.existsSync(path.join(ROOT,l.src)),l.src);
  assert.equal(m.layers[0].width,2304);assert.equal(m.layers[0].height,3072);
- imgSize(m.layers[0].src);imgSize(m.layers[4].src);
+ imgSize(m.layers[0].src);imgSize(m.layers[5].src);
  const r=read('js/app/render.js');
  assert.match(r,/function drawMarineParallax\(/);
  assert.match(r,/ctx\.rect\(B\.x1,y1,span\*\.11,y2-y1\)/);

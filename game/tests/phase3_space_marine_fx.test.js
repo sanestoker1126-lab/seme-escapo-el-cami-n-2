@@ -19,7 +19,7 @@ test('Fase 3: meteoritos ambientales siguen la cámara y no crean colisiones', (
   assert.match(render, /for\(let attempt=0;attempt<8&&!clear;attempt\+\+\)/);
   assert.match(render, /Math\.abs\(x-G\.P\.x\)<105/);
   const drawTail = render.slice(render.indexOf('function draw(G, T)'));
-  assert.ok(drawTail.indexOf('drawSpaceMeteorField(G,V,T)') > drawTail.indexOf('drawRealParallax(G,V,sc,4,5)'),
+  assert.ok(drawTail.indexOf('drawSpaceMeteorField(G,V,T)') > drawTail.indexOf('drawRealParallax(G,V,sc,5,6)'),
     'meteoritos sobre el plano parallax para que sean visibles');
   assert.doesNotMatch(render.slice(render.indexOf('function drawSpaceMeteorField'), render.indexOf('function drawMarineParallax')), /\.foes\.push|\.platforms\.push|EN\.create/);
   assert.ok(fs.existsSync(path.join(ROOT, 'assets/parallax/espacial/r2/decoracion.webp')),

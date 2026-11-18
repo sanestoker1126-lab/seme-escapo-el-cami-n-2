@@ -68,22 +68,22 @@ test('V56: renderer uses visible world clip and original background sequence', (
   assert.match(r, /ctx\.clip\(\)/);
   assert.match(r, /function drawToxiThreat\(/);
   assert.match(r, /drawBackdrop\(G, V\); drawScenes\(G, V\); if\(NS\.PARALLAX_REAL_V582\)NS\.PARALLAX_REAL_V582\.draw\(ctx,G,V,T\); drawNeighborhood\(G, V, T\); drawStreet\(G, V, T\); drawToxiAtmosphere\(G, V, T\)/);
-  assert.match(r, /drawRealParallax\(G, V, sc, 4, 5\)/);
+  assert.match(r, /drawRealParallax\(G, V, sc, 5, 6\)/);
 });
 
 test('V56: PWA precaches new files and invalidates V55 cache', () => {
   const sw = read('sw.js'), html = read('Se_Me_Fue_El_Camion.html');
-  assert.match(sw, /camion-v57-thematic-villains/);
+  assert.match(sw, /camion-v58-1-phase4-parallax-real-v582-cache/);
   for (const [asset, v] of [
-    ['css/toxifamilia_style.css', '57.9'],
-    ['js/core/toxifamilia_style.js', '57.9']
+    ['css/toxifamilia_style.css', '58.1'],
+    ['js/core/toxifamilia_style.js', '58.1']
   ]) {
     assert.ok(sw.includes(asset + '?v=' + v), 'PWA prefetch ' + asset);
     assert.ok(html.includes(asset + '?v=' + v), 'HTML link ' + asset);
   }
   for (const js of ['js/core/enemies.js', 'js/app/render.js', 'js/app/main.js']) {
-    assert.ok(sw.includes(js + '?v=57.9'), 'SW version ' + js);
-    assert.ok(html.includes(js + '?v=57.9'), 'HTML version ' + js);
+    assert.ok(sw.includes(js + '?v=58.1'), 'SW version ' + js);
+    assert.ok(html.includes(js + '?v=58.1'), 'HTML version ' + js);
   }
 });
 

@@ -50,9 +50,9 @@ test('V57.5: la cinemática narra la visita previa y la leyenda, se puede saltar
 
 test('V57.5: secuencias y storyboard precargados correctamente en PWA',()=>{
  const sw=read('sw.js'),html=read('Se_Me_Fue_El_Camion.html');
- assert.ok(sw.includes('camion-v57-9-corrientes-fauna'));
- for(const s of ['js/app/marine_intro.js?v=57.9','js/app/estoker_anim_data.js?v=57.9','css/marine_intro.css?v=57.9'])assert.ok(sw.includes(s));
- assert.ok(html.indexOf('estoker_anim_data.js?v=57.9')<html.indexOf('marine_intro.js?v=57.9'));
+ assert.ok(sw.includes('camion-v58-1-phase4-parallax-real-v582-cache'));
+ for(const s of ['js/app/marine_intro.js?v=58.1','js/app/estoker_anim_data.js?v=58.1','css/marine_intro.css?v=58.1'])assert.ok(sw.includes(s));
+ assert.ok(html.indexOf('estoker_anim_data.js?v=58.1')<html.indexOf('marine_intro.js?v=58.1'));
  for(const name of ['caminar_estoker','explicar_estoker','caminar_con_sofia','conversacion_con_sofia'])assert.ok(sw.includes(name));
  for(let i=1;i<=5;i++)assert.ok(sw.includes(`assets/cinematic/storyboard_marino/escena_0${i}.webp`));
  assert.ok(fs.existsSync(path.join(ROOT,'PREVIEW_CINEMATICA_ESTOKER.html')));

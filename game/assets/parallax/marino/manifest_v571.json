@@ -1,5 +1,5 @@
 {
-  "schema": "marino-parallax-integrado-v571",
+  "schema": "marino-parallax-integrado-v581-phase2",
   "levelSize": {
     "width": 940,
     "height": 3072
@@ -25,18 +25,33 @@
     },
     {
       "index": 2,
+      "src": "assets/parallax/submarino/05_corriente_profunda.svg",
+      "parallax": 0.12,
+      "role": "background",
+      "width": 960,
+      "height": 1300,
+      "viewBox": [
+        0,
+        0,
+        1920,
+        2600
+      ],
+      "alpha": true
+    },
+    {
+      "index": 3,
       "src": "assets/parallax/submarino/01_profundidad.svg",
       "parallax": 0.15,
       "role": "background"
     },
     {
-      "index": 3,
+      "index": 4,
       "src": "assets/parallax/submarino/02_estructuras.svg",
       "parallax": 0.25,
       "role": "background"
     },
     {
-      "index": 4,
+      "index": 5,
       "src": "assets/parallax/marino/05_fauna_limpia.webp",
       "parallax": 0.35,
       "role": "background",
@@ -45,7 +60,7 @@
       "alpha": true
     },
     {
-      "index": 5,
+      "index": 6,
       "src": "assets/parallax/marino/06_arrecife_real.webp",
       "parallax": 0.5,
       "role": "background",
@@ -54,7 +69,7 @@
       "alpha": true
     },
     {
-      "index": 6,
+      "index": 7,
       "src": "assets/parallax/submarino/04_primer_plano.svg",
       "parallax": 0.8,
       "role": "foreground"

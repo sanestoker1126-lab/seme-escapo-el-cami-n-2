@@ -31,7 +31,7 @@ test('Fase 4: iluminación ambiental por mundo es acotada por calidad y no cubre
   assert.match(render, /qScale<\.72/);
   const tail = render.slice(render.indexOf('function draw(G, T)'));
   assert.ok(tail.indexOf('drawDynamicLights(G,V,T)') > tail.indexOf('drawPlayer(G, T)'));
-  assert.ok(tail.indexOf('drawDynamicLights(G,V,T)') < tail.indexOf('drawRealParallax(G,V,sc,4,5)'));
+  assert.ok(tail.indexOf('drawDynamicLights(G,V,T)') < tail.indexOf('drawRealParallax(G,V,sc,5,6)'));
 });
 
 test('Fase 4: el menú reutiliza botones y solo reconstruye estructura si cambia su estado', () => {

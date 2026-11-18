@@ -50,8 +50,8 @@ test('V57.6: el paseo usa paso lento, desplazamiento sincronizado y suelo único
 test('V57.6: PWA y HTML incluyen la corrección de pies antes de la cinemática',async()=>{
   const html=read('Se_Me_Fue_El_Camion.html');
   const sw=read('sw.js');
-  assert.ok(sw.includes('camion-v57-9-corrientes-fauna'));
-  assert.ok(html.indexOf('marine_feet.js?v=57.9')<html.indexOf('marine_intro.js?v=57.9'));
+  assert.ok(sw.includes('camion-v58-1-phase4-parallax-real-v582-cache'));
+  assert.ok(html.indexOf('marine_feet.js?v=58.1')<html.indexOf('marine_intro.js?v=58.1'));
   const handlers={};let files=[];
   const sandbox={self:{addEventListener:(evt,cb)=>{handlers[evt]=cb;},skipWaiting:()=>{}},
     caches:{open:async()=>({addAll:async a=>{files=a;}})},Promise};
@@ -59,7 +59,7 @@ test('V57.6: PWA y HTML incluyen la corrección de pies antes de la cinemática'
   let promise;
   handlers.install({waitUntil:p=>{promise=p;}});
   await promise;
-  assert.ok(files.includes('js/app/marine_feet.js?v=57.9'));
+  assert.ok(files.includes('js/app/marine_feet.js?v=58.1'));
   const missing=files.filter(f=>!fs.existsSync(path.join(ROOT,f.split('?')[0])));
   assert.equal(missing.length,0,`Faltan: ${missing.join(", ")}`);
 });

@@ -48,10 +48,10 @@ test('Pies alineados con suelo y movimientos lentos independientes de la física
 });
 
 test('Caché PWA y versión incluyendo nuevos fondos',()=>{
- assert.match(sw,/camion-v57-9-corrientes-fauna/);
+ assert.match(sw,/camion-v58-1-phase4-parallax-real-v582-cache/);
  assert.match(sw,/CINEMATIC_ISLAND/);
  assert.match(sw,/assets\/cinematic\/isla_tierra_firme\/calle_llegada\.webp/);
  assert.match(sw,/assets\/cinematic\/isla_tierra_firme\/isla_recuerdo\.webp/);
- assert.match(read('Se_Me_Fue_El_Camion.html'),/marine_intro\.js\?v=57\.9/);
- assert.match(read('js/core/config.js'),/version: '57\.9\.0'/);
+ assert.match(read('Se_Me_Fue_El_Camion.html'),/marine_intro\.js\?v=58\.1/);
+ assert.match(read('js/core/config.js'),/version: '58\.1\.0'/);
 });

@@ -315,6 +315,7 @@
     submarino: [
       'assets/parallax/marino/00_oceano_vertical.webp',
       'assets/parallax/marino/01_luz_volumen.webp',
+      'assets/parallax/submarino/05_corriente_profunda.svg',
       'assets/parallax/submarino/01_profundidad.svg',
       'assets/parallax/submarino/02_estructuras.svg',
       'assets/parallax/marino/05_fauna_limpia.webp',
@@ -323,6 +324,7 @@
     ],
     espacial: [
       'assets/parallax/espacial/00_fondo_lejano.svg',
+      'assets/parallax/espacial/05_nebulosa_distante.svg',
       'assets/parallax/espacial/01_profundidad.svg',
       'assets/parallax/espacial/02_estructuras.svg',
       'assets/parallax/espacial/03_elementos.svg',
@@ -343,8 +345,8 @@
       anden_tren_ligero: 'barrios_inferiores', plaza_jacarandas: 'mercado_parque'
     })
   });
-  const PARALLAX_SPEED = Object.freeze([0.10, 0.22, 0.40, 0.68, 1.00]);
-  const MARINE_SPEED = Object.freeze([0.05, 0.08, 0.15, 0.25, 0.35, 0.50, 0.80]);
+  const PARALLAX_SPEED = Object.freeze([0.10, 0.14, 0.22, 0.40, 0.68, 1.00]);
+  const MARINE_SPEED = Object.freeze([0.05, 0.08, 0.12, 0.15, 0.25, 0.35, 0.50, 0.80]);
 
   /* Rasterización diferida: cada vector se pinta UNA vez en un canvas local de
      960×1300 y se reutiliza durante el juego. Se descartan los de la misión
@@ -399,7 +401,7 @@
       const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height;
       const sx = (x1 - dx) * iw / dw, sy = (y1 - dy) * ih / dh;
       const sw = (x2 - x1) * iw / dw, sh = (y2 - y1) * ih / dh;
-      ctx.globalAlpha = i === 4 ? 0.88 : 1;
+      ctx.globalAlpha = i === 5 ? 0.88 : 1;
       ctx.drawImage(im, sx, sy, sw, sh, x1, y1, x2 - x1, y2 - y1);
     }
     ctx.globalAlpha = 1;
@@ -412,8 +414,8 @@
     if (!group) return;
     const folder = `assets/parallax/${sc.theme}/${group}/`;
     const names = sc.theme === 'escuela'
-      ? ['01_arquitectura.webp', '02_vegetacion.webp', '04_primer_plano.webp']
-      : ['01_nubes_reales.webp', '02_arquitectura_anclada.webp', '04_bruma_frontal.webp'];
+      ? ['01_arquitectura.webp', '02_vegetacion.webp', '03_ambiente.webp', '04_primer_plano.webp']
+      : ['01_nubes_reales.webp', '02_arquitectura_anclada.webp', '03_reflejos_luces.webp', '04_bruma_frontal.webp'];
     const v = G.view, x0 = sc.x0, x2 = sc.x0 + sc.drawW;
     const x1 = Math.max(V.x1, x0), xr = Math.min(V.x2, x2);
     const y1 = Math.max(V.y1, sc.startY), yr = Math.min(V.y2, sc.endY);
@@ -422,8 +424,8 @@
     const xTravel = Math.max(0, sc.drawW - vw), yTravel = Math.max(0, sc.drawH - vh);
     const xProgress = Math.max(0, Math.min(xTravel, G.cam.x - x0));
     const yProgress = Math.max(0, Math.min(yTravel, G.cam.y - sc.startY));
-    const speeds = [0.12, 0.30, 0.55];
-    const alphas = sc.theme === 'escuela' ? [0.16, 0.15, 0.10] : [0.12, 0.14, 0.10];
+    const speeds = [0.12, 0.30, 0.43, 0.56];
+    const alphas = sc.theme === 'escuela' ? [0.16, 0.15, 0.075, 0.10] : [0.12, 0.14, 0.07, 0.10];
     const padX = Math.min(96, vw * 0.14), padY = Math.min(96, vh * 0.12);
     ctx.save();
     ctx.beginPath(); ctx.rect(x1, y1, xr - x1, yr - y1); ctx.clip();
@@ -566,11 +568,8 @@
     }
   }
 
-  /* V57.1 — Parallax marino real de 7 capas sobre todo el alto del mapa.
-     La cámara solo se consulta para desplazar la decoración visual, nunca se
-     escribe en P, W, colliders ni la simulación 60 Hz. No estirar PNG en X/Y.
-     Capa 0: 2304×3072 construida con recortes reales del panorama, proporción
-     igual a los bounds de la misión; capas restantes recortadas por viewport. */
+  /* V58.1 Fase 2 — Ocho estratos marinos independientes con el mismo límite
+     de simulación y recorte por cámara; los SVG se rasterizan una sola vez. */
   function drawMarineParallax(G, V, sc, front) {
     const list = PARALLAX_LAYERS.submarino;
     const B = G.world.bounds, span = B.x2 - B.x1;
@@ -619,10 +618,11 @@
     }
     if (!front) {
       fullHeight(list[1],MARINE_SPEED[1],.58);
-      stratum(list[2],MARINE_SPEED[2],.26,570,.64);
-      stratum(list[3],MARINE_SPEED[3],.38,1520,.52);
-      for(const y of [410,1280,2040,2690]) strip(list[4],MARINE_SPEED[4],.34,y);
-      for(const y of [780,1520,2200,2950]) strip(list[5],MARINE_SPEED[5],.54,y);
+      stratum(list[2],MARINE_SPEED[2],.14,930,.72);
+      stratum(list[3],MARINE_SPEED[3],.26,570,.64);
+      stratum(list[4],MARINE_SPEED[4],.38,1520,.52);
+      for(const y of [410,1280,2040,2690]) strip(list[5],MARINE_SPEED[5],.34,y);
+      for(const y of [780,1520,2200,2950]) strip(list[6],MARINE_SPEED[6],.54,y);
       // Superficie visible en la zona inicial (isla a y=150 por encima del agua a y=205).
       const wy=sc.startY+205*sc.scale;
       if(wy>=V.y1-10&&wy<=V.y2+10){
@@ -661,8 +661,8 @@
       // Primer plano SOLO en los laterales: nunca tapa el cuerpo/hitbox de Sofía.
       ctx.beginPath();ctx.rect(B.x1,y1,span*.11,y2-y1);
       ctx.rect(B.x2-span*.11,y1,span*.11,y2-y1);ctx.clip();
-      stratum(list[6],MARINE_SPEED[6],.46,800,.70);
-      stratum(list[6],MARINE_SPEED[6],.43,2110,.70);
+      stratum(list[7],MARINE_SPEED[7],.46,800,.70);
+      stratum(list[7],MARINE_SPEED[7],.43,2110,.70);
     }
     ctx.globalAlpha=1;ctx.restore();
   }
@@ -720,12 +720,17 @@
 
   function drawBackdrop(G, V) {
     const W = G.world, B = W.bounds;
-    // Cielo del atardecer sobre la azotea de la escuela (inicio de la historia).
+    // Continuación ambiental fuera del mundo: en el submarino no usar el cielo cálido terrestre.
     if (V.y1 < 0) {
+      const marineOpening = W.scenes[0]?.theme === 'submarino';
       const g = ctx.createLinearGradient(0, -600, 0, 0);
-      g.addColorStop(0, '#0b1830'); g.addColorStop(0.6, '#3a3f66'); g.addColorStop(1, '#c46a4c');
+      if (marineOpening) {
+        g.addColorStop(0, '#06334f'); g.addColorStop(0.62, '#087596'); g.addColorStop(1, '#0ca7c4');
+      } else {
+        g.addColorStop(0, '#0b1830'); g.addColorStop(0.6, '#3a3f66'); g.addColorStop(1, '#c46a4c');
+      }
       ctx.fillStyle = g; ctx.fillRect(V.x1, Math.max(V.y1, -900), V.x2 - V.x1, Math.min(0, V.y2) - Math.max(V.y1, -900));
-      for (let i = 0; i < 40; i++) {
+      if (!marineOpening) for (let i = 0; i < 40; i++) {
         const sx = B.x1 + (hash(i, 7) / 997) * (B.x2 - B.x1), sy = -600 + (hash(i, 3) / 997) * 420;
         if (sx > V.x1 && sx < V.x2 && sy > V.y1 && sy < V.y2) circle(sx, sy, 1.2, '#ffffff', 0.5);
       }
@@ -734,10 +739,10 @@
     for (const sc of W.scenes) {
       if (sc.endY < V.y1 || sc.startY > V.y2) continue;
       if (PARALLAX_LAYERS[sc.theme]) {
-        // Fondo marino con arte real, 7 capas, todo el ancho de escena.
+        // Fondo marino con arte real, 8 estratos, todo el ancho de escena.
         if (sc.theme === 'submarino') { drawMarineParallax(G, V, sc, false); continue; }
         // Si falla la descarga de los gráficos nuevos, se conserva el fondo V54.
-        if (sc.theme === 'espacial') { drawSpaceArtwork(G,V,sc,false); drawRealParallax(G,V,sc,1,4); }
+        if (sc.theme === 'espacial') { drawSpaceArtwork(G,V,sc,false); drawRealParallax(G,V,sc,1,5); }
         else if (ready(image(PARALLAX_LAYERS[sc.theme][0]))) drawRealParallax(G,V,sc,0,4);
         else drawMissionParallax(G, V, sc);
         continue;
@@ -2748,8 +2753,8 @@
     if (!G.room) {
       for (const sc of W.scenes) {
         if (sc.theme === 'submarino') drawMarineParallax(G, V, sc, true);
-        else if (sc.theme === 'espacial') { drawRealParallax(G,V,sc,4,5); drawSpaceArtwork(G,V,sc,true); }
-        else if (PARALLAX_LAYERS[sc.theme] && ready(image(PARALLAX_LAYERS[sc.theme][0]))) drawRealParallax(G, V, sc, 4, 5);
+        else if (sc.theme === 'espacial') { drawRealParallax(G,V,sc,5,6); drawSpaceArtwork(G,V,sc,true); }
+        else if (PARALLAX_LAYERS[sc.theme] && ready(image(PARALLAX_LAYERS[sc.theme][0]))) drawRealParallax(G, V, sc, 5, 6);
       }
     }
     // También se ejecuta en rooms: algunos segmentos espaciales usan un room

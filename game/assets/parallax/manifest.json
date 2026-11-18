@@ -20,10 +20,12 @@
   },
   "speeds": [
     0.1,
+    0.12,
+    0.14,
     0.22,
     0.4,
     0.68,
-    1
+    1.0
   ],
   "order": "far-to-near",
   "themes": {
@@ -31,6 +33,11 @@
       {
         "src": "assets/parallax/submarino/00_fondo_lejano.svg",
         "speed": 0.1,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/submarino/05_corriente_profunda.svg",
+        "speed": 0.12,
         "front": false
       },
       {
@@ -50,7 +57,7 @@
       },
       {
         "src": "assets/parallax/submarino/04_primer_plano.svg",
-        "speed": 1,
+        "speed": 1.0,
         "front": true
       }
     ],
@@ -58,6 +65,11 @@
       {
         "src": "assets/parallax/espacial/00_fondo_lejano.svg",
         "speed": 0.1,
+        "front": false
+      },
+      {
+        "src": "assets/parallax/espacial/05_nebulosa_distante.svg",
+        "speed": 0.14,
         "front": false
       },
       {
@@ -77,12 +89,12 @@
       },
       {
         "src": "assets/parallax/espacial/04_primer_plano.svg",
-        "speed": 1,
+        "speed": 1.0,
         "front": true
       }
     ]
   },
   "alpha": true,
   "tile": false,
-  "remark": "Se dibujan secciones de cada SVG según la cámara; la última capa se renderiza sobre el jugador sin tapar el pasillo central."
+  "remark": "Las capas nuevas se sitúan entre el fondo lejano y la profundidad; los primeros planos permanecen al frente y dejan libre el corredor central."
 }
