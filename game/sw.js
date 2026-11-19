@@ -34,7 +34,8 @@ self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(async c=
  // GDL_DEPTH_V3: capas RGBA opcionales; un archivo faltante no bloquea la instalación.
   const gdlDepth=['guadalajara','portales','centro_historico'].flatMap(id=>
     ['01_bruma_atmosferica','02_luz_volumetrica','03_hojas_jacaranda'].map(n=>'assets/parallax/guadalajara/depth_v3/'+id+'/'+n+'.png'));
-  await Promise.allSettled([...ENVIRONMENT_A1_A2_OPTIONAL,...gdlDepth].map(url=>c.add(url)));
+  await Promise.allSettled(ENVIRONMENT_A1_A2_OPTIONAL.map(url=>c.add(url)));
+  await Promise.allSettled(gdlDepth.map(url=>c.add(url)));
 }).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==location.origin)return;
