@@ -1,0 +1,30 @@
+name: QA V58.1 mundos y dialogos
+on:
+  push:
+    branches:
+      - manus/release-candidate-v58.1-fase4
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Node 22 - sintaxis y regresiones
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Sintaxis de motor y diálogos
+        run: |
+          node --check game/js/core/game.js
+          node --check game/js/core/story.js
+          node --check game/js/app/main.js
+          node --check game/sw.js
+      - name: Física, enemigos, guardados, mundos y frases
+        working-directory: game
+        run: |
+          node --test tests/physics.test.js tests/enemies.test.js tests/game.test.js tests/world.test.js tests/v53.test.js tests/v581_mundos_dialogos.test.js
