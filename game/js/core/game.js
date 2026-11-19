@@ -13,9 +13,9 @@
   };
 
   function defaultSave() {
-    // V53 · progreso por misión: tramos desbloqueados en cada una (0 = misión bloqueada). La 1 empieza abierta.
-    return { unlocked: 1, bestTime: 0, bestScore: 0, bestDepth: 0, items: {}, wins: 0,
-      missions: { escuela: 1, guadalajara: 0, submarino: 0, espacial: 0 } };
+    // CAMION_DIALOGOS_MUNDOS_V581_20261119: acceso libre, récords y avance histórico independientes.
+    const missions = Object.fromEntries(NS.LEVELS.MISSIONS.map((m) => [m.id, m.levels.length]));
+    return { unlocked: 1, bestTime: 0, bestScore: 0, bestDepth: 0, items: {}, wins: 0, missions };
   }
 
   function createGame(opts = {}) {
@@ -38,6 +38,8 @@
     // Compatibilidad: saves anteriores a V53 no traen progreso por misión.
     G.save.missions = Object.assign({ escuela: 1, guadalajara: 0, submarino: 0, espacial: 0 }, G.save.missions || {});
     if (!(G.save.missions.escuela > 0)) G.save.missions.escuela = 1;
+    // Todos los mundos seleccionables también con guardados existentes; no borrar puntuaciones ni colecciones.
+    for (const mission of NS.LEVELS.MISSIONS) G.save.missions[mission.id] = mission.levels.length;
 
     const emit = (type, data) => { G.events.push(Object.assign({ type }, data || {})); };
     const persist = () => { if (G.onSave) G.onSave(G.save); };

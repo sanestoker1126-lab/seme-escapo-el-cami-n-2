@@ -80,8 +80,9 @@ test('progreso por misión: completar una desbloquea la siguiente; las paradas s
   const saved = [];
   const G = NS.Game.createGame({ onSave: (s) => saved.push(JSON.parse(JSON.stringify(s))) });
   G.setView(390, 844);
-  assert.equal(G.save.missions.escuela, 1);
-  assert.equal(G.save.missions.submarino, 0, 'el submarino arranca bloqueado');
+  // CAMION_DIALOGOS_MUNDOS_V581_20261119: acceso libre desde el inicio, avance histórico intacto.
+  for (const m of LV.MISSIONS) assert.equal(G.save.missions[m.id], m.levels.length, m.id + ' disponible');
+  assert.equal(G.save.unlocked, 1, 'el contador histórico permanece separado de la selección libre');
   // Jugar la misión submarino (3) y llegar a la meta desbloquea la espacial (4).
   G.newRun({ mission: 2, startTramo: 0, difficulty: 'normal' });
   assert.equal(G.missionId, 'submarino');

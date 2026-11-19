@@ -81,6 +81,14 @@
   };
   const seenFoeKinds = new Set();
   const bossCinematicSeen = new Set();
+  // CAMION_DIALOGOS_MUNDOS_V581_20261119: contexto narrativo, sin afectar física ni colisiones.
+  const spokenBossKinds = new Set(), spokenDefeats = new Set();
+  const speechTheme = (i = G.tramo) => G.world?.scenes?.[i]?.theme || 'escuela';
+  function characterSpeech(theme, actor, event) {
+    const line = ST.DIALOGUES?.[theme]?.[actor]?.[event];
+    const name = { sofia: 'SOFÍA', luna: 'LUNA', morita: 'MORITA' }[actor] || actor.toUpperCase();
+    return line ? name + ': ' + line : null;
+  }
 
   /* ---------- Módulos ---------- */
   const canvas = document.getElementById('game');
@@ -199,6 +207,7 @@
 
   function afterStart() {
     seenFoeKinds.clear();
+    spokenBossKinds.clear(); spokenDefeats.clear();
     ui.show(null);
     acc = 0;
     if (opt.music) audio.start();
@@ -230,11 +239,23 @@
     for (const e of list) {
       switch (e.type) {
         case 'message': ui.toast(e.text, e.priority); break;
-        case 'chapter': ui.chapter(e.index, e.chapter, G.world.scenes.length, e.scene && e.scene.def && e.scene.def.isNew); audio.setTramo(e.index, false, sceneTheme(e.index)); if (G.run && G.run.t > 0.5) audio.sfx('chapter'); break;
+        case 'chapter': {
+          ui.chapter(e.index, e.chapter, G.world.scenes.length, e.scene && e.scene.def && e.scene.def.isNew);
+          audio.setTramo(e.index, false, sceneTheme(e.index));
+          if (G.run && G.run.t > 0.5) audio.sfx('chapter');
+          const line = characterSpeech(speechTheme(e.index), 'sofia', 'entry');
+          if (line) ui.toast(line, 2, 3);
+          break;
+        }
         case 'sfx': audio.sfx(e.name); break;
         case 'bossWindup':
           e.foe.bossWindupStart = animT;
           audio.bossCue(e.foe.kind, 'windup', e.foe.scene);
+          if (!spokenBossKinds.has(e.foe.kind)) {
+            spokenBossKinds.add(e.foe.kind);
+            const line = ST.ENEMY_LINES?.[e.foe.kind]?.challenge;
+            if (line) ui.toast((e.foe.bossName || e.foe.kind).split(' · ')[0] + ': ' + line, 2, 2.4);
+          }
           break;
         case 'bossHit':
           e.foe.bossHitStart = animT;
@@ -273,11 +294,13 @@
         case 'checkpoint': audio.sfx('checkpoint'); audio.sfx(((e.cp?.scene ?? G.tramo) % 2) ? 'morita' : 'luna'); break;
         case 'companionWarning':
           audio.sfx(e.cat === 'morita' ? 'moritaAlert' : 'lunaAlert');
-          ui.toast((e.cat === 'morita' ? 'MORITA' : 'LUNA') + ': ¡CUIDADO!', 2, 0.9);
+          ui.toast(characterSpeech(speechTheme(), e.cat, 'warning') ||
+            ((e.cat === 'morita' ? 'MORITA' : 'LUNA') + ': ¡CUIDADO!'), 2, 1.7);
           break;
         case 'companionAssist':
           audio.sfx(e.cat === 'morita' ? 'moritaAlert' : 'lunaAlert');
-          ui.toast((e.cat === 'morita' ? 'MORITA' : 'LUNA') + ' distrajo al enemigo', 2, 1.1);
+          ui.toast(characterSpeech(speechTheme(), e.cat, 'assist') ||
+            ((e.cat === 'morita' ? 'MORITA' : 'LUNA') + ' distrajo al enemigo'), 2, 1.7);
           break;
         case 'companionPurr': audio.sfx(e.cat === 'morita' ? 'moritaPurr' : 'lunaPurr'); break;
         case 'crate': audio.sfx('stomp'); break;
@@ -316,8 +339,16 @@
             G.shakeT = Math.max(G.shakeT || 0, 0.22);
             audio.bossCue(e.foe.kind, 'defeat', e.foe.scene);
             setTimeout(() => audio.sfx('otroGato'), 1450);
-            ui.toast(ST.MESSAGES.bossDefeated + ': ' + e.foe.bossName, 4, 2.2);
-          } else { audio.sfx('stomp'); audio.sfx('otroGato'); }
+            const bossLine = ST.ENEMY_LINES?.[e.foe.kind]?.defeated;
+            ui.toast(bossLine ? e.foe.bossName + ': ' + bossLine : ST.MESSAGES.bossDefeated + ': ' + e.foe.bossName, 4, 2.8);
+          } else {
+            audio.sfx('stomp'); audio.sfx('otroGato');
+            if (e.foe && !spokenDefeats.has(e.foe.kind)) {
+              spokenDefeats.add(e.foe.kind);
+              const line = ST.ENEMY_LINES?.[e.foe.kind]?.defeated;
+              if (line) ui.toast(e.foe.kind.toUpperCase() + ': ' + line, 1, 1.9);
+            }
+          }
           break;
         case 'sign': ui.sign(e.sign.text); break;
         case 'busSeen': ui.toast(ST.MESSAGES.busWaiting, 3, 3.2); audio.sfx('honk'); break;

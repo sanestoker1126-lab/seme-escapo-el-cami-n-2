@@ -128,5 +128,44 @@
     };
   }
 
-  NS.STORY = { INTRO, CHAPTERS, ITEMS, SIGNS, MESSAGES, ending };
+  /* CAMION_DIALOGOS_MUNDOS_V581_20261119: subtítulos contextuales; audio y sprites originales intactos. */
+  const DIALOGUES = {
+    escuela: {
+      sofia: { entry: 'Luna, Morita, ¡rápido! El camión no nos va a esperar.' },
+      luna: { warning: '¡Miau! Algo se mueve detrás de esas cajas.', assist: '¡Mrr! Yo lo distraigo; tú salta, Sofía.' },
+      morita: { warning: '¡Miau! Ese techo no me da confianza.', assist: '¡Miau! Abre paso, que ahí va Sofía.' }
+    },
+    guadalajara: {
+      sofia: { entry: 'Por las azoteas de Guadalajara llegaremos antes que la ruta 6.' },
+      luna: { warning: '¡Miau! Ojo con el borde de esa azotea.', assist: '¡Prurr! Tú sigue, yo cubro la salida.' },
+      morita: { warning: '¡Miau! Viene alguien por el callejón.', assist: '¡Miau! Voy a hacer ruido para distraerlo.' }
+    },
+    submarino: {
+      sofia: { entry: 'Papito Estoker me explicó la misión. Tengo que bajar hasta el fondo sin perder a mis gatitas.' },
+      luna: { warning: '¡Miau! ¡Burbujas a la derecha! Esa aleta no es de un pez pequeño.', assist: '¡Mrrr! Yo distraigo a la piraña; nada, Sofía.' },
+      morita: { warning: '¡Miau! ¡Tentáculos cerca! Cuidado con la corriente.', assist: '¡Miau! ¡Nada detrás de mí y esquiva!' }
+    },
+    espacial: {
+      sofia: { entry: 'Traje espacial listo. De asteroide en asteroide encontraremos el camino a la Luna.' },
+      luna: { warning: '¡Miau! ¡Un dron viene flotando!', assist: '¡Prurr! Desvío su sensor; dispara el láser.' },
+      morita: { warning: '¡Miau! Esa chatarra se mueve muy rápido.', assist: '¡Miau! ¡Impulso activado, ahora!' }
+    }
+  };
+  const ENEMY_LINES = {
+    rat: { defeated: '¡Chiii! ¡Me ganaste esta vez!' },
+    dog: { challenge: '¡Guau! ¡De aquí no pasa nadie!', defeated: '¡Auuu! ¡Me rindo!' },
+    bravo: { challenge: '¡Grrrr! ¡Este tejado es mío!', defeated: '¡Auuu! Está bien, pasa.' },
+    chile: { defeated: '¡Ay, ay, ay! ¡Me quedé sin semillas!' },
+    bat: { defeated: '¡Me voy a dormir a otra cueva!' },
+    pigeon: { defeated: '¡Currucú! ¡Mejor me voy volando!' },
+    kid: { challenge: '¡Toma una piedra, a ver si la esquivas!', defeated: '¡Eh, mis piedras! ¡Eso no se vale!' },
+    piranha: { defeated: '¡Glu, glu! ¡Espera que vuelva mi cardumen!' },
+    shark: { challenge: '¡GRAAAR! ¡Mis dientes mandan aquí!', defeated: '¡GRUU! ¡Hoy te salvaste!' },
+    octopus: { challenge: '¡Con ocho brazos nadie me esquiva!', defeated: '¡Mis tentáculos necesitan descanso!' },
+    poseidon: { challenge: '¡Soy Poseidón! ¡Este abismo obedece mi tridente!', defeated: '¡El océano reconoce tu valor, Sofía!' },
+    drone: { defeated: 'ERROR: OBJETIVO MÁS RÁPIDO QUE EL SISTEMA.' },
+    satellite: { challenge: 'OBJETIVO DETECTADO. ¡PREPARAR CAÑONES!', defeated: 'SISTEMA INACTIVO. MISIÓN FALLIDA.' }
+  };
+
+  NS.STORY = { INTRO, CHAPTERS, ITEMS, SIGNS, MESSAGES, DIALOGUES, ENEMY_LINES, ending };
 })(typeof globalThis !== 'undefined' ? globalThis : window);

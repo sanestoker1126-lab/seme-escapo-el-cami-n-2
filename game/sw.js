@@ -1,7 +1,8 @@
 // ¡Se me fue el camión! — service worker (V57).
 // Precarga el juego completo (código versionado, fondos de los niveles —incluidos submarino y espacial—, sprites y audio) para jugar sin red.
 // Caché Fase 4: renueva renderer, luces, cámara y estilos responsivos del menú.
-const CACHE='camion-v58-1-phase4-parallax-real-v582-cache';
+// CAMION_DIALOGOS_MUNDOS_V581_20261119: caché nuevo para que el navegador no sirva diálogos obsoletos.
+const CACHE='camion-v58-1-phase4-parallax-real-v582-dialogos-20261119';
 const CODE=['css/space_intro.css?v=58.1','js/app/space_intro.js?v=58.1','css/marine_intro.css?v=58.1','js/app/marine_intro.js?v=58.1','js/app/marine_atlases.js?v=58.1','js/app/estoker_anim_data.js?v=58.1','js/app/marine_feet.js?v=58.1','js/app/marine_motion.js?v=58.1',"css/game.css?v=58.1", "css/toxifamilia_style.css?v=58.1", "css/toxifamilia.css?v=58.1", "js/core/util.js?v=58.1", "js/core/config.js?v=58.1", "js/core/levels.js?v=58.1", "js/core/story.js?v=58.1", "js/core/toxifamilia_style.js?v=58.1", "js/core/toxifamilia.js?v=58.1", "js/core/physics.js?v=58.1", "js/core/enemies.js?v=58.1", "js/core/obstacles.js?v=58.1", "js/core/world.js?v=58.1", "js/core/game.js?v=58.1", "js/app/art_data.js?v=58.1", "js/app/sofia_swim_override.js?v=58.1", "js/app/render.js?v=58.1", "js/app/parallax_real_v582.js?v=58.1", "js/app/input.js?v=58.1", "js/app/audio.js?v=58.1", "js/app/ui.js?v=58.1", "js/app/main.js?v=58.1", "js/app/toxifamilia_cinematic.js?v=58.1"];
 // Environment A1/A2 module is code; PNG/JSON are optional until binary import completes.
 CODE.push('js/app/environment_props.js?v=58.1-env-a1a2');
