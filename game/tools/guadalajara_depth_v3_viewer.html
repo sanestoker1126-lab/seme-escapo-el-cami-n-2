@@ -1,0 +1,54 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="../"><title>Guadalajara PRO V3 — Inspector de profundidad</title>
+<style>
+:root{color-scheme:dark;font:14px/1.5 system-ui,sans-serif}body{background:#101822;color:#e7edf5;margin:0;padding:20px}
+main{max-width:930px;margin:0 auto}h1{font-size:20px;margin:0 0 12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:14px 0}
+button,select,input{accent-color:#bb87db;color:inherit;background:#253143;border:1px solid #66768d;padding:8px;border-radius:6px}
+label{display:flex;gap:5px;align-items:center}canvas{display:block;width:100%;max-width:780px;background:#182535;border:1px solid #4d5f72}
+small,pre{color:#b5c4d6}pre{font-size:12px;white-space:pre-wrap}
+</style></head><body><main>
+<h1>Guadalajara — Parallax con profundidad V3</h1>
+<p>Vista técnica. El edificio es fijo; los planos transparentes se desplazan con la cámara. Esta herramienta no ejecuta la física del juego.</p>
+<div class="controls"><label>Escena <select id="scene"><option value="portales">Los Portales</option><option value="centro_historico">Centro Histórico</option><option value="guadalajara">Guadalajara Centro</option></select></label>
+<label><input type="checkbox" id="depth" checked> Profundidad activada</label><label><input type="checkbox" id="edges"> Mostrar plataformas</label></div>
+<div class="controls"><label>Desplazamiento X <input id="cx" type="range" min="0" max="0" value="0" step="1"></label>
+<label>Desplazamiento Y <input id="cy" type="range" min="0" max="0" value="0" step="1"></label>
+<button id="auto">Automático: activar</button></div>
+<canvas id="stage" width="780" height="500" role="img" aria-label="Vista de las azoteas de Guadalajara con parallax"></canvas>
+<pre id="qa">Cargando...</pre>
+<small>Capas: bruma 0.06, luz 0.23, hojas de jacaranda 0.55; sin modificación de colisiones. Fallback: las imágenes base del PRO V2.</small>
+</main><script src="js/app/guadalajara_depth_v3.js"></script>
+<script>
+'use strict';const $=q=>document.querySelector(q),cnv=$('#stage'),ctx=cnv.getContext('2d');
+let cfg=null,auto=false,now=0,images=new Map(),view={},index=0;
+const base='assets/scenes/guadalajara_rooftops_pro_v2/';
+function img(src){let im=images.get(src);if(!im){im=new Image();im.src=src;images.set(src,im);}return im;}
+function active(){return cfg&&cfg.scenes[$('#scene').value];}
+function resizeScene(){let s=active();if(!s)return;let iw=s.base_size[0],ih=s.base_size[1];let w=ih>iw?480:1400,h=w*ih/iw;
+ view={x0:Math.max(0,(780-w)/2),startY:Math.max(0,(500-h)/2),drawW:w,drawH:h,endY:Math.max(0,(500-h)/2)+h,id:s.scene_id,theme:'guadalajara',gdlProArtwork:true};
+ $('#cx').max=Math.max(0,view.drawW-780);$('#cy').max=Math.max(0,view.drawH-500);
+ $('#cx').value=0;$('#cy').value=0;}
+function platformOverlay(s){const mm=s.base_map, ww=view.drawW/mm[0],hh=view.drawH/mm[1];
+ // The QA metadata from PRO V2 is queried separately; no collision geometry is created.
+ if(!window.placement)return;
+ const data=window.placement.scenes[s.scene_id];if(!data)return;
+ ctx.save();ctx.strokeStyle='#5bffbd';ctx.lineWidth=2;
+ for(const q of data.surfaces){ctx.beginPath();ctx.moveTo(view.x0+q[0]*ww,view.startY+q[2]*hh);ctx.lineTo(view.x0+q[1]*ww,view.startY+q[2]*hh);ctx.stroke();}
+ ctx.restore();}
+function frame(time){requestAnimationFrame(frame);let s=active();if(!s)return;
+ if(auto&&$('#cy').max>0)$('#cy').value=(.5+.5*Math.sin(time*.00022))*Number($('#cy').max);
+ else if(auto&&$('#cx').max>0)$('#cx').value=(.5+.5*Math.sin(time*.00020))*Number($('#cx').max);
+ const camX=Number($('#cx').value),camY=Number($('#cy').value);
+ ctx.clearRect(0,0,780,500);ctx.fillStyle='#0d1725';ctx.fillRect(0,0,780,500);
+ ctx.save();ctx.translate(-camX,-camY);
+ const baseImage=img(s.base_background);
+ if(baseImage.complete&&baseImage.naturalWidth)ctx.drawImage(baseImage,view.x0,view.startY,view.drawW,view.drawH);
+ const V={x1:camX,x2:camX+780,y1:camY,y2:camY+500};
+ let draws=0;if($('#depth').checked)draws=window.CAMION.GDL_DEPTH_V3.draw(ctx,{cam:{x:camX,y:camY},view:{w:780,h:500}},V,view,time*.001);
+ const overlay=img(s.architecture_overlay);
+ if(overlay.complete&&overlay.naturalWidth){ctx.globalAlpha=.93;ctx.drawImage(overlay,view.x0,view.startY,view.drawW,view.drawH);ctx.globalAlpha=1;}
+ if($('#edges').checked)platformOverlay(s);
+ ctx.restore();$('#qa').textContent=s.scene_id+' | Camera ('+Math.round(camX)+','+Math.round(camY)+') | RGBA depth planes drawn: '+draws+' | static architecture unchanged';}
+$('#scene').onchange=resizeScene;$('#auto').onclick=()=>{auto=!auto;$('#auto').textContent='Automático: '+(auto?'desactivar':'activar');};
+Promise.all([fetch('assets/parallax/guadalajara/depth_v3/manifest.json').then(x=>x.json()),fetch('assets/scenes/guadalajara_rooftops_pro_v2/guadalajara_pro_v2_manifest.json').then(x=>x.json())]).then(([m,v2])=>{cfg=m;window.placement=v2;resizeScene();requestAnimationFrame(frame);}).catch(e=>$('#qa').textContent='Error al cargar manifiestos: '+e.message);
+</script></body></html>

@@ -945,6 +945,8 @@
         }
       } else drawFallbackScene(sc);
       if (sc.theme === 'escuela' || sc.theme === 'guadalajara') drawLandParallax(G, V, sc);
+      // GDL_DEPTH_V3: bruma, luz y pétalos de jacaranda (solo visual) en guadalajara, portales y centro_historico.
+      if (sc.theme === 'guadalajara' && NS.GDL_DEPTH_V3) NS.GDL_DEPTH_V3.draw(ctx, G, V, sc, G.world.t);
       const veil = sc.artPainted ? sc.shade : sc.shade + 0.1;
       if (veil > 0) fillRect(sc.x0, y1, sc.drawW, y2 - y1, hex(sc.wash), veil);
       if (!sc.artPainted) {

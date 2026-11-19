@@ -1,0 +1,189 @@
+{
+  "schema": "seme-fue-el-camion/guadalajara-depth-v3",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "status": "GENERATED_PENDING_INGAME_QA",
+  "provenance": "Derived atmospheric RGBA effects; existing WebP architecture is not edited",
+  "rules": {
+    "fixed_architecture": true,
+    "keep_existing_four_parallax": true,
+    "no_collision_changes": true,
+    "no_character_enemy_changes": true,
+    "no_main_changes": true,
+    "clip": "viewport_intersect_scene",
+    "transparent_effects_only": true,
+    "strict_alpha": true
+  },
+  "scenes": {
+    "guadalajara": {
+      "scene_id": "guadalajara",
+      "base_background": "assets/scenes/guadalajara_rooftops_pro_v2/bg_guadalajara_pro_v2.webp",
+      "base_size": [
+        1920,
+        540
+      ],
+      "base_map": [
+        1600,
+        450
+      ],
+      "architecture_overlay": "assets/scenes/guadalajara_rooftops_pro_v2/architecture_guadalajara_pro_v2.png",
+      "existing_land_parallax_speeds": [
+        0.12,
+        0.3,
+        0.43,
+        0.56
+      ],
+      "layers": [
+        {
+          "id": "01_bruma_atmosferica",
+          "src": "assets/parallax/guadalajara/depth_v3/guadalajara/01_bruma_atmosferica.png",
+          "width": 1088,
+          "height": 306,
+          "speed": 0.06,
+          "opacity": 0.44,
+          "alpha_coverage": 0.9059,
+          "sha256": "9ef2fcb95448a261ad64948303950e652d19d79a5c5be6a6e5ad5f7443b82667",
+          "depth": "far",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        },
+        {
+          "id": "02_luz_volumetrica",
+          "src": "assets/parallax/guadalajara/depth_v3/guadalajara/02_luz_volumetrica.png",
+          "width": 1088,
+          "height": 306,
+          "speed": 0.23,
+          "opacity": 0.53,
+          "alpha_coverage": 0.637,
+          "sha256": "0b093e95d96e610ef8cf3d9e8da178f2fa47fcdac975864c33475616b754d2b7",
+          "depth": "mid",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        },
+        {
+          "id": "03_hojas_jacaranda",
+          "src": "assets/parallax/guadalajara/depth_v3/guadalajara/03_hojas_jacaranda.png",
+          "width": 1088,
+          "height": 306,
+          "speed": 0.55,
+          "opacity": 0.48,
+          "alpha_coverage": 0.0602,
+          "sha256": "eb486b58b87e909187a7eb0ea616bdff80f72164b89248cd224e0f96f5a66472",
+          "depth": "near",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        }
+      ]
+    },
+    "portales": {
+      "scene_id": "portales",
+      "base_background": "assets/scenes/guadalajara_rooftops_pro_v2/bg_portales_pro_v2.webp",
+      "base_size": [
+        1536,
+        2504
+      ],
+      "base_map": [
+        628,
+        1024
+      ],
+      "architecture_overlay": "assets/scenes/guadalajara_rooftops_pro_v2/architecture_portales_pro_v2.png",
+      "existing_land_parallax_speeds": [
+        0.12,
+        0.3,
+        0.43,
+        0.56
+      ],
+      "layers": [
+        {
+          "id": "01_bruma_atmosferica",
+          "src": "assets/parallax/guadalajara/depth_v3/portales/01_bruma_atmosferica.png",
+          "width": 832,
+          "height": 1356,
+          "speed": 0.06,
+          "opacity": 0.44,
+          "alpha_coverage": 0.9051,
+          "sha256": "a1e62866000df57899b356a079a19cbeaad1f5ea0af4cec4321928fd3ea391d4",
+          "depth": "far",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        },
+        {
+          "id": "02_luz_volumetrica",
+          "src": "assets/parallax/guadalajara/depth_v3/portales/02_luz_volumetrica.png",
+          "width": 832,
+          "height": 1356,
+          "speed": 0.23,
+          "opacity": 0.53,
+          "alpha_coverage": 0.6131,
+          "sha256": "bb4dd084c1627a1efbd64af1858f9b7201c8198730b80bcead9f9fd9174f6923",
+          "depth": "mid",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        },
+        {
+          "id": "03_hojas_jacaranda",
+          "src": "assets/parallax/guadalajara/depth_v3/portales/03_hojas_jacaranda.png",
+          "width": 832,
+          "height": 1356,
+          "speed": 0.55,
+          "opacity": 0.48,
+          "alpha_coverage": 0.0218,
+          "sha256": "4a33d470adf625535089e802c24b07fed6dc8b5d0c36368d218f187af4b0a3dd",
+          "depth": "near",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        }
+      ]
+    },
+    "centro_historico": {
+      "scene_id": "centro_historico",
+      "base_background": "assets/scenes/guadalajara_rooftops_pro_v2/bg_centro_historico_pro_v2.webp",
+      "base_size": [
+        1536,
+        2504
+      ],
+      "base_map": [
+        628,
+        1024
+      ],
+      "architecture_overlay": "assets/scenes/guadalajara_rooftops_pro_v2/architecture_centro_historico_pro_v2.png",
+      "existing_land_parallax_speeds": [
+        0.12,
+        0.3,
+        0.43,
+        0.56
+      ],
+      "layers": [
+        {
+          "id": "01_bruma_atmosferica",
+          "src": "assets/parallax/guadalajara/depth_v3/centro_historico/01_bruma_atmosferica.png",
+          "width": 832,
+          "height": 1356,
+          "speed": 0.06,
+          "opacity": 0.44,
+          "alpha_coverage": 0.9083,
+          "sha256": "5dd2342c8576784a0205925f0f449be593e9050a6a19e67bdad49042331f66f4",
+          "depth": "far",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        },
+        {
+          "id": "02_luz_volumetrica",
+          "src": "assets/parallax/guadalajara/depth_v3/centro_historico/02_luz_volumetrica.png",
+          "width": 832,
+          "height": 1356,
+          "speed": 0.23,
+          "opacity": 0.53,
+          "alpha_coverage": 0.6138,
+          "sha256": "59bd8d438f333c69bd334d27b4babe1028c573ba34c66ef6bfb98ae6e82099b0",
+          "depth": "mid",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        },
+        {
+          "id": "03_hojas_jacaranda",
+          "src": "assets/parallax/guadalajara/depth_v3/centro_historico/03_hojas_jacaranda.png",
+          "width": 832,
+          "height": 1356,
+          "speed": 0.55,
+          "opacity": 0.48,
+          "alpha_coverage": 0.0175,
+          "sha256": "4954f39f4e93caf5ebd71b975d9407430a515c94fdfffe737d48c55333414f38",
+          "depth": "near",
+          "occlusion": "atmospheric_overlay_not_gameplay_geometry"
+        }
+      ]
+    }
+  }
+}
