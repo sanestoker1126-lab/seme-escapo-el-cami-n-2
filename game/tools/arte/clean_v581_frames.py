@@ -52,13 +52,51 @@ def clean_rgba(src, remove_dust=False):
         "transparent_rgb_cleared":int(np.count_nonzero(clear_rgb))
     }
 
+def source_locked_pngs(root):
+    """Only the exact section 01 PNG: never process unrelated backgrounds."""
+    import re
+    c=json.loads((root/"assets/production/character_enemy_section01.json").read_text())
+    names=set()
+    def add(rel):
+        if not rel.endswith(".png"): raise RuntimeError("Expected PNG "+rel)
+        p=root/rel
+        if not p.is_file(): raise RuntimeError("Missing source "+rel)
+        names.add(p)
+    for e in c["marine_enemies"]:
+        add(e["atlas"])
+        for i in range(e["frames"]):
+            add(e["frames_directory"]+e["source_prefix"]+f"{i:03}.png")
+    so=c["characters"]["sofia"]
+    add(so["underwater"]["atlas"])
+    add(so["underwater"]["attack_atlas"])
+    add("assets/player/sofia/sofia_submarina_complementaria.png")
+    for v in so["arrival"]["variants"]:
+        add(v["atlas"])
+        add(v["folder"]+"idle_0.png")
+        for i in range(v["original_walk_frames"]):
+            add(v["folder"]+f"walk_{i}.png")
+    est=c["characters"]["estoker"]
+    module=(root/est["module"]).read_text()
+    for rel in re.findall(r'"src":"([^"]+\.png)"',module):
+        add(rel)
+    sidecar=json.loads((root/(est["folder"]+"manifest.json")).read_text())
+    for seq in sidecar["sequences"].values():
+        add(est["folder"]+seq["atlas"])
+    for cat in c["characters"]["companions"]:
+        for i in range(1,cat["idle_frames"]+1):
+            add(cat["folder"]+cat["id"]+f"_idle_v38_0{i}.png")
+        for i in range(1,cat["walk_frames"]+1):
+            add(cat["folder"]+cat["id"]+f"_walk_v38_0{i}.png")
+        add(cat["folder"]+cat["id"]+"_shoulder.png")
+    return sorted(names)
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--root",default=".")
     parser.add_argument("--report",default="qa_alpha_cleanup_v581.json")
     args=parser.parse_args()
     root=Path(args.root).resolve()
-    imgs=sorted(root.glob("assets/**/*.png"))
+    imgs=source_locked_pngs(root)
     if not imgs:
         raise RuntimeError("Missing source PNG assets")
     rows=[]
