@@ -48,9 +48,12 @@
       idle: subFrames('morita', 'idle_sub', 6), walk: subFrames('morita', 'walk_sub', 4),
       shoulder: 'assets/companions/sub/morita_shoulder_sub.png', scale: 0.066, tint: '#d2e2ec' }
   };
-  // V58.1 · Reutiliza los frames originales sellados (casco/tanque) también en órbita;
-  // no hay sprites espaciales dedicados de las gatitas en la biblioteca de origen.
-  const COMPANIONS_SPACE = COMPANIONS_SUB;
+  // V58.1 · En órbita las gatitas usan el atlas de astronautas (Luna = gato blanco, Morita = gato gris).
+  // Si el atlas no carga, drawCompanion vuelve a los frames sellados de casco/tanque (COMPANIONS_SUB).
+  const COMPANIONS_SPACE = {
+    luna: Object.assign({}, COMPANIONS_SUB.luna, { atlas: 'gato_blanco' }),
+    morita: Object.assign({}, COMPANIONS_SUB.morita, { atlas: 'gato_gris' })
+  };
   const BUS_FRAMES = [1, 2, 3, 4].map((n) => 'assets/vehicles/camion_frame_0' + n + '.png');
   const FRAME_MS = { idle: 180, run: 92, fastRun: 64, jump: 110, fall: 180, land: 75, climb: 125, dash: 50, kick: 58, hurt: 100, dead: 260, cheer: 170 };
   // Escala base: un cuadro con k = 1 mide ≈ 61 u de pie, igual que la caja de colisión (62 u).
@@ -2182,7 +2185,13 @@
     ctx.translate(x, foot + bob + idleBob + (shoulder ? -48 : 0) + hop);
     ctx.rotate(sway);
     ctx.globalAlpha = 0.98;
-    if (ready(im) || ready(imNext)) {
+    // Atlas de astronautas: en el hombro, pose de reposo reducida; caminando, ciclo walk; quieta, ciclo idle.
+    const atlasName = c.atlas ? (shoulder ? spaceAtlasFrame(c.atlas, 'idle', 0, false)
+      : spaceAtlasFrame(c.atlas, moving ? 'walk' : 'idle', T + phase * 0.42, true)) : null;
+    if (atlasName && drawSpaceAtlasFrame(c.atlas, atlasName, 0, 0, flip, 0.98,
+      (shoulder ? 0.72 : 1) * pulse)) {
+      // dibujado con el atlas
+    } else if (ready(im) || ready(imNext)) {
       const base = ready(im) ? im : imNext;
       const scale = shoulder ? c.scale * 0.72 * pulse : c.scale * pulse;
       ctx.scale((flip ? -1 : 1) * scale, scale * (action === 'cuddle' ? 1.04 : 1));
@@ -2401,8 +2410,61 @@
     ctx.restore();
     return true;
   }
-  /* Reserva visual para el traje astronauta, sin reemplazar los frames originales:
-     cuando se incorpore el atlas espacial la capa se sustituye por frames reales. */
+  /* V58.1 · Atlas de astronautas (js/app/space_atlas_data.js, generado con tools/arte/build_space_atlas_v581.py).
+     Arte conceptual preliminar: solo visual, el cuerpo/hitbox de Sofía y de las gatas no cambia.
+     Devuelve false si el atlas aún no carga, para conservar el dibujo anterior como respaldo. */
+  const SPACE_SOFIA_BY_LOOK = Object.freeze({ uniforme: 'sofia_cuadros', rosa: 'sofia_cuadros' });
+  function spaceAtlasFrame(cid, anim, t, loop) {
+    const A = NS.SPACE_ATLAS && NS.SPACE_ATLAS[cid];
+    const a = A && A.anims[anim];
+    if (!a || !a.frames.length) return null;
+    let i = Math.floor(Math.max(0, t) * 1000 / a.ms);
+    i = (loop === undefined ? a.loop : loop) ? i % a.frames.length : Math.min(i, a.frames.length - 1);
+    return a.frames[i];
+  }
+  function drawSpaceAtlasFrame(cid, name, x, foot, flip, alpha, mul = 1, flash = false) {
+    const A = NS.SPACE_ATLAS && NS.SPACE_ATLAS[cid], f = A && name && A.frames[name];
+    if (!f) return false;
+    const im = image(A.image);
+    if (!ready(im)) return false;
+    const [sx, sy, sw, sh, ax, ay, k] = f;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.translate(x, foot);
+    ctx.scale((flip ? -1 : 1) * k * mul, k * mul);
+    ctx.drawImage(im, sx, sy, sw, sh, -ax, -ay, sw, sh);
+    if (flash) {
+      const sil = silhouette(im, '#ff4040');
+      if (sil) { ctx.globalAlpha = alpha * 0.5; ctx.drawImage(sil, sx, sy, sw, sh, -ax, -ay, sw, sh); }
+    }
+    ctx.restore();
+    return true;
+  }
+  function drawSpacePlayer(G, T, alpha) {
+    const P = G.P, foot = P.y + P.h / 2;
+    const cid = SPACE_SOFIA_BY_LOOK[ropt.ninaLook] || 'sofia_falda_roja';
+    const A = NS.SPACE_ATLAS && NS.SPACE_ATLAS[cid];
+    if (!A) return false;
+    const has = (a) => !!A.anims[a];
+    const cd = (NS.CONFIG.spaceWeapon && NS.CONFIG.spaceWeapon.cooldown) || 0.42;
+    const st = P.state;
+    let name;
+    if (P.dead) name = has('defeat') ? spaceAtlasFrame(cid, 'defeat', G.timers.dying, false) : spaceAtlasFrame(cid, 'hurt_alt', 1, false);
+    else if (st === 'hurt') name = spaceAtlasFrame(cid, 'hurt_alt', P.stateT, false);
+    else if (P.cheer || st === 'cheer') name = has('victory') ? spaceAtlasFrame(cid, 'victory', P.stateT, false) : spaceAtlasFrame(cid, 'idle', T, true);
+    else if (st === 'dash' || P.dashT > 0) name = spaceAtlasFrame(cid, 'boost', P.stateT, false);
+    else if (G.laserCD > 0 && P.ground && ['idle', 'run', 'fastRun', 'land'].includes(st)) name = spaceAtlasFrame(cid, 'shoot', cd - G.laserCD, false);
+    else if (st === 'kick') name = spaceAtlasFrame(cid, 'shoot', 0.22 - P.kickT, false);
+    else if (st === 'jump' && P.stateT < 0.1) name = spaceAtlasFrame(cid, 'jump_launch', 0, false);
+    else if (st === 'jump' || st === 'fall' || !P.ground) name = A.anims.jump_air.frames[P.vy < 0 ? 0 : 1];
+    else if (st === 'land') name = spaceAtlasFrame(cid, 'land', 0, false);
+    else if (st === 'fastRun') name = spaceAtlasFrame(cid, 'run', P.animT, true);
+    else if (st === 'run' || st === 'climb') name = spaceAtlasFrame(cid, 'walk', P.animT, true);
+    else name = spaceAtlasFrame(cid, 'idle', P.animT, true);
+    return drawSpaceAtlasFrame(cid, name, P.x, foot, P.face < 0, alpha, 1, st === 'hurt' && P.hurtT > 0.25);
+  }
+
+  /* Respaldo visual del traje astronauta mientras el atlas no esté cargado. */
   function drawAstronautGear(P, alpha) {
     const foot = P.y + P.h / 2;
     ctx.save();
@@ -2419,16 +2481,18 @@
     ctx.restore();
   }
 
-  function drawLaserPistol(G, alpha) {
+  function drawLaserPistol(G, alpha, flashOnly = false) {
     const P = G.P, dir = P.face < 0 ? -1 : 1, cfg = NS.CONFIG.spaceWeapon;
     const muzzleX = P.x + dir * (P.w / 2 + cfg.muzzleX), muzzleY = P.y + cfg.muzzleY;
-    ctx.save(); ctx.translate(P.x + dir * 9, muzzleY); ctx.scale(dir, 1);
-    fillRR(-4, -4, 12, 7, 2, '#2b4056', alpha);
-    fillRR(6, -3, 12, 5, 1.5, '#73dfff', alpha);
-    fillRect(16, -2, 4, 3, '#e5fbff', alpha);
-    fillRR(0, 2, 4, 6, 1.2, '#17283a', alpha);
-    circle(7, -1, 1.5, '#c5f8ff', alpha);
-    ctx.restore();
+    if (!flashOnly) {
+      ctx.save(); ctx.translate(P.x + dir * 9, muzzleY); ctx.scale(dir, 1);
+      fillRR(-4, -4, 12, 7, 2, '#2b4056', alpha);
+      fillRR(6, -3, 12, 5, 1.5, '#73dfff', alpha);
+      fillRect(16, -2, 4, 3, '#e5fbff', alpha);
+      fillRR(0, 2, 4, 6, 1.2, '#17283a', alpha);
+      circle(7, -1, 1.5, '#c5f8ff', alpha);
+      ctx.restore();
+    }
     if (G.laserFlashT > 0) {
       const k = Math.min(1, G.laserFlashT / 0.09);
       circle(muzzleX, muzzleY, 2 + k * 5, '#75eaff', alpha * 0.75 * k);
@@ -2463,6 +2527,12 @@
     const onMarineLand = suitTheme === 'submarino' && !inMarineWater;
     const outfit = inMarineWater ? 'buzo' : onMarineLand ? 'uniforme' : suitTheme === 'espacial' ? 'astronauta' : ropt.ninaLook;
     if (outfit === 'buzo' && drawDiver(G, alpha)) return;
+    if (outfit === 'astronauta' && drawSpacePlayer(G, T, alpha)) {
+      // El atlas ya trae la pistola en los cuadros de disparo; aquí solo el destello en la boca del cañón.
+      if (suitTheme === 'espacial' && G.laserFlashT > 0) drawLaserPistol(G, alpha, true);
+      if (P.dashT > 0) for (let i = 1; i <= 3; i++) line(P.x - P.face * (14 + i * 9), P.y - 10 + i * 6, P.x - P.face * (30 + i * 9), P.y - 10 + i * 6, '#4ce7ee', 0.5, 2);
+      return;
+    }
     let yOff = 0;
     if (P.dead) { const t = Math.min(1, G.timers.dying / 0.9); yOff = -Math.sin(t * Math.PI) * 42; }
     const state = P.state, list = NINA[state] || NINA.idle;

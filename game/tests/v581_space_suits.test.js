@@ -10,7 +10,10 @@ const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
 test('V58.1 espacio: Sofía conserva astronauta automático y Luna/Morita usan frames sellados fuente', () => {
   assert.match(render, /suitTheme === 'espacial' \? 'astronauta'/, 'Sofía cambia automáticamente al entrar a la misión espacial');
   assert.match(render, /function drawAstronautGear\(/, 'la capa visual astronauta permanece');
-  assert.match(render, /const COMPANIONS_SPACE = COMPANIONS_SUB;/, 'el traje espacial felino reutiliza sprites de casco/tanque existentes');
+  // Desde el atlas de astronautas V58.1 las gatitas usan frames espaciales propios; los sellados de
+  // casco/tanque quedan como respaldo si el atlas no carga (ver v581_space_atlas.test.js).
+  assert.match(render, /luna: Object\.assign\(\{\}, COMPANIONS_SUB\.luna, \{ atlas: 'gato_blanco' \}\)/, 'Luna espacial = atlas gato blanco con respaldo sellado');
+  assert.match(render, /morita: Object\.assign\(\{\}, COMPANIONS_SUB\.morita, \{ atlas: 'gato_gris' \}\)/, 'Morita espacial = atlas gato gris con respaldo sellado');
   assert.match(render, /scNow && scNow\.theme === 'espacial' \? COMPANIONS_SPACE : COMPANIONS/, 'el selector activa los trajes durante la escena espacial');
   assert.match(sw, /const SUB_FRAMES=/, 'el service worker construye la lista de sprites sellados');
   assert.match(sw, /assets\/companions\/sub\/\$\{cat\}_idle_sub_0/, 'la lista incorpora sprites fuente de Luna y Morita');
