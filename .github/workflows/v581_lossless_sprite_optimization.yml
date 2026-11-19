@@ -6,6 +6,7 @@ on:
       - manus/release-candidate-v58.1-fase4
     paths:
       - .github/workflows/v581_lossless_sprite_optimization.yml
+      - game/tools/arte/clean_v581_frames.py
   workflow_dispatch:
 
 concurrency:
