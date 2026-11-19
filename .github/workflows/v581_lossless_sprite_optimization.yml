@@ -1,4 +1,4 @@
-name: V58.1 source-locked PNG optimization
+name: V58.1 alpha-edge cleanup and source-locked PNG optimization
 
 on:
   push:
@@ -26,16 +26,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Set up Python for precise original-frame alpha cleanup
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image processing QA tools
+        run: python -m pip install --disable-pip-version-check --quiet pillow numpy opencv-python-headless
+      - name: Remove faint alpha residue and isolated character dust
+        working-directory: game
+        run: python tools/arte/clean_v581_frames.py --root . --report qa_alpha_cleanup_v581.json
       - name: Verify source-locked optimizer
         working-directory: game
         run: node --test tests/v581_lossless_png_optimization.test.js
-      - name: Optimize source PNG files without any pixel or alpha changes
+      - name: Recompress cleaned source PNG files without further pixel changes
         working-directory: game
         run: node tools/arte/optimize_png_source_locked.js --profile runtime --apply --report optimization_result_v581.json
       - name: Validate character and enemy manifests after optimization
         working-directory: game
         run: node --test tests/character_enemy_assets_section01.test.js tests/character_enemy_missing_sources_v581.test.js
-      - name: Commit only smaller lossless PNG assets to the same branch
+      - name: Commit cleaned and recompressed original PNG assets to the same branch
         shell: bash
         run: |
           set -euo pipefail
@@ -43,7 +52,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- 'game/assets/**/*.png'
           if git diff --cached --quiet; then
-            echo 'All original PNGs already optimal with this lossless method.'
+            echo 'No additional source PNG pixel cleanup or compression needed.'
             exit 0
           fi
           git diff --cached --name-only | while IFS= read -r file; do
@@ -51,7 +60,7 @@ jobs:
               *) echo "Unexpected file staged: $file" >&2; exit 1 ;;
             esac
           done
-          git commit -m 'perf(assets): recompress original PNG IDAT losslessly'
+          git commit -m 'fix(assets): clean faint sprite alpha residues and optimize PNG without rescaling'
           # Preserve any concurrent independent commits on the target branch.
           for attempt in 1 2 3; do
             git fetch origin "${{ github.ref_name }}"
@@ -91,6 +100,8 @@ jobs:
           for (const mod of ['js/app/marine_atlases.js','js/app/estoker_anim_data.js','js/app/marine_intro.js','js/app/sofia_swim_override.js']) add(mod);
           for (const rel of ['assets/production/character_enemy_section01.json','tools/arte/optimize_png_source_locked.js','tools/arte/README_OPTIMIZACION_V581.md','tools/preview_character_enemy_section01.html','tests/character_enemy_assets_section01.test.js','tests/character_enemy_missing_sources_v581.test.js','tests/v581_lossless_png_optimization.test.js']) add(rel);
           add('optimization_result_v581.json');
+          add('qa_alpha_cleanup_v581.json');
+          add('tools/arte/clean_v581_frames.py');
           fs.writeFileSync('v581_pack_filelist.txt', [...files].sort().join('\n')+'\n');
           console.log(JSON.stringify({files:files.size,png:[...files].filter(x=>x.endsWith('.png')).length,metadata:[...files].filter(x=>x.endsWith('.json')).length}));
           NODE
@@ -100,7 +111,7 @@ jobs:
       - name: Upload complete source-locked resource package
         uses: actions/upload-artifact@v4
         with:
-          name: v581-section01-optimized-real-assets
+          name: v581-section01-clean-alpha-real-assets
           path: V581_SECTION01_SOURCE_LOCKED_OPTIMIZED.zip
           if-no-files-found: error
           compression-level: 0
@@ -108,6 +119,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v581-png-lossless-report
-          path: game/optimization_result_v581.json
+          name: v581-source-alpha-cleanup-report
+          path: |
+            game/optimization_result_v581.json
+            game/qa_alpha_cleanup_v581.json
           if-no-files-found: ignore
