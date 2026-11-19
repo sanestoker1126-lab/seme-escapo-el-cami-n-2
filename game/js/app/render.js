@@ -944,9 +944,13 @@
           }
         }
       } else drawFallbackScene(sc);
+      // GDL_ROOFTOPS_PRO_V2: fondo con balcones pintados bajo las plataformas, una vez por copia del trazado.
+      sc.gdlProArtwork = sc.theme === 'guadalajara' && !!NS.GDL_ROOFTOPS_PRO_V2 && NS.GDL_ROOFTOPS_PRO_V2.drawBackground(ctx, G, V, sc);
       if (sc.theme === 'escuela' || sc.theme === 'guadalajara') drawLandParallax(G, V, sc);
       // GDL_DEPTH_V3: bruma, luz y pétalos de jacaranda (solo visual) en guadalajara, portales y centro_historico.
       if (sc.theme === 'guadalajara' && NS.GDL_DEPTH_V3) NS.GDL_DEPTH_V3.draw(ctx, G, V, sc, G.world.t);
+      // GDL_ROOFTOPS_PRO_V2: cornisas RGBA alineadas a las superficies de colisión.
+      if (sc.gdlProArtwork) NS.GDL_ROOFTOPS_PRO_V2.draw(ctx, G, V, sc);
       const veil = sc.artPainted ? sc.shade : sc.shade + 0.1;
       if (veil > 0) fillRect(sc.x0, y1, sc.drawW, y2 - y1, hex(sc.wash), veil);
       if (!sc.artPainted) {
@@ -2826,6 +2830,8 @@
     drawWaters(G, V, false);
     if (!G.room) { drawMarineAtmosphere(G,V,T); drawMarineCurrents(G,V,T); }
     drawSolids(G, V);
+    // GDL_ROOFTOPS_PRO_V2: soportes visuales de los sectores laterales (sin colisiones).
+    if (!G.room && NS.GDL_ROOFTOPS_PRO_V2) NS.GDL_ROOFTOPS_PRO_V2.drawSideSupports(ctx, G, V);
     drawPlatforms(G, V);
     drawDoors(G, V, T);
     drawCheckpoints(G, V, T);

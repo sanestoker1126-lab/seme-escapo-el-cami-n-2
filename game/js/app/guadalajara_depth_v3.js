@@ -33,9 +33,8 @@
   const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
   const ready = im => !!(im && im.complete && im.naturalWidth > 0 && im.naturalHeight > 0);
   function draw(ctx, G, V, sc, time) {
-    // Integración en esta rama: se dibuja sobre el fondo actual de la escena. El paquete exigía
-    // sc.gdlProArtwork (fondos PRO V2), pero esos fondos se hicieron para mapas de 628×1024 /
-    // 1600×450 y los mapas actuales son mayores, así que PRO V2 no se activa.
+    // Integración en esta rama: se dibuja en toda la escena, con o sin fondo PRO V2 (el paquete exigía
+    // sc.gdlProArtwork; PRO V2 solo cubre las dos copias del trazado, no los huecos entre ellas).
     if (!ctx || !G || !V || !sc || sc.theme !== 'guadalajara' ||
         !SCENES.has(sc.id) || !G.view || !G.cam) return 0;
     const x1 = Math.max(V.x1, sc.x0), y1 = Math.max(V.y1, sc.startY);

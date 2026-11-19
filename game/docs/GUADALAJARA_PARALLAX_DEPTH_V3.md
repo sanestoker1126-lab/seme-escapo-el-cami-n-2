@@ -65,11 +65,7 @@ No genera personajes, colisiones ni plataformas nuevas. Reutiliza PRO V2 sin sus
 - **Solo V3.** Los 9 PNG RGBA y `js/app/guadalajara_depth_v3.js` se integraron a mano (el instalador
   exige la rama `manus/release-candidate-v58.1-fase4`). Se dibujan sobre el fondo **actual** de las escenas
   `guadalajara`, `portales` y `centro_historico`; se quitó del módulo la condición `sc.gdlProArtwork`.
-- **PRO V2 no se activó.** Sus fondos y cornisas se hicieron para mapas de 628×1024 (Portales, Centro
-  Histórico) y 1600×450 (Guadalajara); en esta versión los mapas miden 1352×1851, 1352×1874 y 3296×780.
-  Estirados a la escena, **0 de 23** superficies pintadas coinciden con una plataforma real; a escala 1:1
-  coinciden las 23, pero el arte solo cubre la esquina superior izquierda (~46 % × 55 %). Hace falta
-  regenerar PRO V2 para el tamaño actual de los mapas.
+- **PRO V2 sí se activó, colocado por copias** (ver `GUADALAJARA_AZOTEAS_PRO_V2.md`, sección final).
 - **Corrección:** el instalador V3 insertaba `NS.GDL_DEPTH_V3.draw(ctx, G, V, sc, T)` dentro de
   `drawScenes(G, V)`, donde `T` no existe (ReferenceError en cada fotograma). Aquí se usa `G.world.t`.
 - La caché PWA no cambia de nombre (las pruebas existentes la fijan); el código se pide primero a la red.

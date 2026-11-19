@@ -1,0 +1,411 @@
+{
+  "schema": "seme-fue-el-camion/guadalajara-rooftops-pro-v2",
+  "release": "V58.1 FASE4 — RELEASE_CANDIDATE_ECO",
+  "status": "INSTALLABLE_NOT_IN_GAME_QA",
+  "source_branch": "manus/release-candidate-v58.1-fase4",
+  "policy": {
+    "do_not_modify_main": true,
+    "do_not_change_physics": true,
+    "no_character_enemy_changes": true,
+    "no_collisions_in_art": true,
+    "existing_background_fallback": true
+  },
+  "base_parallax": {
+    "source": "Existing LAND_PARALLAX and PARALLAX_REAL_V582; no duplicated layers",
+    "speeds": [
+      0.12,
+      0.3,
+      0.43,
+      0.56
+    ]
+  },
+  "render_integration": {
+    "method": "sceneSource selection + pixel-locked base scene + transparent overlay + optional side support",
+    "side_support": "uses actual world platform coordinates at runtime",
+    "mobile_support": "platform movers drawn by existing engine",
+    "clip": "viewport AND scene bounds"
+  },
+  "scenes": {
+    "portales": {
+      "scene_id": "portales",
+      "map_id": "GDL_MAP",
+      "map_size": [
+        628,
+        1024
+      ],
+      "image_size": [
+        1536,
+        2504
+      ],
+      "background": "assets/scenes/guadalajara_rooftops_pro_v2/bg_portales_pro_v2.webp",
+      "architecture_overlay": "assets/scenes/guadalajara_rooftops_pro_v2/architecture_portales_pro_v2.png",
+      "source": "New style-improved render",
+      "surfaces": [
+        [
+          0,
+          143,
+          164
+        ],
+        [
+          0,
+          292,
+          323
+        ],
+        [
+          442,
+          628,
+          356
+        ],
+        [
+          0,
+          291,
+          523
+        ],
+        [
+          438,
+          628,
+          615
+        ],
+        [
+          0,
+          341,
+          775
+        ],
+        [
+          436,
+          628,
+          862
+        ],
+        [
+          0,
+          344,
+          991
+        ]
+      ],
+      "stairs": [
+        [
+          286,
+          312,
+          329
+        ],
+        [
+          311,
+          337,
+          334
+        ],
+        [
+          336,
+          362,
+          339
+        ],
+        [
+          361,
+          387,
+          344
+        ],
+        [
+          386,
+          412,
+          350
+        ],
+        [
+          411,
+          441,
+          355
+        ],
+        [
+          291,
+          316,
+          538
+        ],
+        [
+          316,
+          341,
+          553
+        ],
+        [
+          341,
+          366,
+          568
+        ],
+        [
+          366,
+          391,
+          583
+        ],
+        [
+          391,
+          416,
+          598
+        ],
+        [
+          416,
+          441,
+          613
+        ],
+        [
+          338,
+          360,
+          789
+        ],
+        [
+          358,
+          380,
+          803
+        ],
+        [
+          378,
+          400,
+          817
+        ],
+        [
+          398,
+          420,
+          831
+        ],
+        [
+          418,
+          440,
+          845
+        ],
+        [
+          408,
+          430,
+          875
+        ],
+        [
+          386,
+          408,
+          890
+        ],
+        [
+          364,
+          386,
+          905
+        ],
+        [
+          342,
+          364,
+          920
+        ],
+        [
+          320,
+          342,
+          935
+        ],
+        [
+          298,
+          320,
+          950
+        ],
+        [
+          276,
+          298,
+          965
+        ],
+        [
+          254,
+          276,
+          980
+        ]
+      ],
+      "movers": [
+        [
+          298,
+          365,
+          442,
+          23,
+          4
+        ],
+        [
+          307,
+          371,
+          705,
+          21,
+          6
+        ]
+      ],
+      "surface_count": 8,
+      "stair_count": 25,
+      "moving_count": 2,
+      "moving_platforms": "drawn by game only; omitted from static overlay",
+      "world_to_image": {
+        "x": "pixelX=mapX*imageWidth/mapWidth",
+        "y": "pixelY=mapY*imageHeight/mapHeight"
+      },
+      "original_background": "assets/scenes/guadalajara_rooftops/bg_portales_azoteas.webp",
+      "sha256_background": "83b80b244513c7be410eb11d0516c9f7243d8710167ce3b62255ccc2560a9f56",
+      "sha256_overlay": "387444d1fb8fa00941128b5dc14bef6ad9586f77935d65331cd6aadfe365bf3e"
+    },
+    "centro_historico": {
+      "scene_id": "centro_historico",
+      "map_id": "CATEDRAL_MAP",
+      "map_size": [
+        628,
+        1024
+      ],
+      "image_size": [
+        1536,
+        2504
+      ],
+      "background": "assets/scenes/guadalajara_rooftops_pro_v2/bg_centro_historico_pro_v2.webp",
+      "architecture_overlay": "assets/scenes/guadalajara_rooftops_pro_v2/architecture_centro_historico_pro_v2.png",
+      "source": "Enhanced original generated art from prior A1 package",
+      "surfaces": [
+        [
+          0,
+          170,
+          140
+        ],
+        [
+          458,
+          628,
+          140
+        ],
+        [
+          170,
+          458,
+          300
+        ],
+        [
+          0,
+          140,
+          380
+        ],
+        [
+          488,
+          628,
+          460
+        ],
+        [
+          170,
+          430,
+          520
+        ],
+        [
+          0,
+          160,
+          600
+        ],
+        [
+          468,
+          628,
+          650
+        ],
+        [
+          130,
+          498,
+          790
+        ],
+        [
+          0,
+          628,
+          990
+        ]
+      ],
+      "stairs": [],
+      "movers": [
+        [
+          230,
+          330,
+          180,
+          70,
+          6
+        ]
+      ],
+      "surface_count": 10,
+      "stair_count": 0,
+      "moving_count": 1,
+      "moving_platforms": "drawn by game only; omitted from static overlay",
+      "world_to_image": {
+        "x": "pixelX=mapX*imageWidth/mapWidth",
+        "y": "pixelY=mapY*imageHeight/mapHeight"
+      },
+      "original_background": "assets/scenes/guadalajara_rooftops/bg_centro_historico_azoteas.webp",
+      "sha256_background": "bc0aa2026b5f28aefe74ff06b392966d36e13f110c16ada0dee73bcfecec3369",
+      "sha256_overlay": "b74ef4b5cb03698661c136eb89a8a18c777a05e4adfebfa04623c104c9ce273e"
+    },
+    "guadalajara": {
+      "scene_id": "guadalajara",
+      "map_id": "SOFEVI_MAP",
+      "map_size": [
+        1600,
+        450
+      ],
+      "image_size": [
+        1920,
+        540
+      ],
+      "background": "assets/scenes/guadalajara_rooftops_pro_v2/bg_guadalajara_pro_v2.webp",
+      "architecture_overlay": "assets/scenes/guadalajara_rooftops_pro_v2/architecture_guadalajara_pro_v2.png",
+      "source": "Enhanced original generated art from prior A1 package",
+      "surfaces": [
+        [
+          950,
+          1560,
+          90
+        ],
+        [
+          120,
+          1120,
+          170
+        ],
+        [
+          480,
+          1480,
+          250
+        ],
+        [
+          60,
+          860,
+          330
+        ],
+        [
+          560,
+          1200,
+          420
+        ]
+      ],
+      "stairs": [
+        [
+          1000,
+          1082,
+          132
+        ],
+        [
+          520,
+          602,
+          212
+        ],
+        [
+          1000,
+          1060,
+          292
+        ],
+        [
+          600,
+          682,
+          375
+        ]
+      ],
+      "movers": [],
+      "surface_count": 5,
+      "stair_count": 4,
+      "moving_count": 0,
+      "moving_platforms": "drawn by game only; omitted from static overlay",
+      "world_to_image": {
+        "x": "pixelX=mapX*imageWidth/mapWidth",
+        "y": "pixelY=mapY*imageHeight/mapHeight"
+      },
+      "original_background": "assets/scenes/guadalajara_rooftops/bg_guadalajara_centro_azoteas.webp",
+      "sha256_background": "8799d75f4c8b46c80479f9fce6bc8ef642ef88ab631360ce13d772ca4d6ae59c",
+      "sha256_overlay": "cde5c5864900f2aad54e173bf66f5b9d80792e20c80ad173286beeeec1fda697"
+    }
+  },
+  "qa": {
+    "frames_registered": 55,
+    "source": "Actual mapped surfaces/stairs/movers from existing catalog",
+    "type": "coordinate and image-integrity checks; not a Playwright game capture",
+    "report": "reports/guadalajara_rooftops_pro_v2/contact_sheet_pro_v2.jpg"
+  }
+}

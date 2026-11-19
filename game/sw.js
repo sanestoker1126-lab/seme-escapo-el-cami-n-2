@@ -5,6 +5,7 @@ const CACHE='camion-v58-1-phase4-parallax-real-v582-cache';
 const CODE=['css/space_intro.css?v=58.1','js/app/space_intro.js?v=58.1','css/marine_intro.css?v=58.1','js/app/marine_intro.js?v=58.1','js/app/marine_atlases.js?v=58.1','js/app/estoker_anim_data.js?v=58.1','js/app/marine_feet.js?v=58.1','js/app/marine_motion.js?v=58.1',"css/game.css?v=58.1", "css/toxifamilia_style.css?v=58.1", "css/toxifamilia.css?v=58.1", "js/core/util.js?v=58.1", "js/core/config.js?v=58.1", "js/core/levels.js?v=58.1", "js/core/story.js?v=58.1", "js/core/toxifamilia_style.js?v=58.1", "js/core/toxifamilia.js?v=58.1", "js/core/physics.js?v=58.1", "js/core/enemies.js?v=58.1", "js/core/obstacles.js?v=58.1", "js/core/world.js?v=58.1", "js/core/game.js?v=58.1", "js/app/art_data.js?v=58.1", "js/app/sofia_swim_override.js?v=58.1", "js/app/render.js?v=58.1", "js/app/parallax_real_v582.js?v=58.1", "js/app/space_atlas_data.js?v=58.1", "js/app/input.js?v=58.1", "js/app/audio.js?v=58.1", "js/app/ui.js?v=58.1", "js/app/main.js?v=58.1", "js/app/toxifamilia_cinematic.js?v=58.1"];
 // Environment A1/A2 module is code; PNG/JSON are optional until binary import completes.
 CODE.push('js/app/environment_props.js?v=58.1-env-a1a2');
+CODE.push('js/app/guadalajara_rooftops_pro_v2.js?v=58.1-gdl-pro-v2'); // GDL_ROOFTOPS_PRO_V2
 CODE.push('js/app/guadalajara_depth_v3.js?v=58.1-gdl-depth-v3'); // GDL_DEPTH_V3
 const ENVIRONMENT_A1_A2_OPTIONAL=['escuela','guadalajara','submarino','espacio'].flatMap(w=>['','_a2'].flatMap(suffix=>['assets/atlases/environment_'+w+suffix+'.png','assets/atlases/environment_'+w+suffix+'.json']));
 const SHELL=['assets/cinematic/papito_estoker_provisional.svg','Se_Me_Fue_El_Camion.html','index.html','manifest.webmanifest','icon-192.png','icon-512.png','assets/audio/cancion_fondo_v40.mp3','assets/audio/guadalajara_aventura_v24.mp3','assets/audio/ambiente_escuela_v24.mp3','assets/audio/ambiente_calles_guadalajara_v24.mp3','assets/audio/luna_maullido_v24.mp3','assets/audio/morita_maullido_v24.mp3','assets/audio/luna_ronroneo_v31.mp3','assets/audio/morita_ronroneo_v31.mp3','assets/audio/luna_alerta_v31.mp3','assets/audio/morita_alerta_v31.mp3','assets/audio/sofia_otro_gato_usuario_v38.mp3','assets/audio/motor_camion_guadalajara_v25.mp3','assets/audio/boss_intro_v37.mp3','assets/audio/boss_windup_v37.mp3','assets/audio/boss_hit_v37.mp3','assets/audio/boss_defeat_v37.mp3','assets/vehicles/camion_frame_01.png','assets/vehicles/camion_frame_02.png','assets/vehicles/camion_frame_03.png','assets/vehicles/camion_frame_04.png','assets/companions/luna.png','assets/companions/luna_shoulder.png','assets/companions/morita.png','assets/companions/morita_shoulder.png'];
@@ -36,6 +37,10 @@ self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(async c=
     ['01_bruma_atmosferica','02_luz_volumetrica','03_hojas_jacaranda'].map(n=>'assets/parallax/guadalajara/depth_v3/'+id+'/'+n+'.png'));
   await Promise.allSettled(ENVIRONMENT_A1_A2_OPTIONAL.map(url=>c.add(url)));
   await Promise.allSettled(gdlDepth.map(url=>c.add(url)));
+  // GDL_ROOFTOPS_PRO_V2: fondos y cornisas opcionales.
+  const gdlPro=['guadalajara','portales','centro_historico'].flatMap(id=>[
+    'assets/scenes/guadalajara_rooftops_pro_v2/bg_'+id+'_pro_v2.webp','assets/scenes/guadalajara_rooftops_pro_v2/architecture_'+id+'_pro_v2.png']);
+  await Promise.allSettled(gdlPro.map(url=>c.add(url)));
 }).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==location.origin)return;
