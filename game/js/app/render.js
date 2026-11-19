@@ -921,10 +921,19 @@
     for (const sc of G.world.scenes) {
       if (sc.theme === 'submarino' || sc.theme === 'espacial') continue; // fondo de ancho total, dibujado antes
       if (!inView(V, sc.x0, sc.startY, sc.x0 + sc.drawW, sc.endY)) continue;
-      const im = sceneSource(sc);
-      sc.missingArt = !im;
       const y1 = Math.max(sc.startY, V.y1), y2 = Math.min(sc.endY, V.y2);
-      if (im) {
+      // GDL_ROOFTOPS_PRO_V2: en Guadalajara, Portales y Centro Histórico SOLO arte nuevo (fondo + parallax V3).
+      // El fondo y el parallax viejos se usan únicamente si el arte nuevo falla al cargar.
+      const proApi = sc.theme === 'guadalajara' ? NS.GDL_ROOFTOPS_PRO_V2 : null;
+      const proStatus = proApi ? proApi.status(sc) : 'none';
+      sc.gdlProScene = proStatus === 'ready' || proStatus === 'loading'; // escena con arte nuevo (aunque aún cargue)
+      sc.gdlProArtwork = proStatus === 'ready' && proApi.drawBackground(ctx, G, V, sc);
+      if (proStatus === 'loading') fillRect(Math.max(sc.x0, V.x1), y1, Math.min(sc.x0 + sc.drawW, V.x2) - Math.max(sc.x0, V.x1), y2 - y1, '#2a2430');
+      const legacy = proStatus === 'none' || proStatus === 'error';
+      const im = legacy ? sceneSource(sc) : null;
+      sc.missingArt = legacy && !im;
+      if (!legacy) { /* arte nuevo ya dibujado (o color liso mientras carga) */ }
+      else if (im) {
         const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height;
         if (sc.artPainted) {
           // Exacto: recorte de la fuente a la parte visible (menos píxeles que componer en móviles).
@@ -944,9 +953,7 @@
           }
         }
       } else drawFallbackScene(sc);
-      // GDL_ROOFTOPS_PRO_V2: fondo con balcones pintados bajo las plataformas, una vez por copia del trazado.
-      sc.gdlProArtwork = sc.theme === 'guadalajara' && !!NS.GDL_ROOFTOPS_PRO_V2 && NS.GDL_ROOFTOPS_PRO_V2.drawBackground(ctx, G, V, sc);
-      if (sc.theme === 'escuela' || sc.theme === 'guadalajara') drawLandParallax(G, V, sc);
+      if (legacy && (sc.theme === 'escuela' || sc.theme === 'guadalajara')) drawLandParallax(G, V, sc);
       // GDL_DEPTH_V3: bruma, luz y pétalos de jacaranda (solo visual) en guadalajara, portales y centro_historico.
       if (sc.theme === 'guadalajara' && NS.GDL_DEPTH_V3) NS.GDL_DEPTH_V3.draw(ctx, G, V, sc, G.world.t);
       // GDL_ROOFTOPS_PRO_V2: cornisas RGBA alineadas a las superficies de colisión.

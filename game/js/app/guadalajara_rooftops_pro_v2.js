@@ -45,11 +45,42 @@
     return origins.map(([mx, my]) => ({ x: sc.x0 + mx * sc.scale, y: sc.startY + my * sc.scale, w: sw * sc.scale, h: sh * sc.scale }));
   }
 
+  /** Fondo lejano para los huecos entre copias (sin plataformas): el mismo arte nuevo, muy reducido
+      (desenfoque barato al ampliarlo) y oscurecido, para que no parezca un balcón pisable. */
+  const backdropCache = new Map();
+  function backdropOf(id, im) {
+    if (backdropCache.has(id)) return backdropCache.get(id);
+    let c = null;
+    try {
+      const s = 512 / Math.max(im.naturalWidth, im.naturalHeight);   // suave al ampliar, sin bloques
+      c = document.createElement('canvas');
+      c.width = Math.max(8, Math.round(im.naturalWidth * s)); c.height = Math.max(8, Math.round(im.naturalHeight * s));
+      const x = c.getContext('2d');
+      x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
+      x.drawImage(im, 0, 0, c.width, c.height);
+      x.fillStyle = 'rgba(12,16,30,0.42)'; x.fillRect(0, 0, c.width, c.height);
+    } catch (_) { c = null; }
+    backdropCache.set(id, c);
+    return c;
+  }
+
+  /** 'ready' | 'loading' | 'error' | 'none' (escena sin arte PRO alineable). */
+  function status(sc) {
+    if (!tiles(sc).length) return 'none';
+    if (featherCache.get(sc.id)) return 'ready';
+    if (featherCache.has(sc.id)) return 'error';
+    const im = getImage(SCENES[sc.id].bg);
+    if (!im) return 'error';
+    if (im.complete && !im.naturalWidth) return 'error';
+    return feathered(sc.id) ? 'ready' : (featherCache.has(sc.id) ? 'error' : 'loading');
+  }
+
   /** Fondo con los cuatro bordes difuminados a transparente (se crea una vez por escena). */
   function feathered(id) {
     if (featherCache.has(id)) return featherCache.get(id);
     const im = getImage(SCENES[id].bg);
     if (!ready(im) || typeof document === 'undefined') return null;
+    backdropOf(id, im);
     let c = null;
     try {
       const s = Math.min(1, MAX_SIDE / Math.max(im.naturalWidth, im.naturalHeight));
@@ -91,12 +122,23 @@
     return n;
   }
 
-  /** Dibuja el fondo PRO sobre el fondo original. Devuelve true si la escena tiene arte PRO activo. */
+  /** Dibuja TODO el fondo de la escena con arte nuevo: fondo lejano en toda la escena y el arte nítido
+      en cada copia del trazado. Devuelve true si se dibujó (el renderer ya no dibuja el fondo viejo). */
   function drawBackground(ctx, G, V, sc) {
     if (!tiles(sc).length) return false;
     const img = feathered(sc.id);
     if (!img) return false;
+    const x1 = Math.max(V.x1, sc.x0), x2 = Math.min(V.x2, sc.x0 + sc.drawW);
+    const y1 = Math.max(V.y1, sc.startY), y2 = Math.min(V.y2, sc.endY);
     ctx.save();
+    const back = backdropCache.get(sc.id);
+    if (back && x2 > x1 && y2 > y1) {
+      // "cover" fijo a la escena: la parte visible se toma del rectángulo correspondiente.
+      const k = Math.max(sc.drawW / back.width, sc.drawH / back.height);
+      const dx = sc.x0 + (sc.drawW - back.width * k) / 2, dy = sc.startY + (sc.drawH - back.height * k) / 2;
+      ctx.imageSmoothingEnabled = true;
+      ctx.drawImage(back, (x1 - dx) / k, (y1 - dy) / k, (x2 - x1) / k, (y2 - y1) / k, x1, y1, x2 - x1, y2 - y1);
+    }
     drawTiles(ctx, V, sc, img);
     ctx.restore();
     return true;
@@ -155,7 +197,7 @@
   NS.GDL_ROOFTOPS_PRO_V2 = Object.freeze({
     has: (id) => Object.prototype.hasOwnProperty.call(SCENES, id),
     background: (id) => SCENES[id] ? SCENES[id].bg : null,
-    tiles, drawBackground, draw, drawSideSupports,
+    tiles, status, drawBackground, draw, drawSideSupports,
     version: '58.1-guadalajara-pro-v2-tiled'
   });
 })(typeof globalThis !== 'undefined' ? globalThis : window);

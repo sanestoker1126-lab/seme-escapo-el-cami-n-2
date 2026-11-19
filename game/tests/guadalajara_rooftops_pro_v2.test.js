@@ -100,3 +100,30 @@ test('soportes laterales solo visuales e ignoran plataformas móviles', () => {
   assert.ok(calls.length > 0);
   assert.equal(JSON.stringify(G), snap);
 });
+
+test('en las escenas con arte nuevo NO se dibuja el fondo ni el parallax viejos (solo si el nuevo falla)', () => {
+  const render = fs.readFileSync(path.join(root, 'js/app/render.js'), 'utf8');
+  const v582 = fs.readFileSync(path.join(root, 'js/app/parallax_real_v582.js'), 'utf8');
+  assert.match(render, /const legacy = proStatus === 'none' \|\| proStatus === 'error';/);
+  assert.match(render, /const im = legacy \? sceneSource\(sc\) : null;/, 'el fondo viejo solo como respaldo');
+  assert.match(render, /if \(legacy && \(sc\.theme === 'escuela' \|\| sc\.theme === 'guadalajara'\)\) drawLandParallax\(G, V, sc\);/, 'parallax viejo de tierra solo como respaldo');
+  assert.match(render, /sc\.gdlProScene = proStatus === 'ready' \|\| proStatus === 'loading';/);
+  assert.match(v582, /if\(sc\.gdlProScene\)continue;/, 'V58.2 no se dibuja en escenas con arte nuevo, ni mientras carga');
+});
+
+test('status: none sin arte alineable, loading mientras carga, ready con lienzo, error si el lienzo falla', () => {
+  const load = (complete, doc) => {
+    class Img { constructor() { this.complete = complete; this.naturalWidth = complete ? 1536 : 0; this.naturalHeight = complete ? 2504 : 0; } set src(v) { this._s = v; } }
+    const host = { Image: Img, document: doc }; host.globalThis = host;
+    vm.runInNewContext(fs.readFileSync(path.join(root, 'js/app/guadalajara_rooftops_pro_v2.js'), 'utf8'), host);
+    return host.CAMION.GDL_ROOFTOPS_PRO_V2;
+  };
+  const ctx2d = { drawImage() {}, fillRect() {}, createLinearGradient: () => ({ addColorStop() {} }) };
+  const okDoc = { createElement: () => ({ width: 0, height: 0, getContext: () => ctx2d }) };
+  const badDoc = { createElement: () => { throw new Error('sin memoria'); } };
+  const sc = () => ({ id: 'portales', map: levelMap('portales'), x0: 0, startY: 0, scale: 1 });
+  assert.equal(load(true, okDoc).status({ id: 'escuela' }), 'none');
+  assert.equal(load(false, okDoc).status(sc()), 'loading');
+  assert.equal(load(true, okDoc).status(sc()), 'ready');
+  assert.equal(load(true, badDoc).status(sc()), 'error', 'si el lienzo falla, el juego vuelve al fondo viejo');
+});

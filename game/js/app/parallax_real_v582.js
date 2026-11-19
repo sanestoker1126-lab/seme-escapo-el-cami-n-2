@@ -58,6 +58,7 @@ function draw(ctx,G,V,T){
   const B=G.world.bounds; const t=Number.isFinite(T)?T:0;let drawn=0;
   for(const sc of G.world.scenes){
     const layers=DEF[sc.theme];if(!layers||sc.endY<=V.y1||sc.startY>=V.y2)continue;
+    if(sc.gdlProScene)continue; // Guadalajara PRO V2: esas escenas usan solo su parallax nuevo (depth V3)
     const x1=Math.max(B.x1,V.x1),x2=Math.min(B.x2,V.x2),
           y1=Math.max(sc.startY,V.y1),y2=Math.min(sc.endY,V.y2);
     if(!(x2>x1&&y2>y1))continue;
